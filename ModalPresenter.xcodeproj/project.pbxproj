@@ -1,0 +1,331 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A40C04797979E903E0A8DB7 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C30DE59F59580501725D /* YellowVC.swift */; };
+		5A40C1EBD752D6C84FC71C8B /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */; };
+		5A40C3D274C3A8825109E810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C8AF6A7E203D7B97273C /* LaunchScreen.storyboard */; };
+		5A40C5A0B38F3026342C84A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C68B4142BC79E60E7A64 /* Main.storyboard */; };
+		5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C44405A2F6785A32A565 /* ModalPresenter.swift */; };
+		5A40C763D78B2C35539981D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C3C2E0192D06B56E4B0B /* ViewController.swift */; };
+		5A40C76F4FEA2A6D352AB13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */; };
+		5A40C9FEFBE44E225A65826F /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9184A2DD880987217DA /* BlueVC.swift */; };
+		5A40CB490D6AED5BC83E4F4B /* PresentDisableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */; };
+		5A40CFD407A5A79791545F09 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */; };
+		5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF54B712305609DD6A64 /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A40C1DB43218FEE14E4B89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
+		5A40C30DE59F59580501725D /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
+		5A40C3C2E0192D06B56E4B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A40C3CF20420E5F42AEE3A6 /* ModalPresenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModalPresenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A40C44405A2F6785A32A565 /* ModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
+		5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentDisableViewController.swift; sourceTree = "<group>"; };
+		5A40C72B1AF977EFB4A65A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A40C9184A2DD880987217DA /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
+		5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
+		5A40CC1E8EC7473F22BBCBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A40CF54B712305609DD6A64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A40C492D6FF516DBEA9EAA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A40C7A405861DF9E7A93E24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A40C3CF20420E5F42AEE3A6 /* ModalPresenter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A40C941AA0B68F36B7FB792 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */,
+				5A40C9184A2DD880987217DA /* BlueVC.swift */,
+				5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */,
+				5A40C44405A2F6785A32A565 /* ModalPresenter.swift */,
+				5A40C30DE59F59580501725D /* YellowVC.swift */,
+				5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5A40CB9D58204E67467BDE02 /* ModalPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				5A40C1DB43218FEE14E4B89D /* Info.plist */,
+				5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */,
+				5A40C8AF6A7E203D7B97273C /* LaunchScreen.storyboard */,
+				5A40CF54B712305609DD6A64 /* AppDelegate.swift */,
+				5A40C68B4142BC79E60E7A64 /* Main.storyboard */,
+				5A40C3C2E0192D06B56E4B0B /* ViewController.swift */,
+				5A40C941AA0B68F36B7FB792 /* Classes */,
+			);
+			path = ModalPresenter;
+			sourceTree = "<group>";
+		};
+		5A40CEA9427256B88FAF76A2 = {
+			isa = PBXGroup;
+			children = (
+				5A40C7A405861DF9E7A93E24 /* Products */,
+				5A40CB9D58204E67467BDE02 /* ModalPresenter */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A40C6FB30EBBE3DE8E73474 /* ModalPresenter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A40CDFFE1749D2B9F5BEFB4 /* Build configuration list for PBXNativeTarget "ModalPresenter" */;
+			buildPhases = (
+				5A40C5BB35833D453BD1F0D9 /* Sources */,
+				5A40C492D6FF516DBEA9EAA1 /* Frameworks */,
+				5A40C7DCEFFA735C006C04A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ModalPresenter;
+			productName = ModalPresenter;
+			productReference = 5A40C3CF20420E5F42AEE3A6 /* ModalPresenter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A40CE9AA18158955DCFAC84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Chope;
+			};
+			buildConfigurationList = 5A40C1078ED12F117F7B004C /* Build configuration list for PBXProject "ModalPresenter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5A40CEA9427256B88FAF76A2;
+			productRefGroup = 5A40C7A405861DF9E7A93E24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A40C6FB30EBBE3DE8E73474 /* ModalPresenter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A40C7DCEFFA735C006C04A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A40C76F4FEA2A6D352AB13D /* Assets.xcassets in Resources */,
+				5A40C3D274C3A8825109E810 /* LaunchScreen.storyboard in Resources */,
+				5A40C5A0B38F3026342C84A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A40C5BB35833D453BD1F0D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */,
+				5A40C763D78B2C35539981D9 /* ViewController.swift in Sources */,
+				5A40C1EBD752D6C84FC71C8B /* RedVC.swift in Sources */,
+				5A40C9FEFBE44E225A65826F /* BlueVC.swift in Sources */,
+				5A40CFD407A5A79791545F09 /* GreenVC.swift in Sources */,
+				5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */,
+				5A40C04797979E903E0A8DB7 /* YellowVC.swift in Sources */,
+				5A40CB490D6AED5BC83E4F4B /* PresentDisableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5A40C68B4142BC79E60E7A64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A40CC1E8EC7473F22BBCBA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5A40C8AF6A7E203D7B97273C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5A40C72B1AF977EFB4A65A93 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5A40C178953431715E850B66 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A40C23188CDB828D428B11B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ModalPresenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperconnect.test.ModalPresenter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.1;
+			};
+			name = Release;
+		};
+		5A40C234101FA13F968E16BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A40CA4E9D815E0F6442E865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ModalPresenter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hyperconnect.test.ModalPresenter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.1;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A40C1078ED12F117F7B004C /* Build configuration list for PBXProject "ModalPresenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A40C178953431715E850B66 /* Debug */,
+				5A40C234101FA13F968E16BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A40CDFFE1749D2B9F5BEFB4 /* Build configuration list for PBXNativeTarget "ModalPresenter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A40CA4E9D815E0F6442E865 /* Debug */,
+				5A40C23188CDB828D428B11B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A40CE9AA18158955DCFAC84 /* Project object */;
+}
