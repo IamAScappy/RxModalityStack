@@ -5,73 +5,28 @@
 
 import UIKit
 
-enum ModalView {
-    case red
-    case blue
-    case green
-    case yellow
-    case viewController(UIViewController, Bool)
-
-    var viewController: UIViewController {
-        switch self {
-        case .red:
-            return RedVC()
-        case .blue:
-            return BlueVC()
-        case .green:
-            return GreenVC()
-        case .yellow:
-            return YellowVC()
-        case .viewController(let vc, _):
-            return vc
-        }
-    }
-
-    var isPresentation: Bool {
-        switch self {
-        case .red:
-            return false
-        case .blue:
-            return false
-        case .green:
-            return false
-        case .yellow:
-            return false
-        case .viewController(_, let presentation):
-            return presentation
-        }
-    }
+enum ModalAction {
+    case present
+    case dismiss
 }
 
 class ModalInfo {
-    let modalView: ModalView
     weak var viewController: UIViewController?
 
-    init(modalView: ModalView, viewController: UIViewController) {
-        self.modalView = modalView
+    init(viewController: UIViewController) {
         self.viewController = viewController
     }
 }
 
-class PresentInfo {
-    let modalView: ModalView
+class ModalActionInfo {
+    var viewController: UIViewController
+    let action: ModalAction
     let animated: Bool
     let completion: (()->Void)?
 
-    init(modalView: ModalView, animated: Bool, completion: (()->Void)? = nil) {
-        self.modalView = modalView
-        self.animated = animated
-        self.completion = completion
-    }
-}
-
-class DismissInfo {
-    weak var viewController: UIViewController?
-    let animated: Bool
-    let completion: (()->Void)?
-
-    init(viewController: UIViewController, animated: Bool, completion: (()->Void)? = nil) {
+    init(viewController: UIViewController, action: ModalAction, animated: Bool, completion: (()->Void)? = nil) {
         self.viewController = viewController
+        self.action = action
         self.animated = animated
         self.completion = completion
     }
@@ -85,75 +40,78 @@ class ModalPresenter {
             print("stack: \(stack)")
         }
     }
-    private var presentQueue: [PresentInfo] = []
-    private var isPresentAnimating: Bool = false
-
-    private var dismissQueue: [DismissInfo] = []
-    private var isDismissAnimating: Bool = false
+    private var queue: [ModalActionInfo] = [] {
+        didSet {
+            print("queue: \(queue)")
+        }
+    }
+    private var isExecutingAction: Bool = false
 
     private init() {}
 
-    func present(view: ModalView, animated: Bool = true, completion: (()->Void)? = nil) {
-        guard isPresentAnimating == false else {
-            presentQueue.append(PresentInfo(modalView: view, animated: animated, completion: completion))
+    func present(viewController: UIViewController, animated: Bool = true, completion: (()->Void)? = nil) {
+        guard isExecutingAction == false else {
+            queue.append(ModalActionInfo(viewController: viewController, action: .present, animated: animated, completion: completion))
             return
         }
         guard let baseVC = stack.last?.viewController ?? UIApplication.shared.keyWindow?.rootViewController else {
             return
         }
 
-        isPresentAnimating = true
+        isExecutingAction = true
 
-        let viewController = view.viewController
-        baseVC.present(viewController, animated: animated) {
-            self.stack.append(ModalInfo(modalView: view, viewController: viewController))
-            self.isPresentAnimating = false
+        baseVC.present(viewController, animated: animated) { [weak self] in
+            guard let ss = self else { return }
+            ss.stack.append(ModalInfo(viewController: viewController))
+            ss.isExecutingAction = false
 
             completion?()
 
-            if self.presentQueue.count > 0 {
-                let info = self.presentQueue.removeFirst()
-                self.present(view: info.modalView, animated: info.animated, completion: info.completion)
-            }
+            ss.processModalActionInQueue()
         }
     }
 
     func dismiss(viewController: UIViewController, animated: Bool, completion: (()->Void)? = nil) {
-        guard isDismissAnimating == false else {
-            dismissQueue.append(DismissInfo(viewController: viewController, animated: animated, completion: completion))
+        guard isExecutingAction == false else {
+            queue.append(ModalActionInfo(viewController: viewController, action: .dismiss, animated: animated, completion: completion))
             return
         }
-        guard let index = stack.index(where: { info in
-            guard let vc = info.viewController, vc === viewController else { return false }
-            return true
-        }) else {
+        guard let index = stack.index(where: { $0.viewController == viewController }) else {
             assertionFailure()
             return
         }
 
-        isDismissAnimating = true
+        isExecutingAction = true
 
-        let info = stack.remove(at: index)
-        info.viewController?.dismiss(animated: animated) {
-            self.isDismissAnimating = false
+        let modal = stack.remove(at: index)
+        modal.viewController?.dismiss(animated: animated) { [weak self] in
+            guard let ss = self else { return }
+
+            ss.isExecutingAction = false
             completion?()
 
-            if self.dismissQueue.count > 0 {
-                let dismissInfo = self.dismissQueue.removeFirst()
-
-                if let vc = dismissInfo.viewController {
-                    self.dismiss(viewController: vc, animated: dismissInfo.animated, completion: dismissInfo.completion)
-                }
-            }
+            ss.processModalActionInQueue()
         }
     }
 
     func dismissAll(animated: Bool = false) {
-        dismissQueue = stack.reversed().flatMap { $0.viewController }.map { DismissInfo(viewController: $0, animated: animated) }
+        stack.reversed().flatMap { $0.viewController }.forEach { [weak self] in
+            self?.dismiss(viewController: $0, animated: animated)
+        }
+    }
 
-        let info = dismissQueue.removeFirst()
-        if let vc = info.viewController {
-            dismiss(viewController: vc, animated: info.animated)
+    private func processModalActionInQueue() {
+        guard queue.count > 0 else { return }
+
+        assert(isExecutingAction == false)
+
+        let info: ModalActionInfo = queue.removeFirst()
+
+        switch info.action {
+        case .present:
+            present(viewController: info.viewController, animated: info.animated, completion: info.completion)
+        case .dismiss:
+            dismiss(viewController: info.viewController, animated: info.animated, completion: info.completion)
         }
     }
 }
