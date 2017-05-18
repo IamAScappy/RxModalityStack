@@ -32,9 +32,18 @@ class ViewController: UIViewController {
 
 
     @objc func presentTestVC() {
+        let blueVC = BlueVC()
+
         ModalPresenter.shared.present(viewController: RedVC()) { print("present red") }
-        ModalPresenter.shared.present(viewController: BlueVC()) { print("present blue") }
+        ModalPresenter.shared.present(viewController: blueVC) { print("present blue") }
         ModalPresenter.shared.present(viewController: GreenVC()) { print("present green") }
         ModalPresenter.shared.present(viewController: YellowVC()) { print("present yellow") }
+
+        ModalPresenter.shared.moveToFront(viewController: blueVC) {
+            print("move to front")
+        }
+//        ModalPresenter.shared.dismiss(viewController: blueVC, animated: true) {
+//            print("blueVC dismissed")
+//        }
     }
 }
