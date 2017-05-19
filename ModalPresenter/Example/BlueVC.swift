@@ -5,10 +5,10 @@
 
 import UIKit
 
-class RedVC: PresentableViewController {
+class BlueVC: DismissibleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.blue
     }
 }

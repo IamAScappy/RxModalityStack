@@ -5,13 +5,13 @@
 
 import UIKit
 
-class PresentableViewController: UIViewController {
+class DismissibleViewController: UIViewController {
     let dismissButton: UIButton = UIButton(type: .custom)
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dismissButton.frame = CGRect(x: 100, y: 100, width: 100, height: 100)
+        dismissButton.frame = CGRect(x: 50, y: 50, width: 200, height: 100)
         dismissButton.backgroundColor = UIColor.white
         dismissButton.setTitleColor(UIColor.black, for: .normal)
         dismissButton.setTitle("Dismiss", for: .normal)

@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecf674cc-34bf-4128-a0f9-78f8e17e9749" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" afterPath="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModalPresenter.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/ModalPresenter.xcodeproj/project.pbxproj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ModalPresenter/ViewController.swift" afterPath="$PROJECT_DIR$/ModalPresenter/ViewController.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +21,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6s_10.3_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ModalPresenter.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ModalPresenter.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="93" column="43" lean-forward="true" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+            <state relative-caret-position="549">
+              <caret line="93" column="43" lean-forward="false" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -36,7 +42,7 @@
         </entry>
       </file>
       <file leaf-file-name="BlueVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
               <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
@@ -46,20 +52,20 @@
         </entry>
       </file>
       <file leaf-file-name="GreenVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
+            <state relative-caret-position="90">
+              <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="YellowVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+            <state relative-caret-position="286">
+              <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -68,25 +74,25 @@
       <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ModalPresenter/ViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="534">
+              <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="49" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PresentDisableViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+      <file leaf-file-name="DismissibleViewController.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+            <state relative-caret-position="77">
+              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="RedVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
               <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -118,10 +124,12 @@
         <option value="$PROJECT_DIR$/ModalPresenter/TheCVC.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/TheDVC.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/ViewController.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/ViewController.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/Example/DismissableViewController.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift" />
       </list>
     </option>
   </component>
@@ -163,6 +171,12 @@
               <item name="ModalPresenter" type="1d218c8b:XcodeProjectNode" />
               <item name="ModalPresenter" type="fcab9f18:XcodeViewNode" />
               <item name="Classes" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="ModalPresenter" type="1d218c8b:XcodeProjectNode" />
+              <item name="ModalPresenter" type="fcab9f18:XcodeViewNode" />
+              <item name="Example" type="fcab9f18:XcodeViewNode" />
             </path>
           </expand>
           <select />
@@ -222,15 +236,16 @@
       <workItem from="1494928538807" duration="1010000" />
       <workItem from="1495086485894" duration="3729000" />
       <workItem from="1495096787737" duration="424000" />
-      <workItem from="1495097579311" duration="6796000" />
+      <workItem from="1495097579311" duration="7558000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22233000" />
+    <option name="totallyTimeSpent" value="22995000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="173" width="1470" height="907" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -243,7 +258,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24775708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32883435" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -263,7 +278,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
@@ -271,7 +286,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -295,7 +310,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
@@ -303,7 +318,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
@@ -311,7 +326,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
@@ -327,7 +342,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
@@ -335,7 +350,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -351,7 +366,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
@@ -359,7 +374,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
@@ -367,7 +382,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
@@ -383,7 +398,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="41" lean-forward="false" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
@@ -391,7 +406,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -407,7 +422,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
@@ -415,7 +430,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
@@ -423,7 +438,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
@@ -439,7 +454,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -447,7 +462,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="41" lean-forward="true" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
@@ -463,7 +478,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
@@ -471,7 +486,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
@@ -479,7 +494,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
@@ -495,7 +510,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
@@ -503,7 +518,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
           <caret line="23" column="34" lean-forward="false" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
@@ -511,7 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
@@ -519,7 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
@@ -535,7 +550,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
@@ -551,7 +566,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="22" />
@@ -567,7 +582,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
@@ -575,7 +590,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="44" lean-forward="false" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
@@ -583,7 +598,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
@@ -599,50 +614,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="4" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/GreenVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="68" lean-forward="false" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/BlueVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/YellowVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/PresentDisableViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="40" column="5" lean-forward="false" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -655,18 +630,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/ViewController.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="41" column="32" lean-forward="true" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+        <state relative-caret-position="549">
+          <caret line="93" column="43" lean-forward="false" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift">
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/ViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="93" column="43" lean-forward="true" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+        <state relative-caret-position="534">
+          <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="49" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="false" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="39" lean-forward="false" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="39" column="38" lean-forward="false" selection-start-line="39" selection-start-column="38" selection-end-line="39" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="33" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/DismissibleViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding />
         </state>
       </provider>

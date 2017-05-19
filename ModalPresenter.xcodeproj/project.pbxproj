@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A40C04797979E903E0A8DB7 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C30DE59F59580501725D /* YellowVC.swift */; };
-		5A40C1EBD752D6C84FC71C8B /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */; };
+		5A40C3C55C1A15800EB8A52C /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CECE2F0212D5C15CACA5 /* RedVC.swift */; };
 		5A40C3D274C3A8825109E810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C8AF6A7E203D7B97273C /* LaunchScreen.storyboard */; };
 		5A40C5A0B38F3026342C84A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C68B4142BC79E60E7A64 /* Main.storyboard */; };
 		5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C44405A2F6785A32A565 /* ModalPresenter.swift */; };
 		5A40C763D78B2C35539981D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C3C2E0192D06B56E4B0B /* ViewController.swift */; };
 		5A40C76F4FEA2A6D352AB13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */; };
-		5A40C9FEFBE44E225A65826F /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9184A2DD880987217DA /* BlueVC.swift */; };
-		5A40CB490D6AED5BC83E4F4B /* PresentDisableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */; };
-		5A40CFD407A5A79791545F09 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */; };
+		5A40CB98F78060F70F9D0506 /* DismissibleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CD4157D9AE0AC22020C4 /* DismissibleViewController.swift */; };
+		5A40CEA2A864A8C356F94719 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C5F3CAD6462723FCF138 /* GreenVC.swift */; };
+		5A40CF2A5860BC38A4BDE239 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF8D9AA149B84C06942F /* YellowVC.swift */; };
+		5A40CF63C67F5169B67A31CF /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB59D5270B6EA346256B /* BlueVC.swift */; };
 		5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF54B712305609DD6A64 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5A40C1DB43218FEE14E4B89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
-		5A40C30DE59F59580501725D /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
 		5A40C3C2E0192D06B56E4B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A40C3CF20420E5F42AEE3A6 /* ModalPresenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModalPresenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A40C44405A2F6785A32A565 /* ModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
 		5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentDisableViewController.swift; sourceTree = "<group>"; };
+		5A40C5F3CAD6462723FCF138 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 		5A40C72B1AF977EFB4A65A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5A40C9184A2DD880987217DA /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
-		5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
+		5A40CB59D5270B6EA346256B /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
 		5A40CC1E8EC7473F22BBCBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5A40CD4157D9AE0AC22020C4 /* DismissibleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DismissibleViewController.swift; sourceTree = "<group>"; };
+		5A40CECE2F0212D5C15CACA5 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
 		5A40CF54B712305609DD6A64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5A40CF8D9AA149B84C06942F /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A40C11D1A93F5ABF3582961 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				5A40CB59D5270B6EA346256B /* BlueVC.swift */,
+				5A40CD4157D9AE0AC22020C4 /* DismissibleViewController.swift */,
+				5A40CECE2F0212D5C15CACA5 /* RedVC.swift */,
+				5A40CF8D9AA149B84C06942F /* YellowVC.swift */,
+				5A40C5F3CAD6462723FCF138 /* GreenVC.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		5A40C7A405861DF9E7A93E24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +70,7 @@
 		5A40C941AA0B68F36B7FB792 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5A40CB9C393DBA2DB46BA8BE /* RedVC.swift */,
-				5A40C9184A2DD880987217DA /* BlueVC.swift */,
-				5A40C1E7AC8ECB97B04D3685 /* GreenVC.swift */,
 				5A40C44405A2F6785A32A565 /* ModalPresenter.swift */,
-				5A40C30DE59F59580501725D /* YellowVC.swift */,
-				5A40C52FE2C99F6936DFCCA8 /* PresentDisableViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -78,6 +85,7 @@
 				5A40C68B4142BC79E60E7A64 /* Main.storyboard */,
 				5A40C3C2E0192D06B56E4B0B /* ViewController.swift */,
 				5A40C941AA0B68F36B7FB792 /* Classes */,
+				5A40C11D1A93F5ABF3582961 /* Example */,
 			);
 			path = ModalPresenter;
 			sourceTree = "<group>";
@@ -155,12 +163,12 @@
 			files = (
 				5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */,
 				5A40C763D78B2C35539981D9 /* ViewController.swift in Sources */,
-				5A40C1EBD752D6C84FC71C8B /* RedVC.swift in Sources */,
-				5A40C9FEFBE44E225A65826F /* BlueVC.swift in Sources */,
-				5A40CFD407A5A79791545F09 /* GreenVC.swift in Sources */,
 				5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */,
-				5A40C04797979E903E0A8DB7 /* YellowVC.swift in Sources */,
-				5A40CB490D6AED5BC83E4F4B /* PresentDisableViewController.swift in Sources */,
+				5A40CF63C67F5169B67A31CF /* BlueVC.swift in Sources */,
+				5A40CB98F78060F70F9D0506 /* DismissibleViewController.swift in Sources */,
+				5A40C3C55C1A15800EB8A52C /* RedVC.swift in Sources */,
+				5A40CF2A5860BC38A4BDE239 /* YellowVC.swift in Sources */,
+				5A40CEA2A864A8C356F94719 /* GreenVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
