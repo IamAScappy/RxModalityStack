@@ -36,6 +36,10 @@ class ViewController: UIViewController {
                 print("move to front")
             }
         }
+
+        NotificationCenter.modalPresenter.addObserver(forName: .changedStack, object: nil, queue: nil) { notification in
+            print("[ViewController]: changed stack in modal presenter")
+        }
     }
 
 

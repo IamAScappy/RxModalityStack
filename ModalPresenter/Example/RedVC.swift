@@ -5,7 +5,7 @@
 
 import UIKit
 
-class RedVC: DismissibleViewController {
+class RedVC: ToolViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 

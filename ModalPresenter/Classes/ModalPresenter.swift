@@ -5,6 +5,14 @@
 
 import UIKit
 
+extension NotificationCenter {
+    static let modalPresenter = NotificationCenter()
+}
+
+extension Notification.Name {
+    static let changedStack: Notification.Name = Notification.Name("ModalPresenter-ChangedStack")
+}
+
 enum ModalAction {
     case present
     case dismiss
@@ -39,6 +47,8 @@ class ModalPresenter {
     private var stack: [ModalInfo] = [] {
         didSet {
             print("stack: \(stack.flatMap { $0.viewController }.map { type(of: $0) })")
+
+            NotificationCenter.modalPresenter.post(name: .changedStack, object: nil)
         }
     }
     private var queue: [ModalActionInfo] = [] {

@@ -5,21 +5,21 @@
 
 import UIKit
 
-class DismissibleViewController: UIViewController {
-    var controlView: UIView!
+class ToolViewController: UIViewController {
+    var toolView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        controlView = createControlView()
-        view.addSubview(controlView)
+        toolView = createToolView()
+        view.addSubview(toolView)
     }
 
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        controlView.frame.size.width = view.bounds.size.width
-        controlView.frame.origin.y = view.bounds.size.height - controlView.frame.size.height
+        toolView.frame.size.width = view.bounds.size.width
+        toolView.frame.origin.y = view.bounds.size.height - toolView.frame.size.height
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,14 +42,18 @@ class DismissibleViewController: UIViewController {
         print("\(self): viewDidDisappear")
     }
 
-    func createControlView() -> UIView? {
-        let height: CGFloat = 100
+    func createToolView() -> UIView? {
+        let height: CGFloat = 120
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: height))
         view.backgroundColor = UIColor.black
         view.addSubview(createControlButton(title: "dismiss all", origin: CGPoint(x: 6, y: 6), action: #selector(self.dismissAll)))
         view.addSubview(createControlButton(title: "dismiss front", origin: CGPoint(x: 90, y: 6), action: #selector(self.dismissFront)))
         view.addSubview(createControlButton(title: "dismiss First", origin: CGPoint(x: 190, y: 6), action: #selector(self.dismissFirst)))
         view.addSubview(createControlButton(title: "first to front", origin: CGPoint(x: 6, y: 40), action: #selector(self.firstToFront)))
+        view.addSubview(createControlButton(title: "present blue", origin: CGPoint(x: 6, y: 74), action: #selector(self.presentBlue)))
+        view.addSubview(createControlButton(title: "present green", origin: CGPoint(x: 94, y: 74), action: #selector(self.presentGreen)))
+        view.addSubview(createControlButton(title: "present red", origin: CGPoint(x: 188, y: 74), action: #selector(self.presentRed)))
+        view.addSubview(createControlButton(title: "present yellow", origin: CGPoint(x: 270, y: 74), action: #selector(self.presentYellow)))
         return view
     }
 
@@ -58,7 +62,7 @@ class DismissibleViewController: UIViewController {
         button.backgroundColor = UIColor.white
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle(title, for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12)
         button.frame.origin = origin
         button.contentEdgeInsets = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
         button.sizeToFit()
@@ -82,5 +86,21 @@ class DismissibleViewController: UIViewController {
     @objc func firstToFront() {
         guard let viewController = ModalPresenter.shared.viewController(at: 0) else { return }
         ModalPresenter.shared.moveToFront(viewController: viewController)
+    }
+
+    @objc func presentBlue() {
+        ModalPresenter.shared.present(viewController: BlueVC(), animated: true)
+    }
+
+    @objc func presentGreen() {
+        ModalPresenter.shared.present(viewController: GreenVC(), animated: true)
+    }
+
+    @objc func presentRed() {
+        ModalPresenter.shared.present(viewController: RedVC(), animated: true)
+    }
+
+    @objc func presentYellow() {
+        ModalPresenter.shared.present(viewController: YellowVC(), animated: true)
     }
 }

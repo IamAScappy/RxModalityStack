@@ -5,7 +5,7 @@
 
 import UIKit
 
-class BlueVC: DismissibleViewController {
+class BlueVC: ToolViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 

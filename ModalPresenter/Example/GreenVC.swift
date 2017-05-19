@@ -5,7 +5,7 @@
 
 import UIKit
 
-class GreenVC: DismissibleViewController {
+class GreenVC: ToolViewController {
     let contentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
 
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
