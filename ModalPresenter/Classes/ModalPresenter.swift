@@ -73,6 +73,13 @@ class ModalPresenter {
         }
     }
 
+    func dismiss(animated: Bool, completion: (()->Void)? = nil) {
+        assert(isExecutingAction == false)
+
+        guard let viewController = stack.last?.viewController else { return }
+        dismiss(viewController: viewController, animated: animated, completion: completion)
+    }
+
     func dismiss(viewController: UIViewController, animated: Bool, completion: (()->Void)? = nil) {
         fixStack()
 
@@ -124,7 +131,7 @@ class ModalPresenter {
         }
     }
 
-    func dismissAll(animated: Bool = false) {
+    func dismissAll(animated: Bool) {
         stack.reversed().flatMap { $0.viewController }.forEach { [unowned self] in
             self.dismiss(viewController: $0, animated: animated)
         }
@@ -136,6 +143,17 @@ class ModalPresenter {
         dismiss(viewController: viewController, animated: false) { [weak self] in
             self?.present(viewController: viewController, animated: false, completion: completion)
         }
+    }
+
+    func isPresented(type: UIViewController.Type) -> Bool {
+        fixStack()
+
+        return stack.flatMap { $0.viewController }.contains { type(of: $0) == type }
+    }
+
+    func viewController(at index: Int) -> UIViewController? {
+        guard stack.count > index else { return nil }
+        return stack[index].viewController
     }
 
     private func processModalActionInQueue() {

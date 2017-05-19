@@ -21,9 +21,6 @@ class GreenVC: DismissibleViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        dismissButton.removeFromSuperview()
-        contentView.addSubview(dismissButton)
-
         view.addSubview(contentView)
         view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         contentView.backgroundColor = UIColor.green
