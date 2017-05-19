@@ -38,12 +38,12 @@ class ModalPresenter {
 
     private var stack: [ModalInfo] = [] {
         didSet {
-            print("stack: \(stack)")
+            print("stack: \(stack.flatMap { $0.viewController }.map { type(of: $0) })")
         }
     }
     private var queue: [ModalActionInfo] = [] {
         didSet {
-            print("queue: \(queue)")
+            print("queue: \(queue.map { "\($0.action): \(type(of: $0.viewController))" })")
         }
     }
     private var isExecutingAction: Bool = false
@@ -66,10 +66,9 @@ class ModalPresenter {
 
         baseVC.present(viewController, animated: animated) { [unowned self] in
             self.stack.append(ModalInfo(viewController: viewController))
-            self.isExecutingAction = false
-
             completion?()
 
+            self.isExecutingAction = false
             self.processModalActionInQueue()
         }
     }
@@ -94,9 +93,9 @@ class ModalPresenter {
 
         let modal = stack.remove(at: index)
         modal.viewController?.dismiss(animated: animated) { [unowned self] in
-            self.isExecutingAction = false
             completion?()
 
+            self.isExecutingAction = false
             self.processModalActionInQueue()
         }
     }
@@ -134,8 +133,9 @@ class ModalPresenter {
     func moveToFront(viewController: UIViewController, completion: (()->Void)? = nil) {
         fixStack()
 
-        dismiss(viewController: viewController, animated: false)
-        present(viewController: viewController, animated: false, completion: completion)
+        dismiss(viewController: viewController, animated: false) { [weak self] in
+            self?.present(viewController: viewController, animated: false, completion: completion)
+        }
     }
 
     private func processModalActionInQueue() {
