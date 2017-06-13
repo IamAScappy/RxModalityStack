@@ -10,25 +10,29 @@ import UIKit
 
 
 class ViewController: UIViewController {
-    let blueVC = BlueVC()
+    private let presentButton: UIButton = UIButton(type: .custom)
+    private let blueVC = BlueVC()
 
     override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(presentTestVC))
-        self.view.addGestureRecognizer(tapGesture)
+        super.viewDidLoad()
+
+        view.addSubview(presentButton)
+
+        presentButton.addTarget(self, action: #selector(presentTestVC), for: .touchUpInside)
+        presentButton.backgroundColor = UIColor.lightGray
+        presentButton.setTitle("Present four viewControllers", for: .normal)
     }
 
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-    override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+        presentButton.frame.size = CGSize(width: view.frame.size.width - 40, height: 60)
+        presentButton.center.x = view.center.x
+        presentButton.frame.origin.y = 100
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        view.backgroundColor = UIColor.black
 
         NotificationCenter.default.addObserver(forName: Notification.Name("reorder"), object: nil, queue: nil) { [weak self] notification in
             guard let ss = self else { return }
@@ -37,8 +41,9 @@ class ViewController: UIViewController {
             }
         }
 
-        NotificationCenter.modalPresenter.addObserver(forName: .changedStack, object: nil, queue: nil) { notification in
-            print("[ViewController]: changed stack in modal presenter")
+        NotificationCenter.modalPresenter.addObserver(forName: Notification.Name.ModalPresenter.changedStack, object: nil, queue: nil) { notification in
+            let stackTypes = notification.userInfo?[ModalPresenter.stackTypesNotificationKey]
+            print("[ViewController]: changed stack in modal presenter: \(String(describing: stackTypes))")
         }
     }
 

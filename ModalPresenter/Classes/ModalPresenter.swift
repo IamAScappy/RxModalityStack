@@ -5,50 +5,38 @@
 
 import UIKit
 
-extension NotificationCenter {
+public extension NotificationCenter {
     static let modalPresenter = NotificationCenter()
 }
 
-extension Notification.Name {
-    static let changedStack: Notification.Name = Notification.Name("ModalPresenter-ChangedStack")
-}
-
-enum ModalAction {
-    case present
-    case dismiss
-    case moveToFront
-}
-
-class ModalInfo {
-    weak var viewController: UIViewController?
-
-    init(viewController: UIViewController) {
-        self.viewController = viewController
+public extension Notification.Name {
+    public struct ModalPresenter {
+        public static let changedStack: Notification.Name = Notification.Name("ModalPresenter-ChangedStack")
     }
 }
 
-class ModalActionInfo {
-    var viewController: UIViewController
-    let action: ModalAction
-    let animated: Bool
-    let completion: (()->Void)?
+public class ModalPresenter {
+    public static let shared = ModalPresenter()
+    public static let stackTypesNotificationKey = "StackTypesNotificationKey"
 
-    init(viewController: UIViewController, action: ModalAction, animated: Bool, completion: (()->Void)? = nil) {
-        self.viewController = viewController
-        self.action = action
-        self.animated = animated
-        self.completion = completion
+    public var frontViewController: UIViewController? {
+        return stack.last?.viewController
     }
-}
-
-class ModalPresenter {
-    static let shared = ModalPresenter()
 
     private var stack: [ModalInfo] = [] {
         didSet {
-            print("stack: \(stack.flatMap { $0.viewController }.map { type(of: $0) })")
+            let fixedStack = fixingStack()
 
-            NotificationCenter.modalPresenter.post(name: .changedStack, object: nil)
+            guard stack.count == fixedStack.count else {
+                stack = fixedStack
+                return
+            }
+
+            let stackTypes = stack.flatMap { $0.viewController } .map { type(of: $0) }
+            print("stack: \(stackTypes)")
+            NotificationCenter.modalPresenter.post(name: Notification.Name.ModalPresenter.changedStack, object: nil, userInfo: [
+                type(of: self).stackTypesNotificationKey: stackTypes
+            ])
         }
     }
     private var queue: [ModalActionInfo] = [] {
@@ -60,8 +48,8 @@ class ModalPresenter {
 
     private init() {}
 
-    func present(viewController: UIViewController, animated: Bool = true, completion: (()->Void)? = nil) {
-        fixStack()
+    public func present(viewController: UIViewController, animated: Bool = true, completion: (()->Void)? = nil) {
+        fixedStack()
 
         guard isExecutingAction == false else {
             queue.append(ModalActionInfo(viewController: viewController, action: .present, animated: animated, completion: completion))
@@ -83,15 +71,15 @@ class ModalPresenter {
         }
     }
 
-    func dismiss(animated: Bool, completion: (()->Void)? = nil) {
+    public func dismiss(animated: Bool, completion: (()->Void)? = nil) {
         assert(isExecutingAction == false)
 
         guard let viewController = stack.last?.viewController else { return }
         dismiss(viewController: viewController, animated: animated, completion: completion)
     }
 
-    func dismiss(viewController: UIViewController, animated: Bool, completion: (()->Void)? = nil) {
-        fixStack()
+    public func dismiss(viewController: UIViewController, animated: Bool, completion: (()->Void)? = nil) {
+        fixedStack()
 
         guard isExecutingAction == false else {
             queue.append(ModalActionInfo(viewController: viewController, action: .dismiss, animated: animated, completion: completion))
@@ -141,27 +129,27 @@ class ModalPresenter {
         }
     }
 
-    func dismissAll(animated: Bool) {
+    public func dismissAll(animated: Bool) {
         stack.reversed().flatMap { $0.viewController }.forEach { [unowned self] in
             self.dismiss(viewController: $0, animated: animated)
         }
     }
 
-    func moveToFront(viewController: UIViewController, completion: (()->Void)? = nil) {
-        fixStack()
+    public func moveToFront(viewController: UIViewController, completion: (()->Void)? = nil) {
+        fixedStack()
 
-        dismiss(viewController: viewController, animated: false) { [weak self] in
-            self?.present(viewController: viewController, animated: false, completion: completion)
+        dismiss(viewController: viewController, animated: false) { [unowned self] in
+            self.present(viewController: viewController, animated: false, completion: completion)
         }
     }
 
-    func isPresented(type: UIViewController.Type) -> Bool {
-        fixStack()
+    public func isPresented(type: UIViewController.Type) -> Bool {
+        fixedStack()
 
         return stack.flatMap { $0.viewController }.contains { type(of: $0) == type }
     }
 
-    func viewController(at index: Int) -> UIViewController? {
+    public func viewController(at index: Int) -> UIViewController? {
         guard stack.count > index else { return nil }
         return stack[index].viewController
     }
@@ -183,7 +171,39 @@ class ModalPresenter {
         }
     }
 
-    private func fixStack() {
-        stack = stack.filter { $0.viewController != nil }
+    private func fixingStack() -> [ModalInfo] {
+        return stack.filter { $0.viewController != nil }
+    }
+
+    private func fixedStack() {
+        stack = fixingStack()
+    }
+}
+
+private enum ModalAction {
+    case present
+    case dismiss
+    case moveToFront
+}
+
+private class ModalInfo {
+    weak var viewController: UIViewController?
+
+    init(viewController: UIViewController) {
+        self.viewController = viewController
+    }
+}
+
+private class ModalActionInfo {
+    var viewController: UIViewController
+    let action: ModalAction
+    let animated: Bool
+    let completion: (()->Void)?
+
+    init(viewController: UIViewController, action: ModalAction, animated: Bool, completion: (()->Void)? = nil) {
+        self.viewController = viewController
+        self.action = action
+        self.animated = animated
+        self.completion = completion
     }
 }
