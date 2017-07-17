@@ -49,16 +49,36 @@ class ViewController: UIViewController {
 
 
     @objc func presentTestVC() {
-        ModalPresenter.shared.present(viewController: RedVC()) { print("present red") }
-        ModalPresenter.shared.present(viewController: blueVC) { print("present blue") }
-        ModalPresenter.shared.present(viewController: GreenVC()) { print("present green") }
-        ModalPresenter.shared.present(viewController: YellowVC()) { print("present yellow") }
+        ModalPresenter.shared.present(modalVC: .red) { print("present red") }
+        ModalPresenter.shared.present(modalVC: .blue) { print("present blue") }
+        ModalPresenter.shared.present(modalVC: .green) { print("present green") }
+        ModalPresenter.shared.present(modalVC: .yellow) { print("present yellow") }
+    }
+}
 
-//        ModalPresenter.shared.moveToFront(viewController: blueVC) {
-//            print("move to front")
-//        }
-//        ModalPresenter.shared.dismiss(viewController: blueVC, animated: true) {
-//            print("blueVC dismissed")
-//        }
+
+enum ModalVC {
+    case red
+    case blue
+    case green
+    case yellow
+
+    var viewController: UIViewController {
+        switch self {
+        case .red:
+            return RedVC()
+        case .blue:
+            return BlueVC()
+        case .green:
+            return GreenVC()
+        case .yellow:
+            return YellowVC()
+        }
+    }
+}
+
+extension ModalPresenter {
+    func present(modalVC: ModalVC, animated: Bool = true, completion: (()->Void)? = nil) {
+        ModalPresenter.shared.present(viewController: modalVC.viewController, animated: animated, completion: completion)
     }
 }
