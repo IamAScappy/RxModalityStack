@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import RxSwift
 
 class ViewController: UIViewController {
     private let presentButton: UIButton = UIButton(type: .custom)
     private let blueVC = BlueVC()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,25 +35,25 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        NotificationCenter.default.addObserver(forName: Notification.Name("reorder"), object: nil, queue: nil) { [weak self] notification in
-            guard let ss = self else { return }
-            ModalPresenter.shared.moveToFront(viewController: ss.blueVC) {
-                print("move to front")
-            }
-        }
-
-        NotificationCenter.modalPresenter.addObserver(forName: Notification.Name.ModalPresenter.changedStack, object: nil, queue: nil) { notification in
-            let stackTypes = notification.userInfo?[ModalPresenter.stackTypesNotificationKey]
-            print("[ViewController]: changed stack in modal presenter: \(String(describing: stackTypes))")
-        }
+//        NotificationCenter.default.addObserver(forName: Notification.Name("reorder"), object: nil, queue: nil) { [weak self] notification in
+//            guard let ss = self else { return }
+//            ModalPresenter.shared.moveToFront(viewController: ss.blueVC) {
+//                print("move to front")
+//            }.subscribe().disposed(by: ss.disposeBag)
+//        }
+//
+//        NotificationCenter.modalPresenter.addObserver(forName: Notification.Name.ModalPresenter.changedStack, object: nil, queue: nil) { notification in
+//            let stackTypes = notification.userInfo?[ModalPresenter.stackTypesNotificationKey]
+//            print("[ViewController]: changed stack in modal presenter: \(String(describing: stackTypes))")
+//        }
     }
 
 
     @objc func presentTestVC() {
-        ModalPresenter.shared.present(modalVC: .red) { print("present red") }
-        ModalPresenter.shared.present(modalVC: .blue) { print("present blue") }
-        ModalPresenter.shared.present(modalVC: .green) { print("present green") }
-        ModalPresenter.shared.present(modalVC: .yellow) { print("present yellow") }
+        ModalPresenter.shared.present(modalVC: .red).do(onSuccess: { _ in print("present red") }).subscribe()
+        ModalPresenter.shared.present(modalVC: .blue).do(onSuccess: { _ in print("present blue") }).subscribe()
+        ModalPresenter.shared.present(modalVC: .green).do(onSuccess: { _ in print("present green") }).subscribe()
+        ModalPresenter.shared.present(modalVC: .yellow).do(onSuccess: { _ in print("present yellow") }).subscribe()
     }
 }
 
@@ -77,8 +78,8 @@ enum ModalVC {
     }
 }
 
-extension ModalPresenter {
-    func present(modalVC: ModalVC, animated: Bool = true, completion: (()->Void)? = nil) {
-        ModalPresenter.shared.present(viewController: modalVC.viewController, animated: animated, completion: completion)
+extension ModalPresentable {
+    func present(modalVC: ModalVC, animated: Bool = true) -> Single<Void> {
+        return ModalPresenter.shared.present(viewController: modalVC.viewController, animated: animated)
     }
 }

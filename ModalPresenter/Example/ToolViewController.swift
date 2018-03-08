@@ -4,9 +4,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class ToolViewController: UIViewController {
     var toolView: UIView!
+
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,36 +74,36 @@ class ToolViewController: UIViewController {
     }
 
     @objc func dismissAll() {
-        ModalPresenter.shared.dismissAll(animated: true)
+        ModalPresenter.shared.dismissAll(animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissFront() {
-        ModalPresenter.shared.dismiss(animated: true)
+        ModalPresenter.shared.dismiss(animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissFirst() {
         guard let viewController = ModalPresenter.shared.viewController(at: 0) else { return }
-        ModalPresenter.shared.dismiss(viewController: viewController, animated: true)
+        ModalPresenter.shared.dismiss(viewController: viewController, animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func firstToFront() {
         guard let viewController = ModalPresenter.shared.viewController(at: 0) else { return }
-        ModalPresenter.shared.moveToFront(viewController: viewController)
+        ModalPresenter.shared.moveToFront(viewController: viewController).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentBlue() {
-        ModalPresenter.shared.present(viewController: BlueVC(), animated: true)
+        ModalPresenter.shared.present(viewController: BlueVC(), animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentGreen() {
-        ModalPresenter.shared.present(viewController: GreenVC(), animated: true)
+        ModalPresenter.shared.present(viewController: GreenVC(), animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentRed() {
-        ModalPresenter.shared.present(viewController: RedVC(), animated: true)
+        ModalPresenter.shared.present(viewController: RedVC(), animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentYellow() {
-        ModalPresenter.shared.present(viewController: YellowVC(), animated: true)
+        ModalPresenter.shared.present(viewController: YellowVC(), animated: true).subscribe().disposed(by: disposeBag)
     }
 }

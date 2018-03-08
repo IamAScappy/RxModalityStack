@@ -7,26 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D05776C204E696D00EAE509 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D05776A204E696C00EAE509 /* RxSwift.framework */; };
+		1D05777A2050DE2600EAE509 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0577792050DE2600EAE509 /* RevealServer.framework */; };
+		1D05777B2050DE2600EAE509 /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D0577792050DE2600EAE509 /* RevealServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5A40C3158E869F3B45D51C23 /* ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C7F0AEDB09AFF3DC300F /* ModalPresentable.swift */; };
 		5A40C3C55C1A15800EB8A52C /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CECE2F0212D5C15CACA5 /* RedVC.swift */; };
 		5A40C3D274C3A8825109E810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C8AF6A7E203D7B97273C /* LaunchScreen.storyboard */; };
+		5A40C4BF3764BE2E614BA481 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C45373C3D7F43F7E348C /* Cartfile */; };
 		5A40C5A0B38F3026342C84A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C68B4142BC79E60E7A64 /* Main.storyboard */; };
-		5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C44405A2F6785A32A565 /* ModalPresenter.swift */; };
+		5A40C5BAC5C1EBCB011E1E30 /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB4CD31558AE134B9FEE /* RxTaskQueue.swift */; };
+		5A40C61800F95F9BD1C65EB1 /* SerialModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C44405A2F6785A32A565 /* SerialModalPresenter.swift */; };
+		5A40C6D1E9DD3408F64AE282 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C7F7D34A5F52D83C89F2 /* UIViewController+Rx.swift */; };
+		5A40C7437F7C2A94F5E75CEF /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C36113C039AB6CB112F8 /* RxSerialTaskQueue.swift */; };
 		5A40C76F4FEA2A6D352AB13D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */; };
 		5A40C7AA524C34341A97596F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CE35A8A95F2E83B739D2 /* ViewController.swift */; };
+		5A40CB2D97D9CC6CF92095C6 /* ModalPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C068EB633705D484C629 /* ModalPresenter.swift */; };
 		5A40CB98F78060F70F9D0506 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CD4157D9AE0AC22020C4 /* ToolViewController.swift */; };
+		5A40CD5FFF38FA01D90AB084 /* ModalInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C49EC19E188A412DA1BB /* ModalInfo.swift */; };
 		5A40CEA2A864A8C356F94719 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C5F3CAD6462723FCF138 /* GreenVC.swift */; };
 		5A40CF2A5860BC38A4BDE239 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF8D9AA149B84C06942F /* YellowVC.swift */; };
 		5A40CF63C67F5169B67A31CF /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB59D5270B6EA346256B /* BlueVC.swift */; };
 		5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF54B712305609DD6A64 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1D0577782050DE0500EAE509 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1D05777B2050DE2600EAE509 /* RevealServer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1D05776A204E696C00EAE509 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		1D05776B204E696D00EAE509 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		1D0577792050DE2600EAE509 /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RevealServer.framework; sourceTree = "<group>"; };
+		5A40C068EB633705D484C629 /* ModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
 		5A40C1DB43218FEE14E4B89D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5A40C36113C039AB6CB112F8 /* RxSerialTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialTaskQueue.swift; sourceTree = "<group>"; };
 		5A40C3CF20420E5F42AEE3A6 /* ModalPresenter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModalPresenter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		5A40C44405A2F6785A32A565 /* ModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresenter.swift; sourceTree = "<group>"; };
+		5A40C44405A2F6785A32A565 /* SerialModalPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerialModalPresenter.swift; sourceTree = "<group>"; };
+		5A40C45373C3D7F43F7E348C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		5A40C49EC19E188A412DA1BB /* ModalInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalInfo.swift; sourceTree = "<group>"; };
 		5A40C4D203D26A60D0BA0BA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A40C5F3CAD6462723FCF138 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 		5A40C72B1AF977EFB4A65A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5A40C7F0AEDB09AFF3DC300F /* ModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPresentable.swift; sourceTree = "<group>"; };
+		5A40C7F7D34A5F52D83C89F2 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		5A40CB4CD31558AE134B9FEE /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
 		5A40CB59D5270B6EA346256B /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
 		5A40CC1E8EC7473F22BBCBA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A40CD4157D9AE0AC22020C4 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
@@ -41,12 +75,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D05777A2050DE2600EAE509 /* RevealServer.framework in Frameworks */,
+				1D05776C204E696D00EAE509 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D057769204E696C00EAE509 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D05776B204E696D00EAE509 /* RxCocoa.framework */,
+				1D05776A204E696C00EAE509 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A40C11D1A93F5ABF3582961 /* Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +116,13 @@
 		5A40C941AA0B68F36B7FB792 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				5A40C44405A2F6785A32A565 /* ModalPresenter.swift */,
+				5A40C44405A2F6785A32A565 /* SerialModalPresenter.swift */,
+				5A40C7F7D34A5F52D83C89F2 /* UIViewController+Rx.swift */,
+				5A40C36113C039AB6CB112F8 /* RxSerialTaskQueue.swift */,
+				5A40CB4CD31558AE134B9FEE /* RxTaskQueue.swift */,
+				5A40C49EC19E188A412DA1BB /* ModalInfo.swift */,
+				5A40C7F0AEDB09AFF3DC300F /* ModalPresentable.swift */,
+				5A40C068EB633705D484C629 /* ModalPresenter.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -93,8 +144,11 @@
 		5A40CEA9427256B88FAF76A2 = {
 			isa = PBXGroup;
 			children = (
+				1D0577792050DE2600EAE509 /* RevealServer.framework */,
 				5A40C7A405861DF9E7A93E24 /* Products */,
 				5A40CB9D58204E67467BDE02 /* ModalPresenter */,
+				5A40C45373C3D7F43F7E348C /* Cartfile */,
+				1D057769204E696C00EAE509 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +162,8 @@
 				5A40C5BB35833D453BD1F0D9 /* Sources */,
 				5A40C492D6FF516DBEA9EAA1 /* Frameworks */,
 				5A40C7DCEFFA735C006C04A1 /* Resources */,
+				1D05776E204E697900EAE509 /* [Carthage] Run Script */,
+				1D0577782050DE0500EAE509 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,6 +180,7 @@
 		5A40CE9AA18158955DCFAC84 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Chope;
 			};
 			buildConfigurationList = 5A40C1078ED12F117F7B004C /* Build configuration list for PBXProject "ModalPresenter" */;
@@ -151,10 +208,30 @@
 				5A40C76F4FEA2A6D352AB13D /* Assets.xcassets in Resources */,
 				5A40C3D274C3A8825109E810 /* LaunchScreen.storyboard in Resources */,
 				5A40C5A0B38F3026342C84A9 /* Main.storyboard in Resources */,
+				5A40C4BF3764BE2E614BA481 /* Cartfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D05776E204E697900EAE509 /* [Carthage] Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "[Carthage] Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A40C5BB35833D453BD1F0D9 /* Sources */ = {
@@ -162,13 +239,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A40CFF7EA8385721BFCD648 /* AppDelegate.swift in Sources */,
-				5A40C61800F95F9BD1C65EB1 /* ModalPresenter.swift in Sources */,
+				5A40C61800F95F9BD1C65EB1 /* SerialModalPresenter.swift in Sources */,
 				5A40CF63C67F5169B67A31CF /* BlueVC.swift in Sources */,
 				5A40CB98F78060F70F9D0506 /* ToolViewController.swift in Sources */,
 				5A40C3C55C1A15800EB8A52C /* RedVC.swift in Sources */,
 				5A40CF2A5860BC38A4BDE239 /* YellowVC.swift in Sources */,
 				5A40CEA2A864A8C356F94719 /* GreenVC.swift in Sources */,
 				5A40C7AA524C34341A97596F /* ViewController.swift in Sources */,
+				5A40C6D1E9DD3408F64AE282 /* UIViewController+Rx.swift in Sources */,
+				5A40C7437F7C2A94F5E75CEF /* RxSerialTaskQueue.swift in Sources */,
+				5A40C5BAC5C1EBCB011E1E30 /* RxTaskQueue.swift in Sources */,
+				5A40CD5FFF38FA01D90AB084 /* ModalInfo.swift in Sources */,
+				5A40C3158E869F3B45D51C23 /* ModalPresentable.swift in Sources */,
+				5A40CB2D97D9CC6CF92095C6 /* ModalPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +287,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -212,7 +297,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -249,11 +338,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ModalPresenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyperconnect.test.ModalPresenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -267,7 +361,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -275,7 +371,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -305,11 +405,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ModalPresenter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hyperconnect.test.ModalPresenter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.1;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -332,6 +437,7 @@
 				5A40C23188CDB828D428B11B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
