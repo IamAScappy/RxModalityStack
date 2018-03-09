@@ -7,13 +7,14 @@ import UIKit
 import RxSwift
 
 public enum RxModalityStackTypeError: Error {
+    case frontViewControllerNotExists
     case viewControllerNotExists
     case notExistsInStack
 }
 
 public protocol RxModalityStackType: class {
     var queue: RxTaskQueue! { get set }
-    var frontViewController: UIViewController { get }
+    var frontViewController: UIViewController? { get }
 
     func present(viewController: UIViewController, animated: Bool) -> Single<Void>
     func dismiss(animated: Bool) -> Single<Void>

@@ -17,11 +17,8 @@ public class RxSerialModalityStack: RxModalityStackType {
         }
     }
 
-    public var frontViewController: UIViewController {
-        guard let vc = stack.last?.viewController ?? UIApplication.shared.keyWindow?.rootViewController else {
-            fatalError()
-        }
-        return vc
+    public var frontViewController: UIViewController? {
+        return stack.last?.viewController ?? UIApplication.shared.keyWindow?.rootViewController
     }
 
     private var stack: [ModalityInfo] = [] {
@@ -43,12 +40,16 @@ public class RxSerialModalityStack: RxModalityStackType {
     public func present(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
         let single = Single<UIViewController>
             .create { [unowned self] observer in
-                observer(.success(self.frontViewController))
+                guard let frontViewController = self.frontViewController else {
+                    observer(.error(RxModalityStackTypeError.frontViewControllerNotExists))
+                    return Disposables.create()
+                }
+                observer(.success(frontViewController))
                 return Disposables.create()
             }
             .observeOn(MainScheduler.instance)
             .flatMap { (baseVC: UIViewController) in
-                baseVC.rx.present(viewController: viewController, animated: animated)
+                return baseVC.rx.present(viewController: viewController, animated: animated)
             }
             .do(onSuccess: { [unowned self] _ in
                 self.stack.append(ModalityInfo(viewController: viewController))
@@ -57,7 +58,18 @@ public class RxSerialModalityStack: RxModalityStackType {
     }
 
     public func dismiss(animated: Bool = true) -> Single<Void> {
-        return dismiss(viewController: frontViewController, animated: animated)
+        return Single<UIViewController>
+            .create { [unowned self] observer in
+                guard let viewController = self.stack.last?.viewController else {
+                    observer(.error(RxModalityStackTypeError.frontViewControllerNotExists))
+                    return Disposables.create()
+                }
+                observer(.success(viewController))
+                return Disposables.create()
+            }
+            .flatMap { [unowned self] (viewController: UIViewController) -> Single<Void> in
+                return self.dismiss(viewController: viewController, animated: animated)
+            }
     }
 
     public func dismiss(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
