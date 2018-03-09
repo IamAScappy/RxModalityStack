@@ -2,21 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecf674cc-34bf-4128-a0f9-78f8e17e9749" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Cartfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/ModalInfo.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresentable.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/RxSerialTaskQueue.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/RxTaskQueue.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ModalPresenter/Classes/UIViewController+Rx.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ModalPresenter.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModalPresenter.xcodeproj/xcuserdata/chope.xcuserdatad/xcschemes/ModalPresenter.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter.xcodeproj/xcuserdata/chope.xcuserdatad/xcschemes/ModalPresenter.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModalPresenter/AppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter/AppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ModalPresenter/Example/ViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ModalPresenter/Example/ViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/RxModalityStack.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/RxModalityStackType.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/RxSerialModalityStack.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/RxSerialTaskQueue.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/RxTaskQueue.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModalPresenter/UIViewController+Rx.swift" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,77 +22,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_D5D5FFE5-63F4-4772-A995-0166DA899378" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SerialModalPresenter.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#94#106#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIKit.UIWindow.swift" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache.zip!/ModuleCache/9C40b/4.0.3/armv7/iphoneos11.2/UIKit.UIWindow/UIKit.UIWindow.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModalPresentable.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresentable.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#93#105#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModalInfo.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalInfo.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ModalPresenter/AppDelegate.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RxSerialTaskQueue.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RxSerialTaskQueue.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-              <folding>
-                <element signature="e#93#110#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UIViewController+Rx.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/UIViewController+Rx.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-              <folding>
-                <element signature="e#93#105#0" expanded="true" />
-              </folding>
+            <state>
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -106,8 +34,8 @@
       <file leaf-file-name="ToolViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
+            <state relative-caret-position="1734">
+              <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
               <folding>
                 <element signature="e#94#106#0" expanded="true" />
               </folding>
@@ -115,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/ViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1154">
-              <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+            <state relative-caret-position="799">
+              <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
               <folding>
                 <element signature="e#143#155#0" expanded="true" />
               </folding>
@@ -127,23 +55,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ModalPresenter.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-            </state>
-          </provider>
+      <file leaf-file-name="ModalPresenter.h" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ModalPresenter/ModalPresenter.h">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>present</find>
-      <find>extension Notification.N</find>
-      <find>queue</find>
-      <find>queu</find>
       <find>processModalActionInQueue</find>
       <find>present(</find>
       <find>delegate</find>
@@ -170,9 +90,14 @@
       <find>.observeOn</find>
       <find>rx.</find>
       <find>subscribe</find>
+      <find>SerialModalPresenter</find>
+      <find>presenter</find>
+      <find>md</find>
+      <find>modalstack</find>
     </findStrings>
     <replaceStrings>
       <replace>fixedStack()</replace>
+      <replace>ModalPresenter</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -182,7 +107,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/ModalPresenter/TheAVC.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/ModalPresenter.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/PresentDisableViewController.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/RedVC.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/TheBVC.swift" />
@@ -205,12 +129,21 @@
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/UIViewController+Rx.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/ModalInfo.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/RxSerialTaskQueue.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/AppDelegate.swift" />
-        <option value="$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/ModalPresentable.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" />
         <option value="$PROJECT_DIR$/ModalPresenter/Example/ViewController.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/AppDelegate.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter.podspec" />
+        <option value="$PROJECT_DIR$/ModalPresenter/ModalPresenter.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/ModalPresentable.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/SerialModalPresenter.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/UIViewController+Rx.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/RxTaskQueue.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/RxSerialModalStack.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/RxModalStackType.swift" />
+        <option value="$PROJECT_DIR$/ModalPresenter/RxModalStack.swift" />
       </list>
     </option>
   </component>
@@ -221,8 +154,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="y" value="202" />
+    <option name="x" value="1605" />
+    <option name="y" value="144" />
     <option name="width" value="1439" />
     <option name="height" value="878" />
   </component>
@@ -231,6 +164,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -252,19 +186,11 @@
               <item name="" type="efc3779f:XcodeRootNode" />
               <item name="ModalPresenter" type="1d218c8b:XcodeProjectNode" />
               <item name="ModalPresenter" type="fcab9f18:XcodeViewNode" />
-              <item name="Classes" type="fcab9f18:XcodeViewNode" />
-            </path>
-            <path>
-              <item name="" type="efc3779f:XcodeRootNode" />
-              <item name="ModalPresenter" type="1d218c8b:XcodeProjectNode" />
-              <item name="ModalPresenter" type="fcab9f18:XcodeViewNode" />
-              <item name="Example" type="fcab9f18:XcodeViewNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Cidr.FilesView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -287,8 +213,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="ModalPresenter" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ModalPresenter" TARGET_NAME="ModalPresenter" CONFIG_NAME="Debug" SCHEME_NAME="ModalPresenter" RUN_TARGET_PROJECT_NAME="ModalPresenter" RUN_TARGET_NAME="ModalPresenter" MAKE_ACTIVE="TRUE">
+  <component name="RunManager" selected="Application.ModalPresenter">
+    <configuration default="false" name="ModalPresenter" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ModalPresenter" TARGET_NAME="ModalPresenter" CONFIG_NAME="Debug" SCHEME_NAME="ModalPresenter" MAKE_ACTIVE="TRUE">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method />
+    </configuration>
+    <configuration name="ModalPresenterExample" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ModalPresenter" TARGET_NAME="ModalPresenterExample" CONFIG_NAME="Debug" SCHEME_NAME="ModalPresenterExample" RUN_TARGET_PROJECT_NAME="ModalPresenter" RUN_TARGET_NAME="ModalPresenterExample" MAKE_ACTIVE="TRUE">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>
@@ -305,6 +237,10 @@
       <envs />
       <method />
     </configuration>
+    <list>
+      <item itemvalue="Application.ModalPresenterExample" />
+      <item itemvalue="Application.ModalPresenter" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -335,21 +271,19 @@
     <option name="totallyTimeSpent" value="33258000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="202" width="1439" height="878" extended-state="0" />
-    <editor active="true" />
+    <frame x="1605" y="144" width="1439" height="878" extended-state="0" />
     <layout>
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24753174" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24753174" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3277849" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3277849" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3277849" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32883435" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24947146" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4199744" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -357,6 +291,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.329602" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3277849" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -371,56 +306,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/ViewController.swift" />
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="41" selection-start-line="33" selection-start-column="41" selection-end-line="33" selection-end-column="41" />
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="68" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/YellowVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/ViewController.swift" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/RedVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -438,15 +323,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -497,16 +374,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/GreenVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -525,15 +393,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/BlueVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -614,16 +474,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/UIViewControllerTransitioningDelegateProxy.swift" />
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RxTaskQueue.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="e#93#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RxTaskQueue.swift" />
     <entry file="jar://$APPLICATION_HOME_DIR$/Resources/module_cache.zip!/ModuleCache/9C40b/4.0.3/armv7/iphoneos11.2/Swift/Collection.Array.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1649">
@@ -645,86 +496,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/UIViewController+Rx.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-          <folding>
-            <element signature="e#93#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalInfo.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/UIViewController+Rx.swift" />
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalInfo.swift" />
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresentable.swift" />
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RxSerialTaskQueue.swift" />
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift" />
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/AppDelegate.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state>
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/ToolViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="89" column="55" selection-start-line="89" selection-start-column="55" selection-end-line="89" selection-end-column="55" />
+        <state relative-caret-position="1734">
+          <caret line="102" column="31" selection-start-line="102" selection-start-column="31" selection-end-line="102" selection-end-column="31" />
           <folding>
             <element signature="e#94#106#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresentable.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#93#105#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/RxSerialTaskQueue.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
-          <folding>
-            <element signature="e#93#110#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/SerialModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#94#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ModalPresenter/Classes/ModalPresenter.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter.podspec" />
     <entry file="file://$PROJECT_DIR$/ModalPresenter/Example/ViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1154">
-          <caret line="82" column="29" selection-start-line="82" selection-start-column="29" selection-end-line="82" selection-end-column="29" />
+        <state relative-caret-position="799">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
           <folding>
             <element signature="e#143#155#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/RxSerialModalityStack.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/RxTaskQueue.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/RxModalityStackType.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="13" column="34" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/RxModalityStack.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/UIViewController+Rx.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/RxSerialTaskQueue.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ModalPresenter/ModalPresenter.h">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
