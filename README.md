@@ -85,15 +85,18 @@ RxModalityStack.shared.moveToFront(viewController: firstViewController)
 ## UIViewController+Rx
 
 ```swift
-let vc = UIViewController()
-vc.rx
-  .present(viewController: vc, animated: true)
-  .subscribe()
-  .disposed(by: disposeBag)
-vc.rx
-  .dismiss(animated: true)
-  .subscribe()
-  .disposed(by: disposeBag)
+class AViewController: UIViewController {
+.....
+  self.rx
+    .present(viewController: vc, animated: true)
+    .subscribe()
+    .disposed(by: disposeBag)
+  self.rx
+    .dismiss(animated: true)
+    .subscribe()
+    .disposed(by: disposeBag)
+.....
+}
 ```
 
 ## License
