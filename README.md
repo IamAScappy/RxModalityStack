@@ -2,7 +2,7 @@
 
 ModalityStack 은 Modal ViewController 의 Stack 을 관리해줍니다.
 
-Modal 위에 Modal, 그 위에 Modal 등 복수개의 Modal이 연속으로 띄워줍니다.
+Modal 위에 Modal, 그 위에 Modal 등 복수개의 Modal을 연속으로 띄워줍니다.
 
 화면에 상관없이 띄워야 하는 Modal 에 유용합니다.
 
@@ -86,7 +86,7 @@ RxModalityStack.shared.moveToFront(viewController: firstViewController)
 
 ```swift
 let vc = UIViewController()
-self.rx
+vc.rx
   .present(viewController: vc, animated: true)
   .subscribe()
   .disposed(by: disposeBag)
