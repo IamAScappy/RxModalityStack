@@ -37,11 +37,11 @@ completion 은 RxSwift로 대신 합니다.
 ```swift
 let vc = UIViewController()
 RxModalityStack.shared
-	.present(viewController: vc, animated: true)
-	.subscribe(onNext: { _ in
-		print("presented viewController")
-	})
-	.disposed(by: disposeBag)
+  .present(viewController: vc, animated: true)
+  .subscribe(onNext: { _ in
+    print("presented viewController")
+  })
+  .disposed(by: disposeBag)
 ```
 
 ### Dismiss view controller
@@ -68,10 +68,10 @@ RxModalityStack.shared.dismissAll(animated: true)
 
 ```swift
 RxModalityStack.shared
-	.dismissAll(animated: true)
-	.subscribe(onNext: { _ in
-    	print("dismiss all")
-    })
+  .dismissAll(animated: true)
+  .subscribe(onNext: { _ in
+    print("dismiss all")
+  })
 ```
 
 ## Change stack (Experimental function)
@@ -87,13 +87,13 @@ RxModalityStack.shared.moveToFront(viewController: firstViewController)
 ```swift
 let vc = UIViewController()
 self.rx
-	.present(viewController: vc, animated: true)
-	.subscribe()
-    .disposed(by: disposeBag)
+  .present(viewController: vc, animated: true)
+  .subscribe()
+  .disposed(by: disposeBag)
 vc.rx
-	.dismiss(animated: true)
-	.subscribe()
-    .disposed(by: disposeBag)
+  .dismiss(animated: true)
+  .subscribe()
+  .disposed(by: disposeBag)
 ```
 
 ## License
