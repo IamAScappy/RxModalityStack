@@ -1,5 +1,7 @@
 # RxModalityStack
 
+[![Build Status](https://travis-ci.org/yoonhg84/RxModalityStack.svg?branch=master)](https://travis-ci.org/yoonhg84/RxModalityStack)
+
 ModalityStack 은 Modal ViewController 의 Stack 을 관리해줍니다.
 
 Modal 위에 Modal, 그 위에 Modal 등 복수개의 Modal을 연속으로 띄워줍니다.
