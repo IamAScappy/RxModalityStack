@@ -75,6 +75,7 @@ public class RxSerialTaskQueue: RxTaskQueue {
                     .filter { $0 == false }
                     .debug(),
                 actionQueue
+                    .observeOn(scheduler)
                     .buffer(timeSpan: 1, count: 10, scheduler: scheduler)
                     .filter { $0.count > 0 }
                     .debug()

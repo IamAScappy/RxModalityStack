@@ -18,7 +18,6 @@
 		1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E72052776700A46BEB /* UIViewController+Rx.swift */; };
 		1D5549F52052789800A46BEB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F32052789800A46BEB /* RxSwift.framework */; };
 		1D5549F62052789800A46BEB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F42052789800A46BEB /* RxCocoa.framework */; };
-		1D5549F82052794900A46BEB /* ModalityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549F72052794900A46BEB /* ModalityInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +47,6 @@
 		1D5549F12052780D00A46BEB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1D5549F32052789800A46BEB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../RxSwift/Spread.2/RxSwift.framework; sourceTree = "<group>"; };
 		1D5549F42052789800A46BEB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../RxSwift/Spread.2/RxCocoa.framework; sourceTree = "<group>"; };
-		1D5549F72052794900A46BEB /* ModalityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 		1D5549AC2052770C00A46BEB /* RxModalityStack */ = {
 			isa = PBXGroup;
 			children = (
-				1D5549F72052794900A46BEB /* ModalityInfo.swift */,
 				1D5549E22052776700A46BEB /* RxModalityStack.swift */,
 				1D5549E32052776700A46BEB /* RxModalityStackType.swift */,
 				1D5549E42052776700A46BEB /* RxSerialModalityStack.swift */,
@@ -240,7 +237,6 @@
 			files = (
 				1D5549EB2052776700A46BEB /* RxSerialTaskQueue.swift in Sources */,
 				1D5549EA2052776700A46BEB /* RxSerialModalityStack.swift in Sources */,
-				1D5549F82052794900A46BEB /* ModalityInfo.swift in Sources */,
 				1D5549E82052776700A46BEB /* RxModalityStack.swift in Sources */,
 				1D5549EC2052776700A46BEB /* RxTaskQueue.swift in Sources */,
 				1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */,
