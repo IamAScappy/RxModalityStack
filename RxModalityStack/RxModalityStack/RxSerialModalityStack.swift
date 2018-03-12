@@ -27,96 +27,71 @@ public class RxSerialModalityStack: RxModalityStackType {
     private var taskObservable: Observable<Void> = Observable.empty()
 
     public func present(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
-        let single = frontViewController()
-            .observeOn(MainScheduler.instance)
-            .flatMap { (baseVC: UIViewController) in
-                return baseVC.rx.present(viewController: viewController, animated: animated)
-            }
-            .do(onSuccess: { [unowned self] _ in
-                self.stack.append(viewController)
-            })
+        let single = present(viewController: viewController, onFrontViewControllerWithAnimated: animated)
         return queue.add(single: single)
     }
 
     public func dismiss(animated: Bool = true) -> Single<Void> {
-        return frontViewController()
-            .observeOn(MainScheduler.instance)
-            .flatMap { [unowned self] (viewController: UIViewController) -> Single<Void> in
-                return self.dismiss(viewController: viewController, animated: animated)
-            }
+        let single = dismissFrontViewController(animated: animated)
+        return queue.add(single: single)
     }
 
     public func dismiss(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
-        guard let index = stack.index(where: { $0 == viewController }) else {
-            return .error(RxModalityStackTypeError.notExistsInStack)
-        }
-
-        var lastSingle: Single<Void> = Single.just(Void())
-        var reorderViewControllers: ArraySlice<UIViewController> = []
-
-        if index < (stack.count - 1) {
-            let range: Range<Int> = (index + 1)..<stack.count
-            reorderViewControllers = stack[range]
-            reorderViewControllers.reversed().forEach { [unowned self] (vc: UIViewController) in
-                let single = self._dismiss(viewController: vc, animated: false)
-                lastSingle = self.queue.add(single: single)
-            }
-        }
-
-        let vc: UIViewController = stack[index]
-        let animated: Bool = index == (stack.count - 1) ? animated : false
-        let single: Single<Void> = _dismiss(viewController: vc, animated: animated)
-        lastSingle = queue.add(single: single)
-
-        if reorderViewControllers.count > 0 {
-            reorderViewControllers.forEach { [unowned self] (viewController: UIViewController) in
-                lastSingle = self.present(viewController: viewController, animated: false)
-            }
-        }
-        return lastSingle
+        return queue.add(single: _dismiss(viewController: viewController))
     }
 
-    private func _dismiss(viewController: UIViewController, animated: Bool) -> Single<Void> {
-        return Single<(UIViewController, (Int))>
+    private func _dismiss(viewController: UIViewController) -> Single<Void> {
+        return Single<Int>
             .create { [unowned self] observer in
                 guard let index = self.stack.index(where: { $0 == viewController }) else {
                     observer(.error(RxModalityStackTypeError.notExistsInStack))
                     return Disposables.create()
                 }
 
-                observer(.success((viewController, index)))
+                observer(.success(index))
                 return Disposables.create()
             }
-            .observeOn(MainScheduler.instance)
-            .flatMap { (viewController, index) in
-                return viewController.rx
-                    .dismiss(animated: animated)
-                    .do(onSuccess: { [unowned self] _ in
-                        self.stack.remove(at: index)
-                    })
+            .map { [unowned self] index -> (index: Int, reorderedViewController: ArraySlice<UIViewController>) in
+                if index < (self.stack.count - 1) {
+                    let range: Range<Int> = (index + 1)..<self.stack.count
+                    return (index, self.stack[range])
+                }
+                return (index, [])
+            }
+            .flatMap { [unowned self] (index, reorderViewControllers) -> Single<Void> in
+                var concatObservable: Observable<Void> = Observable.just(Void())
+
+                for _ in (0..<(reorderViewControllers.count + 1)) {
+                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
+                }
+
+                reorderViewControllers.forEach { [unowned self] (viewController: UIViewController) in
+                    concatObservable = concatObservable.concat(self.present(viewController: viewController, onFrontViewControllerWithAnimated: false))
+                }
+
+                return concatObservable.takeLast(1).asSingle()
             }
     }
 
     public func dismissAll(animated: Bool = true) -> Single<Void> {
-        var lastSingle: Single<Void> = Single.just(Void())
-
-        stack.reversed().forEach {
-            let single = _dismiss(viewController: $0, animated: animated)
-            lastSingle = queue.add(single: single)
-        }
-
-        return lastSingle
+        let single = Single<Int>
+            .create { [unowned self] observer in
+                observer(.success(self.stack.count))
+                return Disposables.create()
+            }
+            .do(onSuccess: { [unowned self] count in
+                for _ in (0..<count) {
+                    _ = self.queue.add(single: self.dismissFrontViewController(animated: animated))
+                }
+            })
+            .map { _ in Void() }
+        return queue.add(single: single)
     }
 
-    public func moveToFront(viewController: UIViewController) -> Observable<Void> {
-        let retainedViewController: UIViewController = viewController
-        return Observable.just(Void())
-            .flatMap { [unowned self] _ in
-                return self.dismiss(viewController: retainedViewController, animated: false)
-            }
-            .flatMap { [unowned self] _ in
-                return self.present(viewController: retainedViewController, animated: false)
-            }
+    public func moveToFront(viewController: UIViewController) -> Single<Void> {
+        return _dismiss(viewController: viewController).flatMap { [unowned self] _ in
+            self.present(viewController: viewController, onFrontViewControllerWithAnimated: false)
+        }
     }
 
     public func isPresented(type viewControllerType: UIViewController.Type) -> Bool {
@@ -139,5 +114,34 @@ public class RxSerialModalityStack: RxModalityStackType {
             }
             return Disposables.create()
         }
+    }
+
+
+    // MARK: - present / dismiss viewController
+    private func present(viewController: UIViewController, onFrontViewControllerWithAnimated animated: Bool = true) -> Single<Void> {
+        return frontViewController()
+            .observeOn(MainScheduler.instance)
+            .flatMap { (baseVC: UIViewController) in
+                return baseVC.rx.present(viewController: viewController, animated: animated)
+            }
+            .do(onSuccess: { [unowned self] _ in
+                self.stack.append(viewController)
+            })
+    }
+
+    private func dismissFrontViewController(animated: Bool) -> Single<Void> {
+        return frontViewController()
+            .do(onSuccess: { [unowned self] viewController in
+                if self.stack.last != viewController {
+                    throw RxModalityStackTypeError.topOfStackIsNotFrontViewController
+                }
+            })
+            .observeOn(MainScheduler.instance)
+            .flatMap { viewController in
+                return viewController.rx.dismiss(animated: animated)
+            }
+            .do(onSuccess: { [unowned self] _ in
+                _ = self.stack.removeLast()
+            })
     }
 }

@@ -25,7 +25,7 @@ public class RxSerialTaskQueue: RxTaskQueue {
     private let isExecuting: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let actionQueue: PublishSubject<Task> = PublishSubject()
     private let completionSubject: PublishSubject<Result> = PublishSubject()
-    private let scheduler: SerialDispatchQueueScheduler = SerialDispatchQueueScheduler(internalSerialQueueName: "RxSerialTaskQueue")
+
 
     public init() {
         configure()
@@ -38,7 +38,6 @@ public class RxSerialTaskQueue: RxTaskQueue {
         actionQueue.onNext(task)
 
         return completionSubject
-            .observeOn(scheduler)
             .filter { $0.uuid == uuid }
             .do(onNext: {
                 if let error = $0.error {
@@ -70,17 +69,13 @@ public class RxSerialTaskQueue: RxTaskQueue {
     private func configure() {
         Observable.zip(
                 isExecuting
-                    .observeOn(scheduler)
                     .distinctUntilChanged()
                     .filter { $0 == false }
                     .debug(),
                 actionQueue
-                    .observeOn(scheduler)
-                    .buffer(timeSpan: 1, count: 10, scheduler: scheduler)
+                    .buffer(timeSpan: 1, count: 10, scheduler: MainScheduler.instance)
                     .filter { $0.count > 0 }
-                    .debug()
             ) { return $1 }
-            .observeOn(scheduler)
             .debug()
             .subscribe(onNext: { [weak self] (tasks: [Task]) in
                 self?.execute(tasks: tasks)
@@ -97,11 +92,16 @@ public class RxSerialTaskQueue: RxTaskQueue {
 
         isExecuting.accept(true)
 
-        var observable = Observable<Any>.just(Void())
+        var observable = Observable<Any>.create { [weak self] observer in
+            self?.isExecuting.accept(true)
+            observer.onNext(Void())
+            observer.onCompleted()
+            return Disposables.create()
+        }
 
         for task in tasks {
             let taskObservable: Single<Any> = task.observable
-                .observeOn(scheduler)
+                .debug()
                 .do(
                     onSuccess: { [weak self] value in
                         let result = Result(uuid: task.uuid, value: value, error: nil)
@@ -112,11 +112,11 @@ public class RxSerialTaskQueue: RxTaskQueue {
                         self?.completionSubject.onNext(result)
                     }
                 )
+                .asObservable().timeout(10, scheduler: MainScheduler.instance).asSingle()
             observable = observable.concat(taskObservable)
         }
 
         observable
-            .observeOn(scheduler)
             .debug()
             .subscribe(onDisposed: { [weak self] in
                 self?.isExecuting.accept(false)

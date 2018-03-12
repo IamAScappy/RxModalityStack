@@ -10,6 +10,7 @@ public enum RxModalityStackTypeError: Error {
     case frontViewControllerNotExists
     case viewControllerNotExists
     case notExistsInStack
+    case topOfStackIsNotFrontViewController
 }
 
 public protocol RxModalityStackType: class {
@@ -19,7 +20,7 @@ public protocol RxModalityStackType: class {
     func dismiss(animated: Bool) -> Single<Void>
     func dismiss(viewController: UIViewController, animated: Bool) -> Single<Void>
     func dismissAll(animated: Bool) -> Single<Void>
-    func moveToFront(viewController: UIViewController) -> Observable<Void>
+    func moveToFront(viewController: UIViewController) -> Single<Void>
     func isPresented(type viewControllerType: UIViewController.Type) -> Bool
     func viewController(at index: Int) -> UIViewController?
 }
