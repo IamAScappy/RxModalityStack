@@ -47,7 +47,7 @@ public class RxSerialModalityStack: RxModalityStackType {
                 observer(.success(frontViewController))
                 return Disposables.create()
             }
-            .observeOn(MainScheduler.instance)
+            .subscribeOn(MainScheduler.instance)
             .flatMap { (baseVC: UIViewController) in
                 return baseVC.rx.present(viewController: viewController, animated: animated)
             }
@@ -67,6 +67,7 @@ public class RxSerialModalityStack: RxModalityStackType {
                 observer(.success(viewController))
                 return Disposables.create()
             }
+            .subscribeOn(MainScheduler.instance)
             .flatMap { [unowned self] (viewController: UIViewController) -> Single<Void> in
                 return self.dismiss(viewController: viewController, animated: animated)
             }
