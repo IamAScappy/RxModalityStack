@@ -14,7 +14,7 @@ public enum RxModalityStackTypeError: Error {
 }
 
 public protocol RxModalityStackType: class {
-    var queue: RxTaskQueue! { get set }
+    var queue: RxTaskQueue { get set }
 
     func present(viewController: UIViewController, animated: Bool) -> Single<Void>
     func dismiss(animated: Bool) -> Single<Void>

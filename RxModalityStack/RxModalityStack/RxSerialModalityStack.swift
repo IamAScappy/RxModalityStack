@@ -8,14 +8,7 @@ import RxSwift
 import RxCocoa
 
 public class RxSerialModalityStack: RxModalityStackType {
-    public var queue: RxTaskQueue! {
-        didSet {
-            guard oldValue == nil else {
-                assertionFailure()
-                return
-            }
-        }
-    }
+    public var queue: RxTaskQueue = RxSerialTaskQueue()
 
     private var stack: [UIViewController] = [] {
         didSet {
