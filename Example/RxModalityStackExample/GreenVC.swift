@@ -7,22 +7,22 @@ import UIKit
 
 class GreenVC: ToolViewController {
     let contentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-
-    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        modalPresentationStyle = .custom
-    }
-
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        modalPresentationStyle = .custom
-    }
+    let button: UIButton = {
+        let view = UIButton(type: .system)
+        view.setTitle("Touch me", for: .normal)
+        view.setTitle("Don't touch me", for: .highlighted)
+        view.setTitleColor(UIColor.blue, for: .normal)
+        view.setTitleColor(UIColor.red, for: .highlighted)
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 30)
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(contentView)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        contentView.addSubview(button)
+
         contentView.backgroundColor = UIColor.green
     }
 
@@ -30,6 +30,6 @@ class GreenVC: ToolViewController {
         super.viewWillLayoutSubviews()
 
         contentView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+        button.frame = contentView.bounds
     }
-
 }

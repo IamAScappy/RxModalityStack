@@ -33,26 +33,9 @@ class ViewController: UIViewController {
         presentButton.frame.origin.y = 100
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-//        NotificationCenter.default.addObserver(forName: Notification.Name("reorder"), object: nil, queue: nil) { [weak self] notification in
-//            guard let ss = self else { return }
-//            ModalPresenter.shared.moveToFront(viewController: ss.blueVC) {
-//                print("move to front")
-//            }.subscribe().disposed(by: ss.disposeBag)
-//        }
-//
-//        NotificationCenter.modalPresenter.addObserver(forName: Notification.Name.ModalPresenter.changedStack, object: nil, queue: nil) { notification in
-//            let stackTypes = notification.userInfo?[ModalPresenter.stackTypesNotificationKey]
-//            print("[ViewController]: changed stack in modal presenter: \(String(describing: stackTypes))")
-//        }
-    }
-
-
     @objc func presentTestVC() {
-        RxModalityStack.shared.present(modalVC: .red).do(onSuccess: { _ in print("present red") }).subscribe()
         RxModalityStack.shared.present(modalVC: .blue).do(onSuccess: { _ in print("present blue") }).subscribe()
+        RxModalityStack.shared.present(modalVC: .red).do(onSuccess: { _ in print("present red") }).subscribe()
         RxModalityStack.shared.present(modalVC: .green).do(onSuccess: { _ in print("present green") }).subscribe()
         RxModalityStack.shared.present(modalVC: .yellow).do(onSuccess: { _ in print("present yellow") }).subscribe()
     }

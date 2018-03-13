@@ -7,7 +7,7 @@ import UIKit
 import RxSwift
 import RxModalityStack
 
-class ToolViewController: UIViewController {
+class ToolViewController: TransparentModalViewController {
     var toolView: UIView!
 
     private let disposeBag = DisposeBag()

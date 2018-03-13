@@ -18,6 +18,7 @@
 		1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E72052776700A46BEB /* UIViewController+Rx.swift */; };
 		1D5549F52052789800A46BEB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F32052789800A46BEB /* RxSwift.framework */; };
 		1D5549F62052789800A46BEB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F42052789800A46BEB /* RxCocoa.framework */; };
+		5A40CECBB05957E25172F95A /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1D5549F12052780D00A46BEB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		1D5549F32052789800A46BEB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../RxSwift/Spread.2/RxSwift.framework; sourceTree = "<group>"; };
 		1D5549F42052789800A46BEB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../RxSwift/Spread.2/RxCocoa.framework; sourceTree = "<group>"; };
+		5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				1D5549E72052776700A46BEB /* UIViewController+Rx.swift */,
 				1D5549AD2052770C00A46BEB /* RxModalityStack.h */,
 				1D5549AE2052770C00A46BEB /* Info.plist */,
+				5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */,
 			);
 			path = RxModalityStack;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				1D5549EC2052776700A46BEB /* RxTaskQueue.swift in Sources */,
 				1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */,
 				1D5549E92052776700A46BEB /* RxModalityStackType.swift in Sources */,
+				5A40CECBB05957E25172F95A /* TransparentModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
