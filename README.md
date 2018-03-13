@@ -25,7 +25,7 @@ github 'yoonhg84/RxModalityStack' 'master'
 
 ### Present view controller
 
-prsent 하는 방법은 UIViewController 에서 하는 방법과 유사합니다.
+present 하는 방법은 UIViewController 에서 하는 방법과 유사합니다.
 
 ```swift
 let vc = UIViewController()
