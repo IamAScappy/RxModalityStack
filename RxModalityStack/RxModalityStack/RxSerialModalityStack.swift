@@ -18,18 +18,19 @@ public class RxSerialModalityStack: RxModalityStackType {
     }
     private var isExecutingAction: Bool = false
     private var taskObservable: Observable<Void> = Observable.empty()
+    private var transitionDelegates: [UIViewController: UIViewControllerTransitioningDelegate] = [:]
 
-    public func present(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
-        let single = present(viewController: viewController, onFrontViewControllerWithAnimated: animated)
+    public func present(viewController: UIViewController, animated: Bool, transition: ModalityTransition) -> Single<Void> {
+        let single = present(viewController: viewController, onFrontViewControllerWithAnimated: animated, transition: transition)
         return queue.add(single: single)
     }
 
-    public func dismiss(animated: Bool = true) -> Single<Void> {
+    public func dismiss(animated: Bool) -> Single<Void> {
         let single = dismissFrontViewController(animated: animated)
         return queue.add(single: single)
     }
 
-    public func dismiss(viewController: UIViewController, animated: Bool = true) -> Single<Void> {
+    public func dismiss(viewController: UIViewController, animated: Bool) -> Single<Void> {
         return queue.add(single: _dismiss(viewController: viewController))
     }
 
@@ -59,14 +60,14 @@ public class RxSerialModalityStack: RxModalityStackType {
                 }
 
                 reorderViewControllers.forEach { [unowned self] (viewController: UIViewController) in
-                    concatObservable = concatObservable.concat(self.present(viewController: viewController, onFrontViewControllerWithAnimated: false))
+                    concatObservable = concatObservable.concat(self.present(viewController: viewController, onFrontViewControllerWithAnimated: false, transition: .ignore))
                 }
 
                 return concatObservable.takeLast(1).asSingle()
             }
     }
 
-    public func dismissAll(animated: Bool = true) -> Single<Void> {
+    public func dismissAll(animated: Bool) -> Single<Void> {
         let single = Single<Int>
             .create { [unowned self] observer in
                 observer(.success(self.stack.count))
@@ -83,7 +84,7 @@ public class RxSerialModalityStack: RxModalityStackType {
 
     public func moveToFront(viewController: UIViewController) -> Single<Void> {
         return _dismiss(viewController: viewController).flatMap { [unowned self] _ in
-            self.present(viewController: viewController, onFrontViewControllerWithAnimated: false)
+            self.present(viewController: viewController, onFrontViewControllerWithAnimated: false, transition: .ignore)
         }
     }
 
@@ -111,10 +112,11 @@ public class RxSerialModalityStack: RxModalityStackType {
 
 
     // MARK: - present / dismiss viewController
-    private func present(viewController: UIViewController, onFrontViewControllerWithAnimated animated: Bool = true) -> Single<Void> {
+    private func present(viewController: UIViewController, onFrontViewControllerWithAnimated animated: Bool, transition: ModalityTransition) -> Single<Void> {
         return frontViewController()
             .observeOn(MainScheduler.instance)
-            .flatMap { (baseVC: UIViewController) in
+            .flatMap { [unowned self] (baseVC: UIViewController) in
+                self.adjust(transition: transition, in: viewController)
                 return baseVC.rx.present(viewController: viewController, animated: animated)
             }
             .do(onSuccess: { [unowned self] _ in
@@ -131,10 +133,26 @@ public class RxSerialModalityStack: RxModalityStackType {
             })
             .observeOn(MainScheduler.instance)
             .flatMap { viewController in
-                return viewController.rx.dismiss(animated: animated)
+                return viewController.rx.dismiss(animated: animated).do(onSuccess: { [unowned self] _ in
+                    self.transitionDelegates[viewController] = nil
+                })
             }
             .do(onSuccess: { [unowned self] _ in
                 _ = self.stack.removeLast()
             })
+    }
+
+    // MARK: - Transition
+    private func adjust(transition: ModalityTransition, in viewController: UIViewController) {
+        switch transition {
+        case .ignore:
+            return
+        case .system:
+            viewController.transitioningDelegate = nil
+        default:
+            transitionDelegates[viewController] = transition.toDelegate()
+            viewController.transitioningDelegate = transitionDelegates[viewController]
+            viewController.modalPresentationStyle = .custom
+        }
     }
 }

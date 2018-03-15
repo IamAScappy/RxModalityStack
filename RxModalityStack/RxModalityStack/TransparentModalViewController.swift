@@ -24,25 +24,21 @@ open class TransparentModalViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        (view as? TouchPassthroughView)?.additionalSubviewsForHitTest = { [weak self] in
-            return self?.presentingViewController?.view.subviews ?? []
-        }
-
+        (view as? TouchPassthroughView)?.additionalView = presentingViewController?.view
         view.backgroundColor = .clear
     }
 }
 
 internal class TouchPassthroughView: UIView {
-    var additionalSubviewsForHitTest: (() -> [UIView])?
+    weak var additionalView: UIView?
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if !isUserInteractionEnabled || isHidden || alpha <= 0.01 {
             return nil
         }
-        let views = subviews.reversed() + (additionalSubviewsForHitTest?() ?? [])
 
         if self.point(inside: point, with: event) {
-            for subview in views {
+            for subview in subviews.reversed() {
                 let p = subview.convert(point, from: self)
                 let view = subview.hitTest(p, with: event)
                 if let view = view {
@@ -50,6 +46,11 @@ internal class TouchPassthroughView: UIView {
                 }
             }
         }
-        return nil
+
+        guard backgroundColor == .clear else { return nil }
+        guard let additionalView = additionalView else { return nil }
+
+        let additionalViewPoint = additionalView.convert(point, from: self)
+        return additionalView.hitTest(additionalViewPoint, with: event)
     }
 }

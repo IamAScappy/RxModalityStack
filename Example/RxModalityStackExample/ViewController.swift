@@ -12,7 +12,6 @@ import RxModalityStack
 
 class ViewController: UIViewController {
     private let presentButton: UIButton = UIButton(type: .custom)
-    private let blueVC = BlueVC()
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -34,36 +33,9 @@ class ViewController: UIViewController {
     }
 
     @objc func presentTestVC() {
-        RxModalityStack.shared.present(modalVC: .blue).do(onSuccess: { _ in print("present blue") }).subscribe()
-        RxModalityStack.shared.present(modalVC: .red).do(onSuccess: { _ in print("present red") }).subscribe()
-        RxModalityStack.shared.present(modalVC: .green).do(onSuccess: { _ in print("present green") }).subscribe()
-        RxModalityStack.shared.present(modalVC: .yellow).do(onSuccess: { _ in print("present yellow") }).subscribe()
-    }
-}
-
-
-enum ModalVC {
-    case red
-    case blue
-    case green
-    case yellow
-
-    var viewController: UIViewController {
-        switch self {
-        case .red:
-            return RedVC()
-        case .blue:
-            return BlueVC()
-        case .green:
-            return GreenVC()
-        case .yellow:
-            return YellowVC()
-        }
-    }
-}
-
-extension RxModalityStackType {
-    func present(modalVC: ModalVC, animated: Bool = true) -> Single<Void> {
-        return RxModalityStack.shared.present(viewController: modalVC.viewController, animated: animated)
+        RxModalityStack.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDownDarkBackground(alpha: 0.6)).do(onSuccess: { _ in print("present blue") }).subscribe()
+        RxModalityStack.shared.present(viewController: RedVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present red") }).subscribe()
+        RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present green") }).subscribe()
+        RxModalityStack.shared.present(viewController: YellowVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present yellow") }).subscribe()
     }
 }
