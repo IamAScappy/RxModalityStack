@@ -9,6 +9,8 @@ import RxSwift
 public enum RxTaskQueueError: Error {
     case illegalType
     case emptyValue
+    case selfIsNil
+    case alreadyExecuting
 }
 
 public protocol RxTaskQueue {

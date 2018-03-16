@@ -67,62 +67,57 @@ public class RxSerialTaskQueue: RxTaskQueue {
     }
 
     private func configure() {
-        Observable.zip(
-                isExecuting
-                    .distinctUntilChanged()
-                    .filter { $0 == false }
-                    .debug(),
-                actionQueue
-                    .buffer(timeSpan: 1, count: 10, scheduler: MainScheduler.instance)
-                    .filter { $0.count > 0 }
-            ) { return $1 }
+        let executable: Observable<Bool> = isExecuting
+            .distinctUntilChanged()
+            .filter { $0 == false }
+        Observable.zip(executable, actionQueue) { return $1 }
             .debug()
-            .subscribe(onNext: { [weak self] (tasks: [Task]) in
-                self?.execute(tasks: tasks)
-            })
+            .flatMap { [weak self] (task: Task) -> Single<Any> in
+                guard let ss = self else {
+                    return .never()
+                }
+                return ss.execute(task: task).catchError { _ in
+                    return Single.never()
+                }
+            }
+            .subscribe()
             .disposed(by: disposeBag)
     }
 
-    private func execute(tasks: [Task]) {
-        guard tasks.count > 0 else { return }
-        guard isExecuting.value == false else {
-            assertionFailure()
-            return
-        }
+    private func execute(task: Task) -> Single<Any> {
+        return Single<Void>
+            .create { [weak self] observer in
+                guard let ss = self else {
+                    observer(.error(RxTaskQueueError.selfIsNil))
+                    return Disposables.create()
+                }
+                guard ss.isExecuting.value == false else {
+                    assertionFailure()
+                    observer(.error(RxTaskQueueError.alreadyExecuting))
+                    return Disposables.create()
+                }
 
-        isExecuting.accept(true)
+                ss.isExecuting.accept(true)
 
-        var observable = Observable<Any>.create { [weak self] observer in
-            self?.isExecuting.accept(true)
-            observer.onNext(Void())
-            observer.onCompleted()
-            return Disposables.create()
-        }
-
-        for task in tasks {
-            let taskObservable: Single<Any> = task.observable
-                .debug()
-                .do(
-                    onSuccess: { [weak self] value in
-                        let result = Result(uuid: task.uuid, value: value, error: nil)
-                        self?.completionSubject.onNext(result)
-                    },
-                    onError: { [weak self] error in
-                        let result = Result(uuid: task.uuid, value: nil, error: error)
-                        self?.completionSubject.onNext(result)
-                    }
-                )
-                .asObservable().timeout(10, scheduler: MainScheduler.instance).asSingle()
-            observable = observable.concat(taskObservable)
-        }
-
-        observable
+                observer(.success(Void()))
+                return Disposables.create()
+            }
+            .flatMap { _ in
+                return task.observable
+            }
+            .do(
+                onSuccess: { [weak self] value in
+                    let result = Result(uuid: task.uuid, value: value, error: nil)
+                    self?.completionSubject.onNext(result)
+                },
+                onError: { [weak self] error in
+                    let result = Result(uuid: task.uuid, value: nil, error: error)
+                    self?.completionSubject.onNext(result)
+                },
+                onDispose: { [weak self] in
+                    self?.isExecuting.accept(false)
+                }
+            )
             .debug()
-            .subscribe(onDisposed: { [weak self] in
-                self?.isExecuting.accept(false)
-            })
-            .disposed(by: disposeBagForExecuting)
-
-        self.observable = observable
     }
 }
