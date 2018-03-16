@@ -26,26 +26,6 @@ class ToolViewController: TransparentModalViewController {
         toolView.frame.origin.y = view.bounds.size.height - toolView.frame.size.height
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("\(self): viewWillAppear")
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("\(self): viewWillDisappear")
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("\(self): viewDidAppear")
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("\(self): viewDidDisappear")
-    }
-
     func createToolView() -> UIView? {
         let height: CGFloat = 120
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: height))
