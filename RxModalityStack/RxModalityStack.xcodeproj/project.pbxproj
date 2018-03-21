@@ -16,8 +16,6 @@
 		1D5549EB2052776700A46BEB /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E52052776700A46BEB /* RxSerialTaskQueue.swift */; };
 		1D5549EC2052776700A46BEB /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E62052776700A46BEB /* RxTaskQueue.swift */; };
 		1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E72052776700A46BEB /* UIViewController+Rx.swift */; };
-		1D5549F52052789800A46BEB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F32052789800A46BEB /* RxSwift.framework */; };
-		1D5549F62052789800A46BEB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549F42052789800A46BEB /* RxCocoa.framework */; };
 		5A40C5074993991E700671C7 /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C595662906470FF02A76 /* ModalityTransition.swift */; };
 		5A40CA05EBF6967D126BFF95 /* SlideUpDownDarkBackgroundTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C967A43B16D29164921A /* SlideUpDownDarkBackgroundTransition.swift */; };
 		5A40CECBB05957E25172F95A /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */; };
@@ -60,8 +58,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5549F52052789800A46BEB /* RxSwift.framework in Frameworks */,
-				1D5549F62052789800A46BEB /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
