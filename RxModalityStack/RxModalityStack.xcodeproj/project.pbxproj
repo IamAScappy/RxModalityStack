@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D54918D2063597D00A5C194 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D54918B2063597D00A5C194 /* RxSwift.framework */; };
+		1D54918E2063597D00A5C194 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D54918C2063597D00A5C194 /* RxCocoa.framework */; };
 		1D5549B42052770C00A46BEB /* RxModalityStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549AA2052770C00A46BEB /* RxModalityStack.framework */; };
 		1D5549B92052770C00A46BEB /* RxModalityStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549B82052770C00A46BEB /* RxModalityStackTests.swift */; };
 		1D5549BB2052770C00A46BEB /* RxModalityStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5549AD2052770C00A46BEB /* RxModalityStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -32,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D54918B2063597D00A5C194 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../RxSwift/Spread.2/RxSwift.framework; sourceTree = "<group>"; };
+		1D54918C2063597D00A5C194 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../RxSwift/Spread.2/RxCocoa.framework; sourceTree = "<group>"; };
 		1D5549AA2052770C00A46BEB /* RxModalityStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxModalityStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D5549AD2052770C00A46BEB /* RxModalityStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxModalityStack.h; sourceTree = "<group>"; };
 		1D5549AE2052770C00A46BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D54918D2063597D00A5C194 /* RxSwift.framework in Frameworks */,
+				1D54918E2063597D00A5C194 /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +74,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D54918A2063597C00A5C194 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D54918C2063597D00A5C194 /* RxCocoa.framework */,
+				1D54918B2063597D00A5C194 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		1D5549A02052770C00A46BEB = {
 			isa = PBXGroup;
 			children = (
 				1D5549AC2052770C00A46BEB /* RxModalityStack */,
 				1D5549B72052770C00A46BEB /* RxModalityStackTests */,
 				1D5549AB2052770C00A46BEB /* Products */,
+				1D54918A2063597C00A5C194 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
