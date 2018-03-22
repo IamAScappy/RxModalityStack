@@ -17,30 +17,28 @@
 		1D554A1020527A9600A46BEB /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D554A0B20527A9500A46BEB /* BlueVC.swift */; };
 		1D554A1120527A9600A46BEB /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D554A0C20527A9500A46BEB /* RedVC.swift */; };
 		1D554A1220527A9600A46BEB /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D554A0D20527A9500A46BEB /* ToolViewController.swift */; };
-		1D554A1820527C2B00A46BEB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D554A0620527A7600A46BEB /* RxCocoa.framework */; };
-		1D554A1920527C2B00A46BEB /* RxCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D554A0620527A7600A46BEB /* RxCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1D554A1A20527C2B00A46BEB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D554A0520527A7600A46BEB /* RxSwift.framework */; };
-		1D554A1B20527C2B00A46BEB /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D554A0520527A7600A46BEB /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1D78404E2063A44E0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404C2063A44E0031AADE /* RxSwift.framework */; };
+		1D78404F2063A44E0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404D2063A44E0031AADE /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1D5549FE20527A2F00A46BEB /* PBXContainerItemProxy */ = {
+		1D7840482063A4170031AADE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */;
+			containerPortal = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1D5549AA2052770C00A46BEB;
 			remoteInfo = RxModalityStack;
 		};
-		1D554A0020527A2F00A46BEB /* PBXContainerItemProxy */ = {
+		1D78404A2063A4170031AADE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */;
+			containerPortal = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 1D5549B32052770C00A46BEB;
 			remoteInfo = RxModalityStackTests;
 		};
-		1D554A0220527A3500A46BEB /* PBXContainerItemProxy */ = {
+		1D7840512063A4C30031AADE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */;
+			containerPortal = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 1D5549A92052770C00A46BEB;
 			remoteInfo = RxModalityStack;
@@ -54,8 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1D554A1B20527C2B00A46BEB /* RxSwift.framework in Embed Frameworks */,
-				1D554A1920527C2B00A46BEB /* RxCocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,14 +66,14 @@
 		1D5549D72052773600A46BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D5549DA2052773600A46BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D5549DC2052773600A46BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxModalityStack.xcodeproj; path = ../RxModalityStack/RxModalityStack.xcodeproj; sourceTree = "<group>"; };
-		1D554A0520527A7600A46BEB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../RxSwift/Spread.2/RxSwift.framework; sourceTree = "<group>"; };
-		1D554A0620527A7600A46BEB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../RxSwift/Spread.2/RxCocoa.framework; sourceTree = "<group>"; };
 		1D554A0920527A9500A46BEB /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
 		1D554A0A20527A9500A46BEB /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 		1D554A0B20527A9500A46BEB /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
 		1D554A0C20527A9500A46BEB /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
 		1D554A0D20527A9500A46BEB /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
+		1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxModalityStack.xcodeproj; path = ../RxModalityStack.xcodeproj; sourceTree = "<group>"; };
+		1D78404C2063A44E0031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		1D78404D2063A44E0031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D554A1A20527C2B00A46BEB /* RxSwift.framework in Frameworks */,
-				1D554A1820527C2B00A46BEB /* RxCocoa.framework in Frameworks */,
+				1D78404E2063A44E0031AADE /* RxSwift.framework in Frameworks */,
+				1D78404F2063A44E0031AADE /* RxCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,9 +92,9 @@
 		1D5549C42052773600A46BEB = {
 			isa = PBXGroup;
 			children = (
+				1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */,
 				1D5549CF2052773600A46BEB /* RxModalityStackExample */,
 				1D5549CE2052773600A46BEB /* Products */,
-				1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */,
 				1D554A0420527A7600A46BEB /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -129,22 +125,22 @@
 			path = RxModalityStackExample;
 			sourceTree = "<group>";
 		};
-		1D5549FA20527A2F00A46BEB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1D5549FF20527A2F00A46BEB /* RxModalityStack.framework */,
-				1D554A0120527A2F00A46BEB /* RxModalityStackTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		1D554A0420527A7600A46BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D554A0620527A7600A46BEB /* RxCocoa.framework */,
-				1D554A0520527A7600A46BEB /* RxSwift.framework */,
+				1D78404D2063A44E0031AADE /* RxCocoa.framework */,
+				1D78404C2063A44E0031AADE /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1D7840442063A4170031AADE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D7840492063A4170031AADE /* RxModalityStack.framework */,
+				1D78404B2063A4170031AADE /* RxModalityStackTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,11 +154,12 @@
 				1D5549CA2052773600A46BEB /* Frameworks */,
 				1D5549CB2052773600A46BEB /* Resources */,
 				1D554A1C20527C2B00A46BEB /* Embed Frameworks */,
+				1D7840502063A4600031AADE /* [Carthage] Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1D554A0320527A3500A46BEB /* PBXTargetDependency */,
+				1D7840522063A4C30031AADE /* PBXTargetDependency */,
 			);
 			name = RxModalityStackExample;
 			productName = RxModalityStackExample;
@@ -198,8 +195,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 1D5549FA20527A2F00A46BEB /* Products */;
-					ProjectRef = 1D5549F920527A2F00A46BEB /* RxModalityStack.xcodeproj */;
+					ProductGroup = 1D7840442063A4170031AADE /* Products */;
+					ProjectRef = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -210,18 +207,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		1D5549FF20527A2F00A46BEB /* RxModalityStack.framework */ = {
+		1D7840492063A4170031AADE /* RxModalityStack.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = RxModalityStack.framework;
-			remoteRef = 1D5549FE20527A2F00A46BEB /* PBXContainerItemProxy */;
+			remoteRef = 1D7840482063A4170031AADE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1D554A0120527A2F00A46BEB /* RxModalityStackTests.xctest */ = {
+		1D78404B2063A4170031AADE /* RxModalityStackTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = RxModalityStackTests.xctest;
-			remoteRef = 1D554A0020527A2F00A46BEB /* PBXContainerItemProxy */;
+			remoteRef = 1D78404A2063A4170031AADE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -238,6 +235,25 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D7840502063A4600031AADE /* [Carthage] Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/RxCocoa.framework",
+			);
+			name = "[Carthage] Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D5549C92052773600A46BEB /* Sources */ = {
@@ -257,10 +273,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1D554A0320527A3500A46BEB /* PBXTargetDependency */ = {
+		1D7840522063A4C30031AADE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RxModalityStack;
-			targetProxy = 1D554A0220527A3500A46BEB /* PBXContainerItemProxy */;
+			targetProxy = 1D7840512063A4C30031AADE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -397,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../RxSwift/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = RxModalityStackExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackExample;
@@ -413,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../RxSwift/**";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = RxModalityStackExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackExample;
