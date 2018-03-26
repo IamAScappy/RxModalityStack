@@ -7,151 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D5549B42052770C00A46BEB /* RxModalityStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5549AA2052770C00A46BEB /* RxModalityStack.framework */; };
-		1D5549B92052770C00A46BEB /* RxModalityStackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549B82052770C00A46BEB /* RxModalityStackTests.swift */; };
-		1D5549BB2052770C00A46BEB /* RxModalityStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5549AD2052770C00A46BEB /* RxModalityStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D5549E82052776700A46BEB /* RxModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E22052776700A46BEB /* RxModalityStack.swift */; };
-		1D5549E92052776700A46BEB /* RxModalityStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E32052776700A46BEB /* RxModalityStackType.swift */; };
-		1D5549EA2052776700A46BEB /* RxSerialModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E42052776700A46BEB /* RxSerialModalityStack.swift */; };
-		1D5549EB2052776700A46BEB /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E52052776700A46BEB /* RxSerialTaskQueue.swift */; };
-		1D5549EC2052776700A46BEB /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E62052776700A46BEB /* RxTaskQueue.swift */; };
-		1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D5549E72052776700A46BEB /* UIViewController+Rx.swift */; };
-		1D7840402063A3A20031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78403E2063A3A20031AADE /* RxSwift.framework */; };
-		1D7840412063A3A20031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78403F2063A3A20031AADE /* RxCocoa.framework */; };
-		5A40C5074993991E700671C7 /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C595662906470FF02A76 /* ModalityTransition.swift */; };
-		5A40CA05EBF6967D126BFF95 /* SlideUpDownDarkBackgroundTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C967A43B16D29164921A /* SlideUpDownDarkBackgroundTransition.swift */; };
-		5A40CECBB05957E25172F95A /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */; };
+		1D7840652068A1170031AADE /* RxModalityStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7840632068A1170031AADE /* RxModalityStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */; };
+		1D7840752068A15B0031AADE /* RxModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406C2068A15A0031AADE /* RxModalityStack.swift */; };
+		1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406D2068A15A0031AADE /* ModalityTransition.swift */; };
+		1D7840772068A15B0031AADE /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */; };
+		1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */; };
+		1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840702068A15A0031AADE /* UIViewController+Rx.swift */; };
+		1D78407A2068A15B0031AADE /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840712068A15A0031AADE /* RxTaskQueue.swift */; };
+		1D78407B2068A15B0031AADE /* SlideUpDownDarkBackgroundTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */; };
+		1D78407C2068A15B0031AADE /* RxModalityStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840732068A15B0031AADE /* RxModalityStackType.swift */; };
+		1D7840832068A23C0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407F2068A16D0031AADE /* RxCocoa.framework */; };
+		1D7840842068A23C0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407E2068A16D0031AADE /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1D5549B52052770C00A46BEB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1D5549A12052770C00A46BEB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1D5549A92052770C00A46BEB;
-			remoteInfo = RxModalityStack;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		1D5549AA2052770C00A46BEB /* RxModalityStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxModalityStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D5549AD2052770C00A46BEB /* RxModalityStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxModalityStack.h; sourceTree = "<group>"; };
-		1D5549AE2052770C00A46BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D5549B32052770C00A46BEB /* RxModalityStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxModalityStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D5549B82052770C00A46BEB /* RxModalityStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxModalityStackTests.swift; sourceTree = "<group>"; };
-		1D5549BA2052770C00A46BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D5549E22052776700A46BEB /* RxModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStack.swift; sourceTree = "<group>"; };
-		1D5549E32052776700A46BEB /* RxModalityStackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStackType.swift; sourceTree = "<group>"; };
-		1D5549E42052776700A46BEB /* RxSerialModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialModalityStack.swift; sourceTree = "<group>"; };
-		1D5549E52052776700A46BEB /* RxSerialTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialTaskQueue.swift; sourceTree = "<group>"; };
-		1D5549E62052776700A46BEB /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
-		1D5549E72052776700A46BEB /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		1D78403E2063A3A20031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		1D78403F2063A3A20031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		5A40C595662906470FF02A76 /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
-		5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
-		5A40C967A43B16D29164921A /* SlideUpDownDarkBackgroundTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownDarkBackgroundTransition.swift; sourceTree = "<group>"; };
+		1D7840602068A1170031AADE /* RxModalityStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxModalityStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D7840632068A1170031AADE /* RxModalityStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxModalityStack.h; sourceTree = "<group>"; };
+		1D7840642068A1170031AADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialModalityStack.swift; sourceTree = "<group>"; };
+		1D78406C2068A15A0031AADE /* RxModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStack.swift; sourceTree = "<group>"; };
+		1D78406D2068A15A0031AADE /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
+		1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialTaskQueue.swift; sourceTree = "<group>"; };
+		1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
+		1D7840702068A15A0031AADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
+		1D7840712068A15A0031AADE /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
+		1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownDarkBackgroundTransition.swift; sourceTree = "<group>"; };
+		1D7840732068A15B0031AADE /* RxModalityStackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStackType.swift; sourceTree = "<group>"; };
+		1D78407E2068A16D0031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		1D78407F2068A16D0031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D5549A62052770C00A46BEB /* Frameworks */ = {
+		1D78405C2068A1170031AADE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D7840402063A3A20031AADE /* RxSwift.framework in Frameworks */,
-				1D7840412063A3A20031AADE /* RxCocoa.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1D5549B02052770C00A46BEB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D5549B42052770C00A46BEB /* RxModalityStack.framework in Frameworks */,
+				1D7840832068A23C0031AADE /* RxCocoa.framework in Frameworks */,
+				1D7840842068A23C0031AADE /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D54918A2063597C00A5C194 /* Frameworks */ = {
+		1D7840562068A1160031AADE = {
 			isa = PBXGroup;
 			children = (
-				1D78403F2063A3A20031AADE /* RxCocoa.framework */,
-				1D78403E2063A3A20031AADE /* RxSwift.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		1D5549A02052770C00A46BEB = {
-			isa = PBXGroup;
-			children = (
-				1D5549AC2052770C00A46BEB /* RxModalityStack */,
-				1D5549B72052770C00A46BEB /* RxModalityStackTests */,
-				1D5549AB2052770C00A46BEB /* Products */,
-				1D54918A2063597C00A5C194 /* Frameworks */,
+				1D7840622068A1170031AADE /* RxModalityStack */,
+				1D7840612068A1170031AADE /* Products */,
+				1D78407D2068A16D0031AADE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		1D5549AB2052770C00A46BEB /* Products */ = {
+		1D7840612068A1170031AADE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D5549AA2052770C00A46BEB /* RxModalityStack.framework */,
-				1D5549B32052770C00A46BEB /* RxModalityStackTests.xctest */,
+				1D7840602068A1170031AADE /* RxModalityStack.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D5549AC2052770C00A46BEB /* RxModalityStack */ = {
+		1D7840622068A1170031AADE /* RxModalityStack */ = {
 			isa = PBXGroup;
 			children = (
-				1D5549E22052776700A46BEB /* RxModalityStack.swift */,
-				1D5549E32052776700A46BEB /* RxModalityStackType.swift */,
-				1D5549E42052776700A46BEB /* RxSerialModalityStack.swift */,
-				1D5549E52052776700A46BEB /* RxSerialTaskQueue.swift */,
-				1D5549E62052776700A46BEB /* RxTaskQueue.swift */,
-				1D5549E72052776700A46BEB /* UIViewController+Rx.swift */,
-				1D5549AD2052770C00A46BEB /* RxModalityStack.h */,
-				1D5549AE2052770C00A46BEB /* Info.plist */,
-				5A40C835753BCDFAE6C6353F /* TransparentModalViewController.swift */,
-				5A40C967A43B16D29164921A /* SlideUpDownDarkBackgroundTransition.swift */,
-				5A40C595662906470FF02A76 /* ModalityTransition.swift */,
+				1D78406D2068A15A0031AADE /* ModalityTransition.swift */,
+				1D78406C2068A15A0031AADE /* RxModalityStack.swift */,
+				1D7840732068A15B0031AADE /* RxModalityStackType.swift */,
+				1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */,
+				1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */,
+				1D7840712068A15A0031AADE /* RxTaskQueue.swift */,
+				1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */,
+				1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */,
+				1D7840702068A15A0031AADE /* UIViewController+Rx.swift */,
+				1D7840632068A1170031AADE /* RxModalityStack.h */,
+				1D7840642068A1170031AADE /* Info.plist */,
 			);
 			path = RxModalityStack;
 			sourceTree = "<group>";
 		};
-		1D5549B72052770C00A46BEB /* RxModalityStackTests */ = {
+		1D78407D2068A16D0031AADE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D5549B82052770C00A46BEB /* RxModalityStackTests.swift */,
-				1D5549BA2052770C00A46BEB /* Info.plist */,
+				1D78407F2068A16D0031AADE /* RxCocoa.framework */,
+				1D78407E2068A16D0031AADE /* RxSwift.framework */,
 			);
-			path = RxModalityStackTests;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1D5549A72052770C00A46BEB /* Headers */ = {
+		1D78405D2068A1170031AADE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5549BB2052770C00A46BEB /* RxModalityStack.h in Headers */,
+				1D7840652068A1170031AADE /* RxModalityStack.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1D5549A92052770C00A46BEB /* RxModalityStack */ = {
+		1D78405F2068A1170031AADE /* RxModalityStack */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D5549BE2052770C00A46BEB /* Build configuration list for PBXNativeTarget "RxModalityStack" */;
+			buildConfigurationList = 1D7840682068A1170031AADE /* Build configuration list for PBXNativeTarget "RxModalityStack" */;
 			buildPhases = (
-				1D5549A52052770C00A46BEB /* Sources */,
-				1D5549A62052770C00A46BEB /* Frameworks */,
-				1D5549A72052770C00A46BEB /* Headers */,
-				1D5549A82052770C00A46BEB /* Resources */,
-				1D7840392063A0BC0031AADE /* [Carthage] Run Script */,
+				1D78405B2068A1170031AADE /* Sources */,
+				1D78405C2068A1170031AADE /* Frameworks */,
+				1D78405D2068A1170031AADE /* Headers */,
+				1D78405E2068A1170031AADE /* Resources */,
+				1D7840822068A1920031AADE /* [Carthage] Run Script */,
 			);
 			buildRules = (
 			);
@@ -159,74 +125,44 @@
 			);
 			name = RxModalityStack;
 			productName = RxModalityStack;
-			productReference = 1D5549AA2052770C00A46BEB /* RxModalityStack.framework */;
+			productReference = 1D7840602068A1170031AADE /* RxModalityStack.framework */;
 			productType = "com.apple.product-type.framework";
-		};
-		1D5549B22052770C00A46BEB /* RxModalityStackTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1D5549C12052770C00A46BEB /* Build configuration list for PBXNativeTarget "RxModalityStackTests" */;
-			buildPhases = (
-				1D5549AF2052770C00A46BEB /* Sources */,
-				1D5549B02052770C00A46BEB /* Frameworks */,
-				1D5549B12052770C00A46BEB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1D5549B62052770C00A46BEB /* PBXTargetDependency */,
-			);
-			name = RxModalityStackTests;
-			productName = RxModalityStackTests;
-			productReference = 1D5549B32052770C00A46BEB /* RxModalityStackTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D5549A12052770C00A46BEB /* Project object */ = {
+		1D7840572068A1160031AADE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Chope Industry";
 				TargetAttributes = {
-					1D5549A92052770C00A46BEB = {
+					1D78405F2068A1170031AADE = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
-					};
-					1D5549B22052770C00A46BEB = {
-						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 1D5549A42052770C00A46BEB /* Build configuration list for PBXProject "RxModalityStack" */;
+			buildConfigurationList = 1D78405A2068A1160031AADE /* Build configuration list for PBXProject "RxModalityStack" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1D5549A02052770C00A46BEB;
-			productRefGroup = 1D5549AB2052770C00A46BEB /* Products */;
+			mainGroup = 1D7840562068A1160031AADE;
+			productRefGroup = 1D7840612068A1170031AADE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D5549A92052770C00A46BEB /* RxModalityStack */,
-				1D5549B22052770C00A46BEB /* RxModalityStackTests */,
+				1D78405F2068A1170031AADE /* RxModalityStack */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D5549A82052770C00A46BEB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1D5549B12052770C00A46BEB /* Resources */ = {
+		1D78405E2068A1170031AADE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -236,7 +172,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D7840392063A0BC0031AADE /* [Carthage] Run Script */ = {
+		1D7840822068A1920031AADE /* [Carthage] Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,6 +183,8 @@
 			);
 			name = "[Carthage] Run Script";
 			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -255,42 +193,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D5549A52052770C00A46BEB /* Sources */ = {
+		1D78405B2068A1170031AADE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D5549EB2052776700A46BEB /* RxSerialTaskQueue.swift in Sources */,
-				1D5549EA2052776700A46BEB /* RxSerialModalityStack.swift in Sources */,
-				1D5549E82052776700A46BEB /* RxModalityStack.swift in Sources */,
-				1D5549EC2052776700A46BEB /* RxTaskQueue.swift in Sources */,
-				1D5549ED2052776700A46BEB /* UIViewController+Rx.swift in Sources */,
-				1D5549E92052776700A46BEB /* RxModalityStackType.swift in Sources */,
-				5A40CECBB05957E25172F95A /* TransparentModalViewController.swift in Sources */,
-				5A40CA05EBF6967D126BFF95 /* SlideUpDownDarkBackgroundTransition.swift in Sources */,
-				5A40C5074993991E700671C7 /* ModalityTransition.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1D5549AF2052770C00A46BEB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1D5549B92052770C00A46BEB /* RxModalityStackTests.swift in Sources */,
+				1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */,
+				1D7840772068A15B0031AADE /* RxSerialTaskQueue.swift in Sources */,
+				1D78407C2068A15B0031AADE /* RxModalityStackType.swift in Sources */,
+				1D78407A2068A15B0031AADE /* RxTaskQueue.swift in Sources */,
+				1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */,
+				1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */,
+				1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */,
+				1D7840752068A15B0031AADE /* RxModalityStack.swift in Sources */,
+				1D78407B2068A15B0031AADE /* SlideUpDownDarkBackgroundTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		1D5549B62052770C00A46BEB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1D5549A92052770C00A46BEB /* RxModalityStack */;
-			targetProxy = 1D5549B52052770C00A46BEB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		1D5549BC2052770C00A46BEB /* Debug */ = {
+		1D7840662068A1170031AADE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -323,6 +245,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -350,7 +273,7 @@
 			};
 			name = Debug;
 		};
-		1D5549BD2052770C00A46BEB /* Release */ = {
+		1D7840672068A1170031AADE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -383,6 +306,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -403,69 +327,52 @@
 			};
 			name = Release;
 		};
-		1D5549BF2052770C00A46BEB /* Debug */ = {
+		1D7840692068A1170031AADE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = RxModalityStack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "";
-			};
-			name = Debug;
-		};
-		1D5549C02052770C00A46BEB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
-				INFOPLIST_FILE = RxModalityStack/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStack;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "";
-			};
-			name = Release;
-		};
-		1D5549C22052770C00A46BEB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				INFOPLIST_FILE = RxModalityStackTests/Info.plist;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RxModalityStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1D5549C32052770C00A46BEB /* Release */ = {
+		1D78406A2068A1170031AADE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				INFOPLIST_FILE = RxModalityStackTests/Info.plist;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RxModalityStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStack;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -474,34 +381,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D5549A42052770C00A46BEB /* Build configuration list for PBXProject "RxModalityStack" */ = {
+		1D78405A2068A1160031AADE /* Build configuration list for PBXProject "RxModalityStack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D5549BC2052770C00A46BEB /* Debug */,
-				1D5549BD2052770C00A46BEB /* Release */,
+				1D7840662068A1170031AADE /* Debug */,
+				1D7840672068A1170031AADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D5549BE2052770C00A46BEB /* Build configuration list for PBXNativeTarget "RxModalityStack" */ = {
+		1D7840682068A1170031AADE /* Build configuration list for PBXNativeTarget "RxModalityStack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D5549BF2052770C00A46BEB /* Debug */,
-				1D5549C02052770C00A46BEB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1D5549C12052770C00A46BEB /* Build configuration list for PBXNativeTarget "RxModalityStackTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1D5549C22052770C00A46BEB /* Debug */,
-				1D5549C32052770C00A46BEB /* Release */,
+				1D7840692068A1170031AADE /* Debug */,
+				1D78406A2068A1170031AADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1D5549A12052770C00A46BEB /* Project object */;
+	rootObject = 1D7840572068A1160031AADE /* Project object */;
 }
