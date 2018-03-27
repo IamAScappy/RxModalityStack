@@ -77,7 +77,7 @@ class ToolViewController: TransparentModalViewController {
     }
 
     @objc func presentGreen() {
-        RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .system).subscribe().disposed(by: disposeBag)
+        RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .slideLeftRightDarkBackground(alpha: 0.6)).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentRed() {
