@@ -8,8 +8,8 @@ import UIKit
 public enum ModalityTransition {
     case ignore
     case system
-    case slideUpDownDarkBackground(alpha: CGFloat)
-    case slideLeftRightDarkBackground(alpha: CGFloat)
+    case slideUpDownDarkBackground
+    case slideLeftRightDarkBackground
     case delegate(UIViewControllerTransitioningDelegate?)
 }
 
@@ -20,10 +20,10 @@ extension ModalityTransition {
             return nil
         case .system:
             return nil
-        case .slideLeftRightDarkBackground(let alpha):
-            return SlideLeftRightDarkBackgroundTransition(alpha: alpha)
-        case .slideUpDownDarkBackground(let alpha):
-            return SlideUpDownDarkBackgroundTransition(alpha: alpha)
+        case .slideLeftRightDarkBackground:
+            return BaseViewControllerTransition(transitionAnimatable: SlideLeftRightTransition())
+        case .slideUpDownDarkBackground:
+            return BaseViewControllerTransition(transitionAnimatable: SlideUpDownTransition())
         case .delegate(let delegate):
             return delegate
         }

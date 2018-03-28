@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import RxModalityStack
 
-class GreenVC: ToolViewController {
+class GreenVC: ToolViewController, BackgroundColorAlphaAnimation {
     let contentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
     let button: UIButton = {
         let view = UIButton(type: .system)
@@ -31,5 +32,11 @@ class GreenVC: ToolViewController {
 
         contentView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
         button.frame = contentView.bounds
+    }
+
+    override func onTouchOutside() {
+        super.onTouchOutside()
+
+        RxModalityStack.shared.dismiss(viewController: self, animated: true)
     }
 }

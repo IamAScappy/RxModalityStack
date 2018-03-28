@@ -71,7 +71,6 @@ public class RxSerialTaskQueue: RxTaskQueue {
             .distinctUntilChanged()
             .filter { $0 == false }
         Observable.zip(executable, actionQueue) { return $1 }
-            .debug()
             .flatMap { [weak self] (task: Task) -> Single<Any> in
                 guard let ss = self else {
                     return .never()
@@ -118,6 +117,5 @@ public class RxSerialTaskQueue: RxTaskQueue {
                     self?.isExecuting.accept(false)
                 }
             )
-            .debug()
     }
 }

@@ -33,9 +33,18 @@ class ViewController: UIViewController {
     }
 
     @objc func presentTestVC() {
-        RxModalityStack.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDownDarkBackground(alpha: 0.6)).do(onSuccess: { _ in print("present blue") }).subscribe()
-        RxModalityStack.shared.present(viewController: RedVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present red") }).subscribe()
+        RxModalityStack.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDownDarkBackground).do(onSuccess: { _ in print("present blue") }).subscribe()
+        RxModalityStack.shared.present(viewController: RedVC(), animated: true, transition: .slideLeftRightDarkBackground).do(onSuccess: { _ in print("present red") }).subscribe()
         RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present green") }).subscribe()
         RxModalityStack.shared.present(viewController: YellowVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present yellow") }).subscribe()
+    }
+}
+
+public extension BackgroundColorAlphaAnimation {
+    public var color: UIColor {
+        return UIColor.black
+    }
+    public var alpha: CGFloat {
+        return 0.6
     }
 }

@@ -55,8 +55,12 @@ public class RxSerialModalityStack: RxModalityStackType {
             .flatMap { [unowned self] (index, reorderViewControllers) -> Single<Void> in
                 var concatObservable: Observable<Void> = Observable.just(Void())
 
-                for _ in (0..<(reorderViewControllers.count + 1)) {
-                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
+                if reorderViewControllers.count == 0 {
+                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: true))
+                } else {
+                    for _ in (0..<(reorderViewControllers.count + 1)) {
+                        concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
+                    }
                 }
 
                 reorderViewControllers.forEach { [unowned self] (viewController: UIViewController) in
@@ -120,6 +124,10 @@ public class RxSerialModalityStack: RxModalityStackType {
                 return baseVC.rx.present(viewController: viewController, animated: animated)
             }
             .do(onSuccess: { [unowned self] _ in
+                if let modalVC = viewController as? TransparentModalViewController, self.stack.count >= 1 {
+                    let lastVC = self.stack[self.stack.count - 1]
+                    modalVC.nextViewForHitTest = lastVC.view
+                }
                 self.stack.append(viewController)
             })
     }

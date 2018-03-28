@@ -15,11 +15,13 @@
 		1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */; };
 		1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840702068A15A0031AADE /* UIViewController+Rx.swift */; };
 		1D78407A2068A15B0031AADE /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840712068A15A0031AADE /* RxTaskQueue.swift */; };
-		1D78407B2068A15B0031AADE /* SlideUpDownDarkBackgroundTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */; };
+		1D78407B2068A15B0031AADE /* SlideUpDownTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */; };
 		1D78407C2068A15B0031AADE /* RxModalityStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840732068A15B0031AADE /* RxModalityStackType.swift */; };
 		1D7840832068A23C0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407F2068A16D0031AADE /* RxCocoa.framework */; };
 		1D7840842068A23C0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407E2068A16D0031AADE /* RxSwift.framework */; };
-		5A40C3D25003325BD328B2AD /* SlideLeftRightDarkBackgroundTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightDarkBackgroundTransition.swift */; };
+		5A40C3D25003325BD328B2AD /* SlideLeftRightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */; };
+		5A40C75612EBE0753B5FB2DB /* BackgroundColorAlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */; };
+		5A40CD28829AB79716645151 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,11 +35,13 @@
 		1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
 		1D7840702068A15A0031AADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		1D7840712068A15A0031AADE /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
-		1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownDarkBackgroundTransition.swift; sourceTree = "<group>"; };
+		1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownTransition.swift; sourceTree = "<group>"; };
 		1D7840732068A15B0031AADE /* RxModalityStackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStackType.swift; sourceTree = "<group>"; };
 		1D78407E2068A16D0031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1D78407F2068A16D0031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightDarkBackgroundTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeftRightDarkBackgroundTransition.swift; sourceTree = "<group>"; };
+		5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorAlphaAnimation.swift; sourceTree = "<group>"; };
+		5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeftRightTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,14 @@
 				1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */,
 				1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */,
 				1D7840712068A15A0031AADE /* RxTaskQueue.swift */,
-				1D7840722068A15A0031AADE /* SlideUpDownDarkBackgroundTransition.swift */,
+				1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */,
 				1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */,
 				1D7840702068A15A0031AADE /* UIViewController+Rx.swift */,
 				1D7840632068A1170031AADE /* RxModalityStack.h */,
 				1D7840642068A1170031AADE /* Info.plist */,
-				5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightDarkBackgroundTransition.swift */,
+				5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */,
+				5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */,
+				5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */,
 			);
 			path = RxModalityStack;
 			sourceTree = "<group>";
@@ -208,8 +214,10 @@
 				1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */,
 				1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */,
 				1D7840752068A15B0031AADE /* RxModalityStack.swift in Sources */,
-				1D78407B2068A15B0031AADE /* SlideUpDownDarkBackgroundTransition.swift in Sources */,
-				5A40C3D25003325BD328B2AD /* SlideLeftRightDarkBackgroundTransition.swift in Sources */,
+				1D78407B2068A15B0031AADE /* SlideUpDownTransition.swift in Sources */,
+				5A40C3D25003325BD328B2AD /* SlideLeftRightTransition.swift in Sources */,
+				5A40C75612EBE0753B5FB2DB /* BackgroundColorAlphaAnimation.swift in Sources */,
+				5A40CD28829AB79716645151 /* BaseTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

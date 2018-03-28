@@ -4,8 +4,16 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 open class TransparentModalViewController: UIViewController {
+    weak var nextViewForHitTest: UIView? {
+        didSet {
+            (view as? TouchPassthroughView)?.nextViewForHitTest = nextViewForHitTest
+        }
+    }
+
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         modalPresentationStyle = .overCurrentContext
@@ -24,13 +32,26 @@ open class TransparentModalViewController: UIViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
 
-        (view as? TouchPassthroughView)?.additionalView = presentingViewController?.view
         view.backgroundColor = .clear
+    }
+
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+
+        guard let point = touches.first?.location(in: view) else { return }
+
+        if view.hitTest(point, with: event) == view {
+            onTouchOutside()
+        }
+    }
+
+    open func onTouchOutside() {
+        print("touch outside")
     }
 }
 
 internal class TouchPassthroughView: UIView {
-    weak var additionalView: UIView?
+    weak var nextViewForHitTest: UIView?
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if !isUserInteractionEnabled || isHidden || alpha <= 0.01 {
@@ -47,8 +68,10 @@ internal class TouchPassthroughView: UIView {
             }
         }
 
-        guard backgroundColor == .clear else { return nil }
-        guard let additionalView = additionalView else { return nil }
+        guard backgroundColor == .clear else {
+            return self
+        }
+        guard let additionalView = nextViewForHitTest else { return nil }
 
         let additionalViewPoint = additionalView.convert(point, from: self)
         return additionalView.hitTest(additionalViewPoint, with: event)
