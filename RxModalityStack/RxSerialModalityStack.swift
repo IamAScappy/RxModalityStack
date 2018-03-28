@@ -124,9 +124,17 @@ public class RxSerialModalityStack: RxModalityStackType {
                 return baseVC.rx.present(viewController: viewController, animated: animated)
             }
             .do(onSuccess: { [unowned self] _ in
-                if let modalVC = viewController as? TransparentModalViewController, self.stack.count >= 1 {
-                    let lastVC = self.stack[self.stack.count - 1]
-                    modalVC.nextViewForHitTest = lastVC.view
+                if let modalVC = viewController as? TransparentModalViewController {
+                    let lastVC: UIViewController? = {
+                        if self.stack.count == 0 {
+                            return UIApplication.shared.keyWindow?.rootViewController
+                        }
+                        return self.stack[self.stack.count - 1]
+                    }()
+
+                    if let view = lastVC?.view {
+                        modalVC.nextViewForHitTest = view
+                    }
                 }
                 self.stack.append(viewController)
             })
