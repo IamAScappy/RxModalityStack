@@ -12,18 +12,25 @@ import RxModalityStack
 
 class ViewController: RedVC {
 //    private let presentButton: UIButton = UIButton(type: .custom)
-//    private let disposeBag = DisposeBag()
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
+    private let disposeBag = DisposeBag()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
 //        view.addSubview(presentButton)
 //
 //        presentButton.addTarget(self, action: #selector(presentTestVC), for: .touchUpInside)
 //        presentButton.backgroundColor = UIColor.lightGray
 //        presentButton.setTitle("Present four viewControllers", for: .normal)
-//    }
-//
+
+        RxModalityStack.shared.changedStack
+            .subscribe(onNext: { controllers in
+                let stackTypes = controllers.map { type(of: $0) }
+                print("stack: \(stackTypes)")
+            })
+            .disposed(by: disposeBag)
+    }
+
 //    open override func viewDidLayoutSubviews() {
 //        super.viewDidLayoutSubviews()
 //

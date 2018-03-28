@@ -15,6 +15,8 @@ public enum RxModalityStackTypeError: Error {
 
 public protocol RxModalityStackType: class {
     var queue: RxTaskQueue { get set }
+    var changedStack: PublishSubject<[UIViewController]> { get }
+    var stack: [UIViewController] { get }
 
     func present(viewController: UIViewController, animated: Bool, transition: ModalityTransition) -> Single<Void>
     func dismiss(animated: Bool) -> Single<Void>

@@ -9,11 +9,13 @@ import RxCocoa
 
 public class RxSerialModalityStack: RxModalityStackType {
     public var queue: RxTaskQueue = RxSerialTaskQueue()
+    public let changedStack: PublishSubject<[UIViewController]> = PublishSubject()
 
-    private var stack: [UIViewController] = [] {
+    public private(set) var stack: [UIViewController] = [] {
         didSet {
-            let stackTypes = stack.map { type(of: $0) }
-            print("stack: \(stackTypes)")
+            guard oldValue != stack else { return }
+
+            changedStack.onNext(stack)
         }
     }
     private var isExecutingAction: Bool = false
