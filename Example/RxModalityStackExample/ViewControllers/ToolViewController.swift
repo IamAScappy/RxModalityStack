@@ -55,36 +55,36 @@ class ToolViewController: TransparentModalViewController {
     }
 
     @objc func dismissAll() {
-        RxModalityStack.shared.dismissAll(animated: true).subscribe().disposed(by: disposeBag)
+        Modal.shared.dismissAll(animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissFront() {
-        RxModalityStack.shared.dismiss(animated: true).subscribe().disposed(by: disposeBag)
+        Modal.shared.dismissFront(animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissFirst() {
-        guard let viewController = RxModalityStack.shared.viewController(at: 0) else { return }
-        RxModalityStack.shared.dismiss(viewController: viewController, animated: true).subscribe().disposed(by: disposeBag)
+        guard let modality = Modal.shared.modality(at: 0) else { return }
+        Modal.shared.dismiss(modality.type, animated: false)
     }
 
     @objc func firstToFront() {
-        guard let viewController = RxModalityStack.shared.viewController(at: 0) else { return }
-        RxModalityStack.shared.moveToFront(viewController: viewController).subscribe().disposed(by: disposeBag)
+        guard let modality = Modal.shared.modality(at: 0) else { return }
+        Modal.shared.bring(toFront: modality.type).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentBlue() {
-        RxModalityStack.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDown).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.blue, animated: true, transition: .slideUpDown).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentGreen() {
-        RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .slideLeftRight).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.green, animated: true, transition: .slideLeftRight).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentRed() {
-        RxModalityStack.shared.present(viewController: RedVC(), animated: true, transition: .system).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.red, animated: true, transition: .system).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentYellow() {
-        RxModalityStack.shared.present(viewController: YellowVC(), animated: true, transition: .system).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.yellow, animated: true, transition: .system).subscribe().disposed(by: disposeBag)
     }
 }

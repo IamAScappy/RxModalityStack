@@ -6,7 +6,7 @@
 import UIKit
 import RxModalityStack
 
-class GreenVC: ToolViewController, BackgroundColorAlphaAnimation {
+class GreenVC: ToolViewController, BackgroundColorAlphaAnimation, ModalityPresentable {
     let contentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
     let button: UIButton = {
         let view = UIButton(type: .system)
@@ -37,6 +37,10 @@ class GreenVC: ToolViewController, BackgroundColorAlphaAnimation {
     override func onTouchOutside() {
         super.onTouchOutside()
 
-        RxModalityStack.shared.dismiss(viewController: self, animated: true)
+        _ = Modal.shared.dismiss(Modal.green, animated: true)
+    }
+
+    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+        return GreenVC()
     }
 }

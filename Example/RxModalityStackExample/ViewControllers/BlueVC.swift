@@ -4,8 +4,9 @@
 //
 
 import UIKit
+import RxModalityStack
 
-class BlueVC: ToolViewController {
+class BlueVC: ToolViewController, ModalityPresentable {
     private let contentView = UIView()
 
     override func viewDidLoad() {
@@ -26,5 +27,9 @@ class BlueVC: ToolViewController {
         let x = (view.bounds.width - width) / 2
         let y = (view.bounds.height - height) / 2
         contentView.frame.origin = CGPoint(x: x, y: y)
+    }
+
+    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+        return BlueVC()
     }
 }

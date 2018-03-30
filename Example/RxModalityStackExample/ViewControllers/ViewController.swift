@@ -23,7 +23,7 @@ class ViewController: RedVC {
 //        presentButton.backgroundColor = UIColor.lightGray
 //        presentButton.setTitle("Present four viewControllers", for: .normal)
 
-        RxModalityStack.shared.changedStack
+        Modal.shared.changedStack
             .subscribe(onNext: { controllers in
                 let stackTypes = controllers.map { type(of: $0) }
                 print("stack: \(stackTypes)")
@@ -40,10 +40,10 @@ class ViewController: RedVC {
 //    }
 //
 //    @objc func presentTestVC() {
-//        RxModalityStack.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDown).do(onSuccess: { _ in print("present blue") }).subscribe()
-//        RxModalityStack.shared.present(viewController: RedVC(), animated: true, transition: .slideLeftRight).do(onSuccess: { _ in print("present red") }).subscribe()
-//        RxModalityStack.shared.present(viewController: GreenVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present green") }).subscribe()
-//        RxModalityStack.shared.present(viewController: YellowVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present yellow") }).subscribe()
+//        Modal.shared.present(viewController: BlueVC(), animated: true, transition: .slideUpDown).do(onSuccess: { _ in print("present blue") }).subscribe()
+//        Modal.shared.present(viewController: RedVC(), animated: true, transition: .slideLeftRight).do(onSuccess: { _ in print("present red") }).subscribe()
+//        Modal.shared.present(viewController: GreenVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present green") }).subscribe()
+//        Modal.shared.present(viewController: YellowVC(), animated: true, transition: .system).do(onSuccess: { _ in print("present yellow") }).subscribe()
 //    }
 }
 

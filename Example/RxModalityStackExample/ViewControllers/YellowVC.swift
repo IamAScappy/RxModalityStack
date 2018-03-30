@@ -4,12 +4,17 @@
 //
 
 import UIKit
+import RxModalityStack
 
-class YellowVC: ToolViewController {
+class YellowVC: ToolViewController, ModalityPresentable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.yellow
+    }
+
+    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+        return YellowVC()
     }
 }

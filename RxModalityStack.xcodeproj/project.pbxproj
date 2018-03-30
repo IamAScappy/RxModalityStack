@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D7840652068A1170031AADE /* RxModalityStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7840632068A1170031AADE /* RxModalityStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */; };
-		1D7840752068A15B0031AADE /* RxModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406C2068A15A0031AADE /* RxModalityStack.swift */; };
 		1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406D2068A15A0031AADE /* ModalityTransition.swift */; };
 		1D7840772068A15B0031AADE /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */; };
 		1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */; };
@@ -29,7 +28,6 @@
 		1D7840632068A1170031AADE /* RxModalityStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxModalityStack.h; sourceTree = "<group>"; };
 		1D7840642068A1170031AADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialModalityStack.swift; sourceTree = "<group>"; };
-		1D78406C2068A15A0031AADE /* RxModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStack.swift; sourceTree = "<group>"; };
 		1D78406D2068A15A0031AADE /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
 		1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialTaskQueue.swift; sourceTree = "<group>"; };
 		1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				1D78406D2068A15A0031AADE /* ModalityTransition.swift */,
-				1D78406C2068A15A0031AADE /* RxModalityStack.swift */,
 				1D7840732068A15B0031AADE /* RxModalityStackType.swift */,
 				1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */,
 				1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */,
@@ -213,7 +210,6 @@
 				1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */,
 				1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */,
 				1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */,
-				1D7840752068A15B0031AADE /* RxModalityStack.swift in Sources */,
 				1D78407B2068A15B0031AADE /* SlideUpDownTransition.swift in Sources */,
 				5A40C3D25003325BD328B2AD /* SlideLeftRightTransition.swift in Sources */,
 				5A40C75612EBE0753B5FB2DB /* BackgroundColorAlphaAnimation.swift in Sources */,
