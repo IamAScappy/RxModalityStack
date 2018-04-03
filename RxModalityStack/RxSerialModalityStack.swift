@@ -23,7 +23,7 @@ public class RxSerialModalityStack<T: ModalityType>: RxModalityStackType {
 
     public init() {}
 
-    public func present(_ modalityType: T, animated: Bool, transition: ModalityTransition) -> Single<Void> {
+    public func present(_ modalityType: T, animated: Bool, transition: ModalityTransition) -> Single<UIViewController> {
         return Single<Modality<T>>
             .create { [unowned self] observer in
                 do {
@@ -37,7 +37,7 @@ public class RxSerialModalityStack<T: ModalityType>: RxModalityStackType {
             }
             .flatMap { [unowned self] modality in
                 let single = self.present(modality, onFrontViewControllerWithAnimated: animated, transition: transition)
-                return self.queue.add(single: single)
+                return self.queue.add(single: single).map { modality.viewController }
             }
     }
 

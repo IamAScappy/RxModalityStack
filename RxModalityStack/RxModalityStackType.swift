@@ -42,7 +42,7 @@ public protocol RxModalityStackType: class {
     var changedStack: PublishSubject<[Modality<LocalModalityType>]> { get }
     var stack: [Modality<LocalModalityType>] { get }
 
-    func present(_ modalityType: LocalModalityType, animated: Bool, transition: ModalityTransition) -> Single<Void>
+    func present(_ modalityType: LocalModalityType, animated: Bool, transition: ModalityTransition) -> Single<UIViewController>
 
     func dismissFront(animated: Bool) -> Single<Void>
     func dismiss(_ modalityType: LocalModalityType, animated: Bool) -> Single<Void>
