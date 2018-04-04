@@ -50,3 +50,20 @@ enum Modal: ModalityType {
         }
     }
 }
+
+enum ModalPresentableError: Error {
+    case invalidType
+}
+
+protocol ModalPresentable: ModalityPresentable {
+    static func viewControllerOf(_ modal: Modal) -> UIViewController
+}
+
+extension ModalPresentable {
+    static func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+        guard let modal = type as? Modal else {
+            throw ModalPresentableError.invalidType
+        }
+        return viewControllerOf(modal)
+    }
+}

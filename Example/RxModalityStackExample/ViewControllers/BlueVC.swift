@@ -6,7 +6,7 @@
 import UIKit
 import RxModalityStack
 
-class BlueVC: ToolViewController, ModalityPresentable {
+class BlueVC: ToolViewController, ModalPresentable {
     private let contentView = UIView()
 
     override func viewDidLoad() {
@@ -29,7 +29,10 @@ class BlueVC: ToolViewController, ModalityPresentable {
         contentView.frame.origin = CGPoint(x: x, y: y)
     }
 
-    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+    class func viewControllerOf(_ modal: Modal) -> UIViewController {
         return BlueVC()
     }
+//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+//        return BlueVC()
+//    }
 }

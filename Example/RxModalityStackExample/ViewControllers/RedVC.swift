@@ -7,7 +7,7 @@ import UIKit
 import QuartzCore
 import RxModalityStack
 
-class RedVC: ToolViewController, ModalityPresentable {
+class RedVC: ToolViewController, ModalPresentable {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let gradientLayer: CAGradientLayer = {
@@ -38,7 +38,11 @@ class RedVC: ToolViewController, ModalityPresentable {
         gradientLayer.frame = contentView.bounds
     }
 
-    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+    class func viewControllerOf(_ modal: Modal) -> UIViewController {
         return RedVC()
     }
+
+//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
+//        return RedVC()
+//    }
 }
