@@ -29,10 +29,11 @@ class BlueVC: ToolViewController, ModalPresentable {
         contentView.frame.origin = CGPoint(x: x, y: y)
     }
 
-    class func viewControllerOf(_ modal: Modal) -> UIViewController {
+    class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
         return BlueVC()
     }
-//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
-//        return BlueVC()
-//    }
+
+    class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
+        return .slideUpDown
+    }
 }

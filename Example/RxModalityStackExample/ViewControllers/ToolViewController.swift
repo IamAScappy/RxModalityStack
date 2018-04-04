@@ -64,7 +64,7 @@ class ToolViewController: TransparentModalViewController {
 
     @objc func dismissFirst() {
         guard let modality = Modal.shared.modality(at: 0) else { return }
-        Modal.shared.dismiss(modality.type, animated: false)
+        Modal.shared.dismiss(modality.type, animated: false).subscribe().disposed(by: disposeBag)
     }
 
     @objc func firstToFront() {
@@ -73,18 +73,18 @@ class ToolViewController: TransparentModalViewController {
     }
 
     @objc func presentBlue() {
-        Modal.shared.present(.blue, animated: true, transition: .slideUpDown).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.blue, with: .none, animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentGreen() {
-        Modal.shared.present(.green, animated: true, transition: .slideLeftRight).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.green, with: .none, animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentRed() {
-        Modal.shared.present(.red, animated: true, transition: .system).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.red, with: .none, animated: true).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentYellow() {
-        Modal.shared.present(.yellow, animated: true, transition: .system).subscribe().disposed(by: disposeBag)
+        Modal.shared.present(.color, with: .color(.yellow), animated: true).subscribe().disposed(by: disposeBag)
     }
 }

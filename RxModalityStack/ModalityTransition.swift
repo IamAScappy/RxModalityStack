@@ -5,12 +5,32 @@
 
 import UIKit
 
-public enum ModalityTransition {
+public enum ModalityTransition: Equatable {
     case ignore
     case system
     case slideUpDown
     case slideLeftRight
     case delegate(UIViewControllerTransitioningDelegate?)
+
+    public static func ==(lhs: ModalityTransition, rhs: ModalityTransition) -> Bool {
+        switch (lhs, rhs) {
+        case (.ignore, .ignore),
+             (.system, .system),
+             (.slideUpDown, .slideUpDown),
+             (.slideLeftRight, .slideLeftRight):
+            return true
+        case (.delegate(let lhsValue), .delegate(let rhsValue)):
+            guard let lhsValue = lhsValue else {
+                return rhsValue == nil
+            }
+            guard let rhsValue = rhsValue else {
+                return false
+            }
+            return lhsValue.isEqual(rhsValue)
+        default:
+            return false
+        }
+    }
 }
 
 extension ModalityTransition {

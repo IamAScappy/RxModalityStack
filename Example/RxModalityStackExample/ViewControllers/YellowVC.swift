@@ -14,11 +14,11 @@ class YellowVC: ToolViewController, ModalPresentable {
         view.backgroundColor = UIColor.yellow
     }
 
-    class func viewControllerOf(_ modal: Modal) -> UIViewController {
+    class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
         return YellowVC()
     }
 
-//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
-//        return YellowVC()
-//    }
+    class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
+        return .system
+    }
 }

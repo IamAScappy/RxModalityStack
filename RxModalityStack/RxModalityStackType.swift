@@ -14,45 +14,25 @@ public enum RxModalityStackTypeError: Error {
     case tooManyTypesInStack
 }
 
-public protocol ModalityPresentable {
-    static func viewController<T: ModalityType>(for type: T) throws -> UIViewController
-}
-
-public protocol ModalityType: Equatable {
-    var modalityPresentableType: (UIViewController & ModalityPresentable).Type { get }
-
-    static func ~=(lhs: Self, rhs: Self) -> Bool
-}
-
-public struct Modality<T: ModalityType>: Equatable {
-    public let type: T
-    public let viewController: UIViewController
-
-    public static func ==(lhs: Modality<T>, rhs: Modality<T>) -> Bool {
-        guard lhs.type == rhs.type else { return false }
-        guard lhs.viewController == rhs.viewController else { return false }
-        return true
-    }
-}
-
 public protocol RxModalityStackType: class {
     associatedtype LocalModalityType: ModalityType
+    associatedtype LocalModalityData: ModalityData
 
     var queue: RxTaskQueue { get set }
-    var changedStack: PublishSubject<[Modality<LocalModalityType>]> { get }
-    var stack: [Modality<LocalModalityType>] { get }
+    var changedStack: PublishSubject<[Modality<LocalModalityType, LocalModalityData>]> { get }
+    var stack: [Modality<LocalModalityType, LocalModalityData>] { get }
 
-    func present(_ modalityType: LocalModalityType, animated: Bool, transition: ModalityTransition) -> Single<UIViewController>
+    func present(_ modalityType: LocalModalityType, with data: LocalModalityData, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
 
-    func dismissFront(animated: Bool) -> Single<Void>
-    func dismiss(_ modalityType: LocalModalityType, animated: Bool) -> Single<Void>
+    func dismissFront(animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
+    func dismiss(_ modalityType: LocalModalityType, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
 //    func dismiss(_ modalityTypes: [LocalModalityType]) -> Single<Void>
     func dismissAll(animated: Bool) -> Single<Void>
 //    func dismissAll(except types: [LocalModalityType]) -> Single<Void>
 
-    func bring(toFront: LocalModalityType) -> Single<Void>
+    func bring(toFront: LocalModalityType) -> Single<Modality<LocalModalityType, LocalModalityData>>
 
     func isPresented(modalityType: LocalModalityType, onlyType: Bool) -> Bool
-    func modality(at index: Int) -> Modality<LocalModalityType>?
-    func modality(of type: LocalModalityType) -> [Modality<LocalModalityType>]
+    func modality(at index: Int) -> Modality<LocalModalityType, LocalModalityData>?
+    func modality(of type: LocalModalityType) -> [Modality<LocalModalityType, LocalModalityData>]
 }

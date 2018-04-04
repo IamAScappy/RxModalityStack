@@ -40,11 +40,11 @@ class GreenVC: ToolViewController, BackgroundColorAlphaAnimation, ModalPresentab
         _ = Modal.shared.dismiss(Modal.green, animated: true)
     }
 
-    class func viewControllerOf(_ modal: Modal) -> UIViewController {
+    class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
         return GreenVC()
     }
 
-//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
-//        return GreenVC()
-//    }
+    class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
+        return .slideLeftRight
+    }
 }

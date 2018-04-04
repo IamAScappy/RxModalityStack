@@ -38,11 +38,11 @@ class RedVC: ToolViewController, ModalPresentable {
         gradientLayer.frame = contentView.bounds
     }
 
-    class func viewControllerOf(_ modal: Modal) -> UIViewController {
+    class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
         return RedVC()
     }
 
-//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
-//        return RedVC()
-//    }
+    class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
+        return .system
+    }
 }

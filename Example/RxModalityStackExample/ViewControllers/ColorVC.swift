@@ -6,29 +6,19 @@
 import UIKit
 import RxModalityStack
 
-class ColorVC: UIViewController, ModalPresentable {
-    class func viewControllerOf(_ modal: Modal) -> UIViewController {
-        let vc = ColorVC()
-
-        switch modal {
+class ColorVC: ToolViewController, ModalPresentable {
+    class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
+        switch data {
         case .color(let color):
+            let vc = ColorVC()
             vc.view.backgroundColor = color
+            return vc
         default:
-            break
+            return nil
         }
-        return vc
     }
-//    class func viewController<T: ModalityType>(for type: T) throws -> UIViewController {
-//        let vc = ColorVC()
-//
-//        if let type = type as? Modal {
-//            switch type {
-//            case Modal.color(let color):
-//                vc.view.backgroundColor = color
-//            default:
-//                break
-//            }
-//        }
-//        return vc
-//    }
+
+    class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
+        return .system
+    }
 }
