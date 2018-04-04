@@ -35,10 +35,12 @@ public class RxSerialModalityStack<T: ModalityType>: RxModalityStackType {
                 }
                 return Disposables.create()
             }
+            .debug()
             .flatMap { [unowned self] modality in
                 let single = self.present(modality, onFrontViewControllerWithAnimated: animated, transition: transition)
                 return self.queue.add(single: single).map { modality.viewController }
             }
+            .debug()
     }
 
     public func dismissFront(animated: Bool) -> Single<Void> {
