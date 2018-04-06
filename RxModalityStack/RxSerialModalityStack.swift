@@ -29,14 +29,14 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
                 do {
                     let vc = try self.viewController(for: modalityType, with: data)
                     let transition = try modalityType.modalityPresentableType.transition(for: modalityType, with: data)
-                    let modality = Modality(type: modalityType, data: data, transition: transition, viewController: vc)
+                    let modality = Modality(id: UUID().uuidString, type: modalityType, data: data, transition: transition, viewController: vc)
                     observer(.success(modality))
                 } catch let e {
                     observer(.error(e))
                 }
                 return Disposables.create()
             }
-            .flatMap { [unowned self] modality in
+            .flatMap { [unowned self] modality -> Single<Modality<T, D>> in
                 let single = self.present(modality, onFrontViewControllerWithAnimated: animated, transition: modality.transition)
                 return self.queue.add(single: single)
             }
@@ -47,24 +47,29 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
         return queue.add(single: single)
     }
 
-    public func dismiss(_ modalityType: T, animated: Bool) -> Single<Modality<T, D>> {
-        return queue.add(single: _dismiss(modalityType))
+    public func dismiss(_ viewController: UIViewController, animated: Bool) -> Single<Modality<T, D>> {
+        return queue.add(single: _dismiss(viewController, animated: animated))
     }
 
-    private func _dismiss(_ modalityType: T) -> Single<Modality<T, D>> {
+    public func dismiss(_ id: String, animated: Bool) -> Single<Modality<T, D>> {
+        return Single<Modality<T, D>>.create { [unowned self] observer in
+            guard let modality = self.modality(of: id) else {
+                observer(.error(RxModalityStackTypeError.invalidID))
+                return Disposables.create()
+            }
+
+            observer(.success(modality))
+            return Disposables.create()
+        }
+        .flatMap { [unowned self] modality in
+            self.dismiss(modality.viewController, animated: animated)
+        }
+    }
+
+    private func _dismiss(_ viewController: UIViewController, animated: Bool) -> Single<Modality<T, D>> {
         return Single<Int>
             .create { [unowned self] observer in
-                let modalities = self.modality(of: modalityType)
-
-                guard modalities.count <= 1 else {
-                    observer(.error(RxModalityStackTypeError.tooManyTypesInStack))
-                    return Disposables.create()
-                }
-                guard let modality = modalities.first else {
-                    observer(.error(RxModalityStackTypeError.notExistsInStack))
-                    return Disposables.create()
-                }
-                guard let index = self.stack.index(where: { $0 == modality }) else {
+                guard let index = self.stack.index(where: { $0.viewController == viewController }) else {
                     observer(.error(RxModalityStackTypeError.notExistsInStack))
                     return Disposables.create()
                 }
@@ -83,7 +88,7 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
                 var concatObservable: Observable<Modality<T, D>> = Observable.empty()
 
                 if reorderModality.count == 0 {
-                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: true))
+                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: animated))
                 } else {
                     for _ in (0..<(reorderModality.count + 1)) {
                         concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
@@ -114,41 +119,92 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
         return queue.add(single: single)
     }
 
-    public func bring(toFront: T) -> Single<Modality<T, D>> {
-        return Single<Void>
+    public func dismissAll(except types: [T]) -> Single<Void> {
+        return Single
             .create { [unowned self] observer in
-                let modalities = self.modality(of: toFront)
-                if modalities.count > 1 {
-                    observer(.error(RxModalityStackTypeError.tooManyTypesInStack))
-                    return Disposables.create()
+                let result = self.stack.filter {
+                    types.contains($0.type) == false
                 }
-                observer(.success(Void()))
+                observer(.success(result))
                 return Disposables.create()
             }
-            .flatMap { [unowned self] _ -> Single<Modality<T, D>> in
-                self._dismiss(toFront)
+            .flatMap { [unowned self] (modalities: [Modality<T, D>]) -> Single<Void> in
+                guard modalities.count > 0 else {
+                    return .just(Void())
+                }
+
+                var concatObservable: Observable<Modality<T, D>> = Observable.empty()
+
+                modalities.reversed().forEach { modality in
+                    concatObservable = concatObservable.concat(self._dismiss(modality.viewController, animated: false).asObservable())
+                }
+
+                let dismissSingle: Single<Void> = concatObservable.asSingle().map { _ in Void() }
+
+                return self.queue.add(single: dismissSingle)
+            }
+    }
+
+    public func bringModality(toFront id: String) -> Single<Modality<T, D>> {
+        return Single<Modality<T,D>>.create { [unowned self] observer in
+                guard let modality = self.modality(of: id) else {
+                    observer(.error(RxModalityStackTypeError.notExistsInStack))
+                    return Disposables.create()
+                }
+                observer(.success(modality))
+                return Disposables.create()
             }
             .flatMap { [unowned self] modality -> Single<Modality<T, D>> in
-                return self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore)
+                return self.bringModality(toFront: modality)
             }
     }
 
-    public func isPresented(modalityType: T, onlyType: Bool) -> Bool {
-        if onlyType {
-            return stack.contains { (modality: Modality<T, D>) in
-                modality.type ~= modalityType
+    public func bringModality(toFront viewController: UIViewController) -> Single<Modality<T, D>> {
+        return Single<Modality<T,D>>.create { [unowned self] observer in
+                guard let modality = self.modality(of: viewController) else {
+                    observer(.error(RxModalityStackTypeError.notExistsInStack))
+                    return Disposables.create()
+                }
+                observer(.success(modality))
+                return Disposables.create()
             }
+            .flatMap { [unowned self] modality -> Single<Modality<T, D>> in
+                return self.bringModality(toFront: modality)
+            }
+    }
+
+    private func bringModality(toFront modality: Modality<T, D>) -> Single<Modality<T, D>> {
+        return Single<Void>.just(Void())
+            .flatMap { [unowned self] _ -> Single<Modality<T, D>> in
+                _ = self.dismiss(modality.viewController, animated: false)
+                return self.queue.add(single: self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore))
+            }
+    }
+
+    public func isPresented(_ type: T) -> Bool {
+        return stack.contains { (modality: Modality<T, D>) in
+            return modality.type == type
         }
-        return modality(of: modalityType).count > 0
     }
 
-    public func modality(at index: Int) -> Modality<T, D>? {
-        guard stack.count > index else { return nil }
-        return stack[index]
+    public func isPresented(_ id: String) -> Bool {
+        return stack.contains { (modality: Modality<T, D>) in
+            return modality.id == id
+        }
     }
 
-    public func modality(of type: T) -> [Modality<T, D>] {
-        return stack.filter { $0.type == type }
+    public func isPresented(_ viewController: UIViewController) -> Bool {
+        return stack.contains { (modality: Modality<T, D>) in
+            return modality.viewController == viewController
+        }
+    }
+
+    public func modality(of id: String) -> Modality<T, D>? {
+        return stack.filter { $0.id == id }.first
+    }
+
+    public func modality(of viewController: UIViewController) -> Modality<T, D>? {
+        return stack.filter { $0.viewController == viewController }.first
     }
 
     public func frontViewController() -> Single<UIViewController> {

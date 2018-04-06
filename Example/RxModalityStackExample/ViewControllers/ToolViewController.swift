@@ -32,8 +32,8 @@ class ToolViewController: TransparentModalViewController {
         view.backgroundColor = UIColor.black
         view.addSubview(createControlButton(title: "dismiss all", origin: CGPoint(x: 6, y: 6), action: #selector(self.dismissAll)))
         view.addSubview(createControlButton(title: "dismiss front", origin: CGPoint(x: 90, y: 6), action: #selector(self.dismissFront)))
-        view.addSubview(createControlButton(title: "dismiss First", origin: CGPoint(x: 190, y: 6), action: #selector(self.dismissFirst)))
         view.addSubview(createControlButton(title: "first to front", origin: CGPoint(x: 6, y: 40), action: #selector(self.firstToFront)))
+        view.addSubview(createControlButton(title: "dismiss except", origin: CGPoint(x: 100, y: 40), action: #selector(self.dismissExceptGreenAndBlue)))
         view.addSubview(createControlButton(title: "present blue", origin: CGPoint(x: 6, y: 74), action: #selector(self.presentBlue)))
         view.addSubview(createControlButton(title: "present green", origin: CGPoint(x: 94, y: 74), action: #selector(self.presentGreen)))
         view.addSubview(createControlButton(title: "present red", origin: CGPoint(x: 188, y: 74), action: #selector(self.presentRed)))
@@ -62,14 +62,14 @@ class ToolViewController: TransparentModalViewController {
         Modal.shared.dismissFront(animated: true).subscribe().disposed(by: disposeBag)
     }
 
-    @objc func dismissFirst() {
-        guard let modality = Modal.shared.modality(at: 0) else { return }
-        Modal.shared.dismiss(modality.type, animated: false).subscribe().disposed(by: disposeBag)
+    @objc func dismissExceptGreenAndBlue() {
+        Modal.shared.dismissAll(except: [.green, .blue]).subscribe().disposed(by: disposeBag)
     }
 
     @objc func firstToFront() {
-        guard let modality = Modal.shared.modality(at: 0) else { return }
-        Modal.shared.bring(toFront: modality.type).subscribe().disposed(by: disposeBag)
+        guard Modal.shared.stack.count > 0 else { return }
+        let modality = Modal.shared.stack[0]
+        Modal.shared.bringModality(toFront: modality.id).subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentBlue() {

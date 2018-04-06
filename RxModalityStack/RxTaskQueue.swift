@@ -5,6 +5,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 public enum RxTaskQueueError: Error {
     case illegalType
@@ -14,6 +15,8 @@ public enum RxTaskQueueError: Error {
 }
 
 public protocol RxTaskQueue {
+    var isExecuting: BehaviorRelay<Bool> { get }
+
     func add<T>(single: Single<T>) -> Single<T>
     func cancelAll()
 }

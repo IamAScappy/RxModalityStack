@@ -12,6 +12,7 @@ public enum RxModalityStackTypeError: Error {
     case notExistsInStack
     case topOfStackIsNotFrontViewController
     case tooManyTypesInStack
+    case invalidID
 }
 
 public protocol RxModalityStackType: class {
@@ -25,14 +26,18 @@ public protocol RxModalityStackType: class {
     func present(_ modalityType: LocalModalityType, with data: LocalModalityData, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
 
     func dismissFront(animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
-    func dismiss(_ modalityType: LocalModalityType, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
-//    func dismiss(_ modalityTypes: [LocalModalityType]) -> Single<Void>
+    func dismiss(_ viewController: UIViewController, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
+    func dismiss(_ id: String, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
     func dismissAll(animated: Bool) -> Single<Void>
-//    func dismissAll(except types: [LocalModalityType]) -> Single<Void>
+    func dismissAll(except types: [LocalModalityType]) -> Single<Void>
 
-    func bring(toFront: LocalModalityType) -> Single<Modality<LocalModalityType, LocalModalityData>>
+    func bringModality(toFront id: String) -> Single<Modality<LocalModalityType, LocalModalityData>>
+    func bringModality(toFront viewController: UIViewController) -> Single<Modality<LocalModalityType, LocalModalityData>>
 
-    func isPresented(modalityType: LocalModalityType, onlyType: Bool) -> Bool
-    func modality(at index: Int) -> Modality<LocalModalityType, LocalModalityData>?
-    func modality(of type: LocalModalityType) -> [Modality<LocalModalityType, LocalModalityData>]
+    func isPresented(_ type: LocalModalityType) -> Bool
+    func isPresented(_ id: String) -> Bool
+    func isPresented(_ viewController: UIViewController) -> Bool
+
+    func modality(of id: String) -> Modality<LocalModalityType, LocalModalityData>?
+    func modality(of viewController: UIViewController) -> Modality<LocalModalityType, LocalModalityData>?
 }

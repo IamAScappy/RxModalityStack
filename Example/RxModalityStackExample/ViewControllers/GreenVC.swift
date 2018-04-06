@@ -37,7 +37,7 @@ class GreenVC: ToolViewController, BackgroundColorAlphaAnimation, ModalPresentab
     override func onTouchOutside() {
         super.onTouchOutside()
 
-        _ = Modal.shared.dismiss(Modal.green, animated: true)
+        _ = Modal.shared.dismiss(self, animated: true)
     }
 
     class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {

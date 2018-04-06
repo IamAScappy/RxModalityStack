@@ -7,6 +7,10 @@ import UIKit
 import RxModalityStack
 
 class ColorVC: ToolViewController, ModalPresentable {
+    deinit {
+        print("deinit color")
+    }
+
     class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
         switch data {
         case .color(let color):

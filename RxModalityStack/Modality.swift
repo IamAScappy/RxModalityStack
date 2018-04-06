@@ -13,11 +13,16 @@ public protocol ModalityData: Equatable {
     static var none: Self { get }
 }
 
-public struct Modality<T: ModalityType, D: ModalityData>: Equatable {
+public struct Modality<T: ModalityType, D: ModalityData>: Equatable, Hashable {
+    public let id: String
     public let type: T
     public let data: D
     public let transition: ModalityTransition
     public let viewController: UIViewController
+
+    public var hashValue: Int {
+        return viewController.hashValue
+    }
 
     public static func ==(lhs: Modality<T, D>, rhs: Modality<T, D>) -> Bool {
         guard lhs.type == rhs.type else { return false }

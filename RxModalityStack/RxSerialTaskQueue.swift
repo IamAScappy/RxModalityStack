@@ -18,11 +18,12 @@ public class RxSerialTaskQueue: RxTaskQueue {
         let error: Error?
     }
 
+    public let isExecuting: BehaviorRelay<Bool> = BehaviorRelay(value: false)
+
     private var observable: Observable<Any> = Observable.empty()
     private var disposeBagForExecuting = DisposeBag()
     private var disposeBag = DisposeBag()
 
-    private let isExecuting: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     private let actionQueue: PublishSubject<Task> = PublishSubject()
     private let completionSubject: PublishSubject<Result> = PublishSubject()
 
@@ -70,14 +71,16 @@ public class RxSerialTaskQueue: RxTaskQueue {
         let executable: Observable<Bool> = isExecuting
             .distinctUntilChanged()
             .filter { $0 == false }
-        Observable.zip(executable, actionQueue) { return $1 }
-            .flatMap { [weak self] (task: Task) -> Single<Any> in
+        Observable.zip(executable.debug(), actionQueue.debug()) { return $1 }
+            .flatMap { [weak self] (task: Task) -> Observable<Any> in
                 guard let ss = self else {
-                    return .never()
+                    return .empty()
                 }
-                return ss.execute(task: task).catchError { _ in
-                    return Single.never()
-                }
+                return ss.execute(task: task)
+                    .catchError { _ in
+                        return .never()
+                    }
+                    .asObservable()
             }
             .subscribe()
             .disposed(by: disposeBag)
