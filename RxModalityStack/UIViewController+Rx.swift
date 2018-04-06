@@ -7,20 +7,32 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+public enum TransitionState {
+    case presenting
+    case dismissing
+    case completed
+}
+
 public extension Reactive where Base: UIViewController {
-    public func present(viewController: UIViewController, animated: Bool) -> Single<Void> {
-        return Single.create { observer in
+    public func present(viewController: UIViewController, animated: Bool) -> Observable<TransitionState> {
+        return Observable.create { observer in
+            observer.onNext(.presenting)
+
             self.base.present(viewController, animated: animated) {
-                observer(.success(Void()))
+                observer.onNext(.completed)
+                observer.onCompleted()
             }
             return Disposables.create()
         }
     }
 
-    public func dismiss(animated: Bool) -> Single<Void> {
-        return Single.create { observer in
+    public func dismiss(animated: Bool) -> Observable<TransitionState> {
+        return Observable.create { observer in
+            observer.onNext(.dismissing)
+
             self.base.dismiss(animated: animated) {
-                observer(.success(Void()))
+                observer.onNext(.completed)
+                observer.onCompleted()
             }
             return Disposables.create()
         }

@@ -9,17 +9,30 @@ import RxCocoa
 
 public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackType {
     public var queue: RxTaskQueue = RxSerialTaskQueue()
-    public let changedStack: PublishSubject<[Modality<T, D>]> = PublishSubject()
+    public let stackEvent: PublishSubject<StackEvent<Modality<T, D>>> = PublishSubject()
 
     public private(set) var stack: [Modality<T, D>] = [] {
         didSet {
             guard oldValue != stack else { return }
-            changedStack.onNext(stack)
+
+            let oldSet = Set(oldValue)
+            let newSet = Set(stack)
+
+            oldSet.subtracting(newSet).forEach {
+                stackEvent.onNext(.dismissed($0))
+            }
+            newSet.subtracting(oldSet).forEach {
+                stackEvent.onNext(.presented($0))
+            }
+
+            if stack.isEmpty {
+                stackEvent.onNext(.empty)
+            }
         }
     }
     private var isExecutingAction: Bool = false
     private var taskObservable: Observable<Void> = Observable.empty()
-    private var transitionDelegates: [UIViewController: UIViewControllerTransitioningDelegate] = [:]
+    private var transitionDelegates: [String: UIViewControllerTransitioningDelegate] = [:]
 
     public init() {}
 
@@ -226,8 +239,21 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
         return frontViewController()
             .observeOn(MainScheduler.instance)
             .flatMap { [unowned self] (baseVC: UIViewController) -> Single<Void> in
-                self.adjust(transition: transition, in: modality.viewController)
-                return baseVC.rx.present(viewController: modality.viewController, animated: animated)
+                self.adjustTransition(in: modality)
+                return baseVC.rx
+                    .present(viewController: modality.viewController, animated: animated)
+                    .do(onNext: { [unowned self] state in
+                        switch state {
+                        case .presenting:
+                            self.stackEvent.onNext(.presenting(modality))
+                        default:
+                            break
+                        }
+                    })
+                    .filter { $0 == .completed }
+                    .take(1)
+                    .map { _ in Void() }
+                    .asSingle()
             }
             .do(onSuccess: { [unowned self] _ in
                 if let modalVC = modality.viewController as? TransparentModalViewController {
@@ -251,17 +277,32 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
     }
 
     private func dismissFrontViewController(animated: Bool) -> Single<Modality<T, D>> {
-        return frontViewController()
-            .do(onSuccess: { [unowned self] viewController in
-                if self.stack.last?.viewController != viewController {
-                    throw RxModalityStackTypeError.topOfStackIsNotFrontViewController
+        return Single<Modality<T, D>>
+            .create { [unowned self] observer in
+                guard let modality = self.stack.last else {
+                    observer(.error(RxModalityStackTypeError.stackIsEmpty))
+                    return Disposables.create()
                 }
-            })
+                observer(.success(modality))
+                return Disposables.create()
+            }
             .observeOn(MainScheduler.instance)
-            .flatMap { viewController in
-                return viewController.rx.dismiss(animated: animated).do(onSuccess: { [unowned self] _ in
-                    self.transitionDelegates[viewController] = nil
-                })
+            .flatMap { (modality: Modality<T, D>) in
+                return modality.viewController.rx.dismiss(animated: animated)
+                    .do(onNext: { [unowned self] state in
+                        switch state {
+                        case .dismissing:
+                            self.stackEvent.onNext(.dismissing(modality))
+                        case .completed:
+                            self.transitionDelegates[modality.id] = nil
+                        default:
+                            break
+                        }
+                    })
+                    .filter { $0 == .completed }
+                    .take(1)
+                    .map { _ in Void() }
+                    .asSingle()
             }
             .map { [unowned self] _ in
                 return self.stack.removeLast()
@@ -273,16 +314,16 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
     }
 
     // MARK: - Transition
-    private func adjust(transition: ModalityTransition, in viewController: UIViewController) {
-        switch transition {
+    private func adjustTransition(in modality: Modality<T, D>) {
+        switch modality.transition {
         case .ignore:
             return
         case .system:
-            viewController.transitioningDelegate = nil
+            modality.viewController.transitioningDelegate = nil
         default:
-            transitionDelegates[viewController] = transition.toDelegate()
-            viewController.transitioningDelegate = transitionDelegates[viewController]
-            viewController.modalPresentationStyle = .custom
+            transitionDelegates[modality.id] = modality.transition.toDelegate()
+            modality.viewController.transitioningDelegate = transitionDelegates[modality.id]
+            modality.viewController.modalPresentationStyle = .custom
         }
     }
 }

@@ -13,6 +13,15 @@ public enum RxModalityStackTypeError: Error {
     case topOfStackIsNotFrontViewController
     case tooManyTypesInStack
     case invalidID
+    case stackIsEmpty
+}
+
+public enum StackEvent<M> {
+    case presenting(M)
+    case presented(M)
+    case dismissing(M)
+    case dismissed(M)
+    case empty
 }
 
 public protocol RxModalityStackType: class {
@@ -20,7 +29,7 @@ public protocol RxModalityStackType: class {
     associatedtype LocalModalityData: ModalityData
 
     var queue: RxTaskQueue { get set }
-    var changedStack: PublishSubject<[Modality<LocalModalityType, LocalModalityData>]> { get }
+    var stackEvent: PublishSubject<StackEvent<Modality<LocalModalityType, LocalModalityData>>> { get }
     var stack: [Modality<LocalModalityType, LocalModalityData>] { get }
 
     func present(_ modalityType: LocalModalityType, with data: LocalModalityData, animated: Bool) -> Single<Modality<LocalModalityType, LocalModalityData>>
