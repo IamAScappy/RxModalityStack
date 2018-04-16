@@ -49,4 +49,7 @@ public protocol RxModalityStackType: class {
 
     func modality(of id: String) -> Modality<LocalModalityType, LocalModalityData>?
     func modality(of viewController: UIViewController) -> Modality<LocalModalityType, LocalModalityData>?
+
+    func setToDismissed(_ id: String)
+    func setToDismissed(_ viewController: UIViewController)
 }

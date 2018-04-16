@@ -233,6 +233,17 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
         }
     }
 
+    public func setToDismissed(_ id: String) {
+        stack = stack.filter {
+            $0.id != id
+        }
+    }
+
+    public func setToDismissed(_ viewController: UIViewController) {
+        stack = stack.filter {
+            $0.viewController != viewController
+        }
+    }
 
     // MARK: - present / dismiss viewController
     private func present(_ modality: Modality<T, D>, onFrontViewControllerWithAnimated animated: Bool, transition: ModalityTransition) -> Single<Modality<T, D>> {

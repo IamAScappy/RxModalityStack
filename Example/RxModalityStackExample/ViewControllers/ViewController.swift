@@ -17,7 +17,17 @@ class ViewController: ToolViewController {
         super.viewDidLoad()
 
         Modal.shared.stackEvent
-            .debug()
+            .filter {
+                switch $0 {
+                case .presented, .dismissed:
+                    return true
+                default:
+                    return false
+                }
+            }
+            .map { _ in
+                return Modal.shared.stack.map { $0.type }
+            }
             .subscribe(onNext: { event in
                 print(event)
             })

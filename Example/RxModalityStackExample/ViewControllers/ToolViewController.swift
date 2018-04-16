@@ -32,8 +32,9 @@ class ToolViewController: TransparentModalViewController {
         view.backgroundColor = UIColor.black
         view.addSubview(createControlButton(title: "dismiss all", origin: CGPoint(x: 6, y: 6), action: #selector(self.dismissAll)))
         view.addSubview(createControlButton(title: "dismiss front", origin: CGPoint(x: 90, y: 6), action: #selector(self.dismissFront)))
+        view.addSubview(createControlButton(title: "dismiss except", origin: CGPoint(x: 180, y: 6), action: #selector(self.dismissExceptGreenAndBlue)))
         view.addSubview(createControlButton(title: "first to front", origin: CGPoint(x: 6, y: 40), action: #selector(self.firstToFront)))
-        view.addSubview(createControlButton(title: "dismiss except", origin: CGPoint(x: 100, y: 40), action: #selector(self.dismissExceptGreenAndBlue)))
+        view.addSubview(createControlButton(title: "present alert", origin: CGPoint(x: 95, y: 40), action: #selector(self.presentAlert)))
         view.addSubview(createControlButton(title: "present blue", origin: CGPoint(x: 6, y: 74), action: #selector(self.presentBlue)))
         view.addSubview(createControlButton(title: "present green", origin: CGPoint(x: 94, y: 74), action: #selector(self.presentGreen)))
         view.addSubview(createControlButton(title: "present red", origin: CGPoint(x: 188, y: 74), action: #selector(self.presentRed)))
@@ -86,5 +87,9 @@ class ToolViewController: TransparentModalViewController {
 
     @objc func presentYellow() {
         Modal.shared.present(.color, with: .color(.yellow), animated: true).subscribe().disposed(by: disposeBag)
+    }
+
+    @objc func presentAlert() {
+        Modal.shared.present(.alert, with: .alert(title: "title", message: "message"), animated: true).subscribe().disposed(by: disposeBag)
     }
 }
