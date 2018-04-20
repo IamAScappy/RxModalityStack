@@ -14,12 +14,16 @@
 		1D78404E2063A44E0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404C2063A44E0031AADE /* RxSwift.framework */; };
 		1D78404F2063A44E0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404D2063A44E0031AADE /* RxCocoa.framework */; };
 		5A40C1A2621B4E89C86AD95A /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C13B9B2729DFA64CD571 /* ToolViewController.swift */; };
+		5A40C1D7F32DAEE1DFADEFC4 /* UIActivityViewController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CC4A7FCA19B91E14F56A /* UIActivityViewController+ModalPresentable.swift */; };
 		5A40C36497F1CEAFEC955F26 /* ColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */; };
 		5A40C47E359545299FBD1081 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C85BB029F61F94FF5CBE /* ViewController.swift */; };
 		5A40C782D42A42DCBE5D7AA5 /* GreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C03F546B897758401D99 /* GreenVC.swift */; };
 		5A40C7E40FCCFD20861FD768 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C8EDD2908DA820EF012D /* Modal.swift */; };
 		5A40C7F197E7BBCCADA6C2E1 /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C2442A60C08D6ACDD99E /* BlueVC.swift */; };
 		5A40C8265A2958652C157937 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF5DEC0DDC0D75C70457 /* RedVC.swift */; };
+		5A40C91D4F2C10F0914F9455 /* UIAlertController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C1D3721FEEBF03E2678C /* UIAlertController+ModalPresentable.swift */; };
+		5A40CB8DC632400E41352257 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C01764D858030311BB83 /* ImageVC.swift */; };
+		5A40CD428DA58D8E71AB3BAA /* UIImagePickerController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CFE0BCAE6FF1641D8F1D /* UIImagePickerController+ModalPresentable.swift */; };
 		5A40CE88C0F21224D5E6B086 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9AC2216263E03446EA3 /* YellowVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,14 +74,18 @@
 		1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RxModalityStack.xcodeproj; path = ../RxModalityStack.xcodeproj; sourceTree = "<group>"; };
 		1D78404C2063A44E0031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = ../Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1D78404D2063A44E0031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = ../Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		5A40C01764D858030311BB83 /* ImageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageVC.swift; sourceTree = "<group>"; };
 		5A40C03F546B897758401D99 /* GreenVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreenVC.swift; sourceTree = "<group>"; };
 		5A40C13B9B2729DFA64CD571 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
+		5A40C1D3721FEEBF03E2678C /* UIAlertController+ModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+ModalPresentable.swift"; sourceTree = "<group>"; };
 		5A40C2442A60C08D6ACDD99E /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
 		5A40C85BB029F61F94FF5CBE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A40C8EDD2908DA820EF012D /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		5A40C9AC2216263E03446EA3 /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
 		5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorVC.swift; sourceTree = "<group>"; };
+		5A40CC4A7FCA19B91E14F56A /* UIActivityViewController+ModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+ModalPresentable.swift"; sourceTree = "<group>"; };
 		5A40CF5DEC0DDC0D75C70457 /* RedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedVC.swift; sourceTree = "<group>"; };
+		5A40CFE0BCAE6FF1641D8F1D /* UIImagePickerController+ModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+ModalPresentable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +129,9 @@
 				1D5549DC2052773600A46BEB /* Info.plist */,
 				5A40CD66F0611EF58F5022DF /* ViewControllers */,
 				5A40C8EDD2908DA820EF012D /* Modal.swift */,
+				5A40C1D3721FEEBF03E2678C /* UIAlertController+ModalPresentable.swift */,
+				5A40CFE0BCAE6FF1641D8F1D /* UIImagePickerController+ModalPresentable.swift */,
+				5A40CC4A7FCA19B91E14F56A /* UIActivityViewController+ModalPresentable.swift */,
 			);
 			path = RxModalityStackExample;
 			sourceTree = "<group>";
@@ -153,6 +164,7 @@
 				5A40C2442A60C08D6ACDD99E /* BlueVC.swift */,
 				5A40C9AC2216263E03446EA3 /* YellowVC.swift */,
 				5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */,
+				5A40C01764D858030311BB83 /* ImageVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -283,6 +295,10 @@
 				5A40CE88C0F21224D5E6B086 /* YellowVC.swift in Sources */,
 				5A40C36497F1CEAFEC955F26 /* ColorVC.swift in Sources */,
 				5A40C7E40FCCFD20861FD768 /* Modal.swift in Sources */,
+				5A40CB8DC632400E41352257 /* ImageVC.swift in Sources */,
+				5A40C91D4F2C10F0914F9455 /* UIAlertController+ModalPresentable.swift in Sources */,
+				5A40CD428DA58D8E71AB3BAA /* UIImagePickerController+ModalPresentable.swift in Sources */,
+				5A40C1D7F32DAEE1DFADEFC4 /* UIActivityViewController+ModalPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

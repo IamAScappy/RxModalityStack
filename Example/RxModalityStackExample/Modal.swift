@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import MobileCoreServices
 import RxSwift
 import RxModalityStack
 
@@ -16,6 +17,9 @@ enum Modal: ModalityType {
     case yellow
     case color
     case alert
+    case imagePicker
+    case image
+    case activity
 
     var modalityPresentableType: (UIViewController & ModalityPresentable).Type {
         switch self {
@@ -31,6 +35,12 @@ enum Modal: ModalityType {
             return ColorVC.self
         case .alert:
             return UIAlertController.self
+        case .imagePicker:
+            return UIImagePickerController.self
+        case .image:
+            return ImageVC.self
+        case .activity:
+            return UIActivityViewController.self
         }
     }
 }
@@ -41,6 +51,7 @@ enum ModalData: ModalityData {
     case empty
     case color(UIColor)
     case alert(title: String, message: String)
+    case image(UIImage)
 }
 
 enum ModalPresentableError: Error {
@@ -76,33 +87,5 @@ extension ModalPresentable {
             throw ModalPresentableError.invalidDataType
         }
         return transitionOf(modal, with: data) ?? .system
-    }
-}
-
-extension UIAlertController: ModalPresentable {
-    static func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
-        switch (modal, data) {
-        case (.alert, .alert(let title, let message)):
-            let vc = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            vc.addAction(UIAlertAction(title: "ok", style: .default) { [unowned vc] action in
-                print("press ok")
-                Modal.shared.setToDismissed(vc)
-            })
-            vc.addAction(UIAlertAction(title: "delete", style: .destructive) { [unowned vc] action in
-                print("press delete")
-                Modal.shared.setToDismissed(vc)
-                _ = Modal.shared.dismissAll(animated: false).subscribe()
-            })
-            vc.addAction(UIAlertAction(title: "cancel", style: .cancel) { action in
-                print("press cancel")
-            })
-            return vc
-        default:
-            return nil
-        }
-    }
-
-    static func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
-        return .system
     }
 }

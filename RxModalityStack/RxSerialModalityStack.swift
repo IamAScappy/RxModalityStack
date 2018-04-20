@@ -233,21 +233,44 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
         }
     }
 
-    public func setToDismissed(_ id: String) {
-        stack = stack.filter {
-            $0.id != id
+    public func setToDismissed(_ id: String) -> Single<Void> {
+        let single = Single<Void>.create { [unowned self] observer in
+            self.stack = self.stack.filter {
+                $0.id != id
+            }
+            observer(.success(Void()))
+            return Disposables.create()
         }
+        return queue.add(single: single)
     }
 
-    public func setToDismissed(_ viewController: UIViewController) {
-        stack = stack.filter {
-            $0.viewController != viewController
+    public func setToDismissed(_ viewController: UIViewController) -> Single<Void> {
+        let single = Single<Void>.create { [unowned self] observer in
+            self.stack = self.stack.filter {
+                $0.viewController != viewController
+            }
+            observer(.success(Void()))
+            return Disposables.create()
+        }
+        return queue.add(single: single)
+    }
+
+    private func fixStack() -> Single<Void> {
+        return Single.create { [unowned self] observer in
+            self.stack = self.stack.filter {
+                $0.viewController.presentingViewController != nil
+            }
+            observer(.success(Void()))
+            return Disposables.create()
         }
     }
 
     // MARK: - present / dismiss viewController
     private func present(_ modality: Modality<T, D>, onFrontViewControllerWithAnimated animated: Bool, transition: ModalityTransition) -> Single<Modality<T, D>> {
-        return frontViewController()
+        return fixStack()
+            .flatMap { [unowned self] _ in
+                return self.frontViewController()
+            }
             .observeOn(MainScheduler.instance)
             .flatMap { [unowned self] (baseVC: UIViewController) -> Single<Void> in
                 self.adjustTransition(in: modality)
