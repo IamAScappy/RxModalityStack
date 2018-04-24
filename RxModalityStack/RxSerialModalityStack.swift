@@ -118,18 +118,26 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
     }
 
     public func dismissAll(animated: Bool) -> Single<Void> {
-        let single = Single<Int>
+        return Single<Int>
             .create { [unowned self] observer in
                 observer(.success(self.stack.count))
                 return Disposables.create()
             }
-            .do(onSuccess: { [unowned self] count in
-                for _ in (0..<count) {
-                    _ = self.queue.add(single: self.dismissFrontViewController(animated: animated))
+            .flatMap { [unowned self] count in
+                guard count > 0 else {
+                    return Single.just(Void())
                 }
-            })
-            .map { _ in Void() }
-        return queue.add(single: single)
+
+                var concatObservable: Observable<Modality<T, D>> = Observable.empty()
+
+                for _ in (0..<count) {
+                    concatObservable = concatObservable.concat(self.queue.add(single: self.dismissFrontViewController(animated: animated)))
+                }
+
+                let dismissSingle: Single<Void> = concatObservable.asSingle().map { _ in Void() }
+
+                return self.queue.add(single: dismissSingle)
+            }
     }
 
     public func dismissAll(except types: [T]) -> Single<Void> {

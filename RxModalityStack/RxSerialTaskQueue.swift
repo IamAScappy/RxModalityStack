@@ -36,9 +36,10 @@ public class RxSerialTaskQueue: RxTaskQueue {
         let uuid: String = UUID().uuidString
         let task = Task(uuid: uuid, observable: single.map { $0 as Any })
 
-        actionQueue.onNext(task)
-
         return completionSubject
+            .do(onSubscribed: { [weak self] in
+                self?.actionQueue.onNext(task)
+            })
             .filter { $0.uuid == uuid }
             .do(onNext: {
                 if let error = $0.error {
@@ -77,8 +78,8 @@ public class RxSerialTaskQueue: RxTaskQueue {
                     return .empty()
                 }
                 return ss.execute(task: task)
-                    .catchError { _ in
-                        return .never()
+                    .catchError { error in
+                        return .just(Void())
                     }
                     .asObservable()
             }

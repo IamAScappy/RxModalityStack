@@ -66,21 +66,21 @@ class ToolViewController: TransparentModalViewController {
     }
 
     @objc func dismissAll() {
-        Modal.shared.dismissAll(animated: true).subscribe().disposed(by: disposeBag)
+        Modal.shared.dismissAll(animated: true).debug().subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissFront() {
-        Modal.shared.dismissFront(animated: true).subscribe().disposed(by: disposeBag)
+        Modal.shared.dismissFront(animated: true).debug().subscribe().disposed(by: disposeBag)
     }
 
     @objc func dismissExceptGreenAndBlue() {
-        Modal.shared.dismissAll(except: [.green, .blue]).subscribe().disposed(by: disposeBag)
+        Modal.shared.dismissAll(except: [.green, .blue]).debug().subscribe().disposed(by: disposeBag)
     }
 
     @objc func firstToFront() {
         guard Modal.shared.stack.count > 0 else { return }
         let modality = Modal.shared.stack[0]
-        Modal.shared.bringModality(toFront: modality.id).subscribe().disposed(by: disposeBag)
+        Modal.shared.bringModality(toFront: modality.id).debug().subscribe().disposed(by: disposeBag)
     }
 
     @objc func presentActivityController() {
