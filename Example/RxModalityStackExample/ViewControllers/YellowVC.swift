@@ -6,7 +6,7 @@
 import UIKit
 import RxModalityStack
 
-class YellowVC: ToolViewController, ModalPresentable {
+class YellowVC: TransparentToolViewController, ModalPresentable {
 
     override func viewDidLoad() {
         super.viewDidLoad()

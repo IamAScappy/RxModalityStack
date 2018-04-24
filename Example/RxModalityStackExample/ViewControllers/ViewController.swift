@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxModalityStack
 
-class ViewController: ToolViewController {
+class ViewController: TransparentToolViewController {
     private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {

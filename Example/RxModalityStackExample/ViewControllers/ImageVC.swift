@@ -6,7 +6,7 @@
 import UIKit
 import RxModalityStack
 
-class ImageVC: ToolViewController {
+class ImageVC: TransparentToolViewController {
     var image: UIImage?
 
     private let imageView = UIImageView()

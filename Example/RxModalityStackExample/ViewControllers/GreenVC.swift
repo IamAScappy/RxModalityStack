@@ -6,7 +6,7 @@
 import UIKit
 import RxModalityStack
 
-class GreenVC: ToolViewController, BackgroundColorAlphaAnimation, ModalPresentable {
+class GreenVC: TransparentToolViewController, BackgroundColorAlphaAnimation, ModalPresentable {
     let contentView: UIView = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
     let button: UIButton = {
         let view = UIButton(type: .system)

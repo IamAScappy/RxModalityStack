@@ -118,7 +118,7 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
     }
 
     public func dismissAll(animated: Bool) -> Single<Void> {
-        return Single<Int>
+        let single: Single<Void> = Single<Int>
             .create { [unowned self] observer in
                 observer(.success(self.stack.count))
                 return Disposables.create()
@@ -131,13 +131,13 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
                 var concatObservable: Observable<Modality<T, D>> = Observable.empty()
 
                 for _ in (0..<count) {
-                    concatObservable = concatObservable.concat(self.queue.add(single: self.dismissFrontViewController(animated: animated)))
+                    concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: animated).asObservable())
                 }
 
-                let dismissSingle: Single<Void> = concatObservable.asSingle().map { _ in Void() }
-
-                return self.queue.add(single: dismissSingle)
+                let dismissSingle: Single<Void> = concatObservable.takeLast(1).asSingle().map { _ in Void() }
+                return dismissSingle
             }
+        return queue.add(single: single)
     }
 
     public func dismissAll(except types: [T]) -> Single<Void> {
@@ -160,7 +160,7 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
                     concatObservable = concatObservable.concat(self._dismiss(modality.viewController, animated: false).asObservable())
                 }
 
-                let dismissSingle: Single<Void> = concatObservable.asSingle().map { _ in Void() }
+                let dismissSingle: Single<Void> = concatObservable.takeLast(1).asSingle().map { _ in Void() }
 
                 return self.queue.add(single: dismissSingle)
             }
@@ -298,19 +298,6 @@ public class RxSerialModalityStack<T: ModalityType, D: ModalityData>: RxModality
                     .asSingle()
             }
             .do(onSuccess: { [unowned self] _ in
-                if let modalVC = modality.viewController as? TransparentModalViewController {
-                    let lastVC: UIViewController? = {
-                        if self.stack.count == 0 {
-                            return UIApplication.shared.keyWindow?.rootViewController
-                        }
-                        return self.stack[self.stack.count - 1].viewController
-                    }()
-
-                    if let view = lastVC?.view {
-                        modalVC.nextViewForHitTest = view
-                    }
-                }
-
                 self.stack.append(modality)
             })
             .map { _ in

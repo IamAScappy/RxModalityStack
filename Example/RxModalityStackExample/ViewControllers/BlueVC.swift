@@ -5,16 +5,21 @@
 
 import UIKit
 import RxModalityStack
+import RxSwift
 
-class BlueVC: ToolViewController, ModalPresentable {
+class BlueVC: TouchPassthroughModalViewController, ModalPresentable {
     private let contentView = UIView()
+    private let toolView: UIView = ToolView()
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(contentView)
+        view.addSubview(toolView)
 
         contentView.backgroundColor = .blue
+        contentView.isUserInteractionEnabled = true
     }
 
     override func viewDidLayoutSubviews() {
@@ -27,6 +32,10 @@ class BlueVC: ToolViewController, ModalPresentable {
         let x = (view.bounds.width - width) / 2
         let y = (view.bounds.height - height) / 2
         contentView.frame.origin = CGPoint(x: x, y: y)
+
+        toolView.frame.size.height = 120
+        toolView.frame.size.width = view.bounds.size.width
+        toolView.frame.origin.y = view.bounds.size.height - toolView.frame.size.height
     }
 
     class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {
