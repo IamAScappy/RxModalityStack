@@ -7,7 +7,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-open class TransparentModalViewController: UIViewController {
+open class TransparentModalViewController: UIViewController, UIGestureRecognizerDelegate {
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         modalPresentationStyle = .overFullScreen
@@ -25,7 +25,7 @@ open class TransparentModalViewController: UIViewController {
 
         if let _ = self as? OutsideTouchable {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
-            tapGestureRecognizer.cancelsTouchesInView = true
+            tapGestureRecognizer.delegate = self
             view.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -37,5 +37,16 @@ open class TransparentModalViewController: UIViewController {
         guard let touchable = self as? OutsideTouchable else { return }
 
         touchable.onTouchOutside()
+    }
+
+    // https://stackoverflow.com/questions/8192480/uitapgesturerecognizer-breaks-uitableview-didselectrowatindexpath
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view == view {
+            return true
+        }
+        if touch.view?.isDescendant(of: view) == true {
+            return false
+        }
+        return true
     }
 }
