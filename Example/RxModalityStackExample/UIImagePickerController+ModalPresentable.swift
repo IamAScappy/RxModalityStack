@@ -16,11 +16,11 @@ extension UIImagePickerController: ModalPresentable {
             vc.allowsEditing = true
             vc.sourceType = .savedPhotosAlbum
             vc.mediaTypes = [kUTTypeImage as String]
-            vc.rx.didCancel
+            _ = vc.rx.didCancel
                 .subscribe(onNext: { [weak vc] _ in
-                guard let vc = vc else { return }
-                Modal.shared.dismiss(vc, animated: true).subscribe()
-            })
+                    guard let vc = vc else { return }
+                    _ = Modal.shared.dismiss(vc, animated: true).subscribe()
+                })
             return vc
         default:
             return nil

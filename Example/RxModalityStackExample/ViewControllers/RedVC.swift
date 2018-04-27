@@ -7,7 +7,7 @@ import UIKit
 import QuartzCore
 import RxModalityStack
 
-class RedVC: TransparentToolViewController, ModalPresentable {
+class RedVC: ToolViewController, ModalPresentable {
     private let scrollView = UIScrollView()
     private let contentView = UIView()
     private let gradientLayer: CAGradientLayer = {

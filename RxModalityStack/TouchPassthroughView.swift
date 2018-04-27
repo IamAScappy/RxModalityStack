@@ -8,6 +8,20 @@ import UIKit
 internal class TouchPassthroughView: UIView {
     weak var nextViewForHitTest: UIView?
 
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configure()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        configure()
+    }
+
+    private func configure() {
+        backgroundColor = .clear
+    }
+
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         guard isHittable(self) == true else {
             return nil

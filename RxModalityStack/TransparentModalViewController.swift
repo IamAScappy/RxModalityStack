@@ -10,31 +10,31 @@ import RxCocoa
 open class TransparentModalViewController: UIViewController {
     public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        modalPresentationStyle = .overCurrentContext
+        modalPresentationStyle = .overFullScreen
     }
 
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        modalPresentationStyle = .overCurrentContext
+        modalPresentationStyle = .overFullScreen
     }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .clear
-    }
 
-    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesEnded(touches, with: event)
-
-        guard let point = touches.first?.location(in: view) else { return }
-
-        if view.hitTest(point, with: event) == view {
-            onTouchOutside()
+        if let _ = self as? OutsideTouchable {
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+            view.addGestureRecognizer(tapGestureRecognizer)
         }
     }
 
-    open func onTouchOutside() {
-        print("touch outside")
+    @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
+        let point = gestureRecognizer.location(in: view)
+
+        guard view.subviews.contains(where: { $0.frame.contains(point) }) == false else { return }
+        guard let touchable = self as? OutsideTouchable else { return }
+
+        touchable.onTouchOutside()
     }
 }

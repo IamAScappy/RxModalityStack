@@ -103,10 +103,13 @@ class ToolView: UIView {
                 }
                 return vc.rx.didSelectImage.asObservable().map { (vc, $0) }
             }
-            .subscribe(onNext: { (vc: UIViewController, image: UIImage) in
-                Modal.shared.dismiss(vc, animated: true).subscribe()
-                Modal.shared.present(.image, with: .image(image), animated: true).subscribe().disposed(by: self.disposeBag)
-            })
+            .flatMap { result in
+                return Modal.shared.dismiss(result.0, animated: true).map { _ in result.1 }
+            }
+            .flatMap {
+                return Modal.shared.present(.image, with: .image($0), animated: true)
+            }
+            .subscribe()
             .disposed(by: disposeBag)
     }
 }

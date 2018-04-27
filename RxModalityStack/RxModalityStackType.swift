@@ -28,7 +28,7 @@ public protocol RxModalityStackType: class {
     associatedtype LocalModalityType: ModalityType
     associatedtype LocalModalityData: ModalityData
 
-    var queue: RxTaskQueue { get set }
+    var queue: RxTaskQueueType { get set }
     var stackEvent: PublishSubject<StackEvent<Modality<LocalModalityType, LocalModalityData>>> { get }
     var stack: [Modality<LocalModalityType, LocalModalityData>] { get }
 

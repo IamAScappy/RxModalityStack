@@ -9,12 +9,11 @@ import RxSwift
 import RxModalityStack
 
 enum Modal: ModalityType {
-    static let shared: RxSerialModalityStack<Modal, ModalData> = RxSerialModalityStack()
+    static let shared: RxModalityStack<Modal, ModalData> = RxModalityStack()
 
     case green
     case blue
     case red
-    case yellow
     case color
     case alert
     case imagePicker
@@ -29,8 +28,6 @@ enum Modal: ModalityType {
             return BlueVC.self
         case .red:
             return RedVC.self
-        case .yellow:
-            return YellowVC.self
         case .color:
             return ColorVC.self
         case .alert:

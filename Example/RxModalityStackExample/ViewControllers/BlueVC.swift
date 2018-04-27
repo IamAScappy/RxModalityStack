@@ -7,7 +7,7 @@ import UIKit
 import RxModalityStack
 import RxSwift
 
-class BlueVC: TouchPassthroughModalViewController, ModalPresentable {
+class BlueVC: TouchPassthroughModalViewController, OutsideTouchable, ModalPresentable {
     private let contentView = UIView()
     private let toolView: UIView = ToolView()
     private let disposeBag = DisposeBag()
@@ -36,6 +36,10 @@ class BlueVC: TouchPassthroughModalViewController, ModalPresentable {
         toolView.frame.size.height = 120
         toolView.frame.size.width = view.bounds.size.width
         toolView.frame.origin.y = view.bounds.size.height - toolView.frame.size.height
+    }
+
+    func onTouchOutside() {
+        _ = Modal.shared.dismiss(self, animated: true).subscribe()
     }
 
     class func viewControllerOf(_ modal: Modal, with data: ModalData) -> (UIViewController & ModalityPresentable)? {

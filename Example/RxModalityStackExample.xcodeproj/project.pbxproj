@@ -13,6 +13,8 @@
 		1D5549DB2052773600A46BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D5549D92052773600A46BEB /* LaunchScreen.storyboard */; };
 		1D78404E2063A44E0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404C2063A44E0031AADE /* RxSwift.framework */; };
 		1D78404F2063A44E0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78404D2063A44E0031AADE /* RxCocoa.framework */; };
+		1DAA93872091A35100610DB5 /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A40C865EEC855F527EE418E /* RevealServer.framework */; };
+		1DAA93882091A35100610DB5 /* RevealServer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A40C865EEC855F527EE418E /* RevealServer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5A40C1A2621B4E89C86AD95A /* TransparentToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C13B9B2729DFA64CD571 /* TransparentToolViewController.swift */; };
 		5A40C1D7F32DAEE1DFADEFC4 /* UIActivityViewController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CC4A7FCA19B91E14F56A /* UIActivityViewController+ModalPresentable.swift */; };
 		5A40C36497F1CEAFEC955F26 /* ColorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */; };
@@ -22,11 +24,11 @@
 		5A40C7F197E7BBCCADA6C2E1 /* BlueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C2442A60C08D6ACDD99E /* BlueVC.swift */; };
 		5A40C8265A2958652C157937 /* RedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF5DEC0DDC0D75C70457 /* RedVC.swift */; };
 		5A40C91D4F2C10F0914F9455 /* UIAlertController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C1D3721FEEBF03E2678C /* UIAlertController+ModalPresentable.swift */; };
+		5A40CAE874F4A4B2AA4C3EFD /* RevealServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A40C865EEC855F527EE418E /* RevealServer.framework */; };
 		5A40CB8DC632400E41352257 /* ImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C01764D858030311BB83 /* ImageVC.swift */; };
 		5A40CD33EF82A1A3EA58C5F4 /* ToolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CF2A88587108F586EBD9 /* ToolViewController.swift */; };
 		5A40CD428DA58D8E71AB3BAA /* UIImagePickerController+ModalPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CFE0BCAE6FF1641D8F1D /* UIImagePickerController+ModalPresentable.swift */; };
 		5A40CE290EA266ADB1F80727 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C5070D02CA0BF1775E6B /* ToolView.swift */; };
-		5A40CE88C0F21224D5E6B086 /* YellowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9AC2216263E03446EA3 /* YellowVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,18 +39,11 @@
 			remoteGlobalIDString = 1D5549AA2052770C00A46BEB;
 			remoteInfo = RxModalityStack;
 		};
-		1D78404A2063A4170031AADE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1D5549B32052770C00A46BEB;
-			remoteInfo = RxModalityStackTests;
-		};
 		1D7840512063A4C30031AADE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1D7840432063A4170031AADE /* RxModalityStack.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 1D5549A92052770C00A46BEB;
+			remoteGlobalIDString = 1D78405F2068A1170031AADE;
 			remoteInfo = RxModalityStack;
 		};
 /* End PBXContainerItemProxy section */
@@ -60,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				1DAA93882091A35100610DB5 /* RevealServer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,8 +79,8 @@
 		5A40C2442A60C08D6ACDD99E /* BlueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueVC.swift; sourceTree = "<group>"; };
 		5A40C5070D02CA0BF1775E6B /* ToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
 		5A40C85BB029F61F94FF5CBE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A40C865EEC855F527EE418E /* RevealServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RevealServer.framework; path = /Users/chope/projects/ModalPresenter/Example/RevealServer.framework; sourceTree = "<absolute>"; };
 		5A40C8EDD2908DA820EF012D /* Modal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
-		5A40C9AC2216263E03446EA3 /* YellowVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowVC.swift; sourceTree = "<group>"; };
 		5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorVC.swift; sourceTree = "<group>"; };
 		5A40CC4A7FCA19B91E14F56A /* UIActivityViewController+ModalPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIActivityViewController+ModalPresentable.swift"; sourceTree = "<group>"; };
 		5A40CF2A88587108F586EBD9 /* ToolViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +93,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DAA93872091A35100610DB5 /* RevealServer.framework in Frameworks */,
 				1D78404E2063A44E0031AADE /* RxSwift.framework in Frameworks */,
 				1D78404F2063A44E0031AADE /* RxCocoa.framework in Frameworks */,
+				5A40CAE874F4A4B2AA4C3EFD /* RevealServer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +143,7 @@
 			children = (
 				1D78404D2063A44E0031AADE /* RxCocoa.framework */,
 				1D78404C2063A44E0031AADE /* RxSwift.framework */,
+				5A40C865EEC855F527EE418E /* RevealServer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -153,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				1D7840492063A4170031AADE /* RxModalityStack.framework */,
-				1D78404B2063A4170031AADE /* RxModalityStackTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -166,7 +164,6 @@
 				5A40C13B9B2729DFA64CD571 /* TransparentToolViewController.swift */,
 				5A40C85BB029F61F94FF5CBE /* ViewController.swift */,
 				5A40C2442A60C08D6ACDD99E /* BlueVC.swift */,
-				5A40C9AC2216263E03446EA3 /* YellowVC.swift */,
 				5A40CB5148FB5CA2AFF496AF /* ColorVC.swift */,
 				5A40C01764D858030311BB83 /* ImageVC.swift */,
 				5A40C5070D02CA0BF1775E6B /* ToolView.swift */,
@@ -246,13 +243,6 @@
 			remoteRef = 1D7840482063A4170031AADE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1D78404B2063A4170031AADE /* RxModalityStackTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = RxModalityStackTests.xctest;
-			remoteRef = 1D78404A2063A4170031AADE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -298,7 +288,6 @@
 				5A40C1A2621B4E89C86AD95A /* TransparentToolViewController.swift in Sources */,
 				5A40C47E359545299FBD1081 /* ViewController.swift in Sources */,
 				5A40C7F197E7BBCCADA6C2E1 /* BlueVC.swift in Sources */,
-				5A40CE88C0F21224D5E6B086 /* YellowVC.swift in Sources */,
 				5A40C36497F1CEAFEC955F26 /* ColorVC.swift in Sources */,
 				5A40C7E40FCCFD20861FD768 /* Modal.swift in Sources */,
 				5A40CB8DC632400E41352257 /* ImageVC.swift in Sources */,
@@ -453,7 +442,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"\"${PROJECT_DIR}/..\"/**",
+				);
 				INFOPLIST_FILE = RxModalityStackExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackExample;
@@ -469,7 +462,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JKB83V3G9Q;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
+					"\"${PROJECT_DIR}/..\"/**",
+				);
 				INFOPLIST_FILE = RxModalityStackExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.chopestory.RxModalityStackExample;

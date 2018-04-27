@@ -8,46 +8,50 @@
 
 /* Begin PBXBuildFile section */
 		1D7840652068A1170031AADE /* RxModalityStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D7840632068A1170031AADE /* RxModalityStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */; };
-		1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406D2068A15A0031AADE /* ModalityTransition.swift */; };
-		1D7840772068A15B0031AADE /* RxSerialTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */; };
+		1D7840742068A15B0031AADE /* RxModalityStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406B2068A15A0031AADE /* RxModalityStack.swift */; };
+		1D7840772068A15B0031AADE /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406E2068A15A0031AADE /* RxTaskQueue.swift */; };
 		1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */; };
 		1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840702068A15A0031AADE /* UIViewController+Rx.swift */; };
-		1D78407A2068A15B0031AADE /* RxTaskQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840712068A15A0031AADE /* RxTaskQueue.swift */; };
-		1D78407B2068A15B0031AADE /* SlideUpDownTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */; };
+		1D78407A2068A15B0031AADE /* RxTaskQueueType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840712068A15A0031AADE /* RxTaskQueueType.swift */; };
 		1D78407C2068A15B0031AADE /* RxModalityStackType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7840732068A15B0031AADE /* RxModalityStackType.swift */; };
 		1D7840832068A23C0031AADE /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407F2068A16D0031AADE /* RxCocoa.framework */; };
 		1D7840842068A23C0031AADE /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D78407E2068A16D0031AADE /* RxSwift.framework */; };
 		5A40C04F53CCEC3161A6B272 /* TouchPassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CE3DF20969AD4353B499 /* TouchPassthroughView.swift */; };
 		5A40C1DE2A3C7880778B0296 /* TouchPassthroughModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C0D06B31352A2D6B3F82 /* TouchPassthroughModalViewController.swift */; };
 		5A40C25FA8817CF99230E7A7 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CC1654ED79D4C85EF942 /* Modality.swift */; };
-		5A40C3D25003325BD328B2AD /* SlideLeftRightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */; };
-		5A40C75612EBE0753B5FB2DB /* BackgroundColorAlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */; };
+		5A40C2C49FDFB5A4E784224F /* SlideUpDownTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */; };
+		5A40C3EAFC4E6F14F223027D /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CE32E2E859D34871B126 /* ModalityTransition.swift */; };
+		5A40C595155A812C583CF045 /* SlideLeftRightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */; };
+		5A40C70BA446B4EFBF464446 /* OutsideTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C41BA8EC4C4B813FB83C /* OutsideTouchable.swift */; };
+		5A40C7EA16807531DB0B0C10 /* FadeInOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C39B3C905357A4F9BEC9 /* FadeInOutTransition.swift */; };
+		5A40CAEAD50A8CDAFCD2A25E /* BackgroundColorAlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */; };
 		5A40CB215D1FE1A8C02C4B69 /* ModalityPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C1257A3912DCE8FF6D06 /* ModalityPresentable.swift */; };
-		5A40CD28829AB79716645151 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */; };
+		5A40CE60F88E2CA1754D8C70 /* BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CB5569C557E9D322DBB9 /* BaseTransition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D7840602068A1170031AADE /* RxModalityStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxModalityStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D7840632068A1170031AADE /* RxModalityStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RxModalityStack.h; sourceTree = "<group>"; };
 		1D7840642068A1170031AADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialModalityStack.swift; sourceTree = "<group>"; };
-		1D78406D2068A15A0031AADE /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
-		1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxSerialTaskQueue.swift; sourceTree = "<group>"; };
+		1D78406B2068A15A0031AADE /* RxModalityStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStack.swift; sourceTree = "<group>"; };
+		1D78406E2068A15A0031AADE /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
 		1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransparentModalViewController.swift; sourceTree = "<group>"; };
 		1D7840702068A15A0031AADE /* UIViewController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
-		1D7840712068A15A0031AADE /* RxTaskQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueue.swift; sourceTree = "<group>"; };
-		1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownTransition.swift; sourceTree = "<group>"; };
+		1D7840712068A15A0031AADE /* RxTaskQueueType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxTaskQueueType.swift; sourceTree = "<group>"; };
 		1D7840732068A15B0031AADE /* RxModalityStackType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxModalityStackType.swift; sourceTree = "<group>"; };
 		1D78407E2068A16D0031AADE /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		1D78407F2068A16D0031AADE /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		5A40C0D06B31352A2D6B3F82 /* TouchPassthroughModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPassthroughModalViewController.swift; sourceTree = "<group>"; };
 		5A40C1257A3912DCE8FF6D06 /* ModalityPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityPresentable.swift; sourceTree = "<group>"; };
-		5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorAlphaAnimation.swift; sourceTree = "<group>"; };
-		5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
+		5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorAlphaAnimation.swift; sourceTree = "<group>"; };
+		5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownTransition.swift; sourceTree = "<group>"; };
+		5A40C39B3C905357A4F9BEC9 /* FadeInOutTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInOutTransition.swift; sourceTree = "<group>"; };
+		5A40C41BA8EC4C4B813FB83C /* OutsideTouchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutsideTouchable.swift; sourceTree = "<group>"; };
+		5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeftRightTransition.swift; sourceTree = "<group>"; };
+		5A40CB5569C557E9D322DBB9 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		5A40CC1654ED79D4C85EF942 /* Modality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
+		5A40CE32E2E859D34871B126 /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
 		5A40CE3DF20969AD4353B499 /* TouchPassthroughView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPassthroughView.swift; sourceTree = "<group>"; };
-		5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeftRightTransition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,23 +87,20 @@
 		1D7840622068A1170031AADE /* RxModalityStack */ = {
 			isa = PBXGroup;
 			children = (
-				1D78406D2068A15A0031AADE /* ModalityTransition.swift */,
 				1D7840732068A15B0031AADE /* RxModalityStackType.swift */,
-				1D78406B2068A15A0031AADE /* RxSerialModalityStack.swift */,
-				1D78406E2068A15A0031AADE /* RxSerialTaskQueue.swift */,
-				1D7840712068A15A0031AADE /* RxTaskQueue.swift */,
-				1D7840722068A15A0031AADE /* SlideUpDownTransition.swift */,
+				1D78406B2068A15A0031AADE /* RxModalityStack.swift */,
+				1D78406E2068A15A0031AADE /* RxTaskQueue.swift */,
+				1D7840712068A15A0031AADE /* RxTaskQueueType.swift */,
 				1D78406F2068A15A0031AADE /* TransparentModalViewController.swift */,
 				1D7840702068A15A0031AADE /* UIViewController+Rx.swift */,
 				1D7840632068A1170031AADE /* RxModalityStack.h */,
 				1D7840642068A1170031AADE /* Info.plist */,
-				5A40CFD268CC3A6FE83A7D3C /* SlideLeftRightTransition.swift */,
-				5A40C27A738C4C251912BB02 /* BackgroundColorAlphaAnimation.swift */,
-				5A40C7F41EB2CE50A28B6626 /* BaseTransition.swift */,
 				5A40C1257A3912DCE8FF6D06 /* ModalityPresentable.swift */,
 				5A40CC1654ED79D4C85EF942 /* Modality.swift */,
 				5A40C0D06B31352A2D6B3F82 /* TouchPassthroughModalViewController.swift */,
 				5A40CE3DF20969AD4353B499 /* TouchPassthroughView.swift */,
+				5A40C41BA8EC4C4B813FB83C /* OutsideTouchable.swift */,
+				5A40CE3F5BC7796FA8283D29 /* Transition */,
 			);
 			path = RxModalityStack;
 			sourceTree = "<group>";
@@ -111,6 +112,19 @@
 				1D78407E2068A16D0031AADE /* RxSwift.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A40CE3F5BC7796FA8283D29 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */,
+				5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */,
+				5A40CB5569C557E9D322DBB9 /* BaseTransition.swift */,
+				5A40CE32E2E859D34871B126 /* ModalityTransition.swift */,
+				5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */,
+				5A40C39B3C905357A4F9BEC9 /* FadeInOutTransition.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,20 +230,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D7840782068A15B0031AADE /* TransparentModalViewController.swift in Sources */,
-				1D7840772068A15B0031AADE /* RxSerialTaskQueue.swift in Sources */,
+				1D7840772068A15B0031AADE /* RxTaskQueue.swift in Sources */,
 				1D78407C2068A15B0031AADE /* RxModalityStackType.swift in Sources */,
-				1D78407A2068A15B0031AADE /* RxTaskQueue.swift in Sources */,
-				1D7840742068A15B0031AADE /* RxSerialModalityStack.swift in Sources */,
-				1D7840762068A15B0031AADE /* ModalityTransition.swift in Sources */,
+				1D78407A2068A15B0031AADE /* RxTaskQueueType.swift in Sources */,
+				1D7840742068A15B0031AADE /* RxModalityStack.swift in Sources */,
 				1D7840792068A15B0031AADE /* UIViewController+Rx.swift in Sources */,
-				1D78407B2068A15B0031AADE /* SlideUpDownTransition.swift in Sources */,
-				5A40C3D25003325BD328B2AD /* SlideLeftRightTransition.swift in Sources */,
-				5A40C75612EBE0753B5FB2DB /* BackgroundColorAlphaAnimation.swift in Sources */,
-				5A40CD28829AB79716645151 /* BaseTransition.swift in Sources */,
 				5A40CB215D1FE1A8C02C4B69 /* ModalityPresentable.swift in Sources */,
 				5A40C25FA8817CF99230E7A7 /* Modality.swift in Sources */,
 				5A40C1DE2A3C7880778B0296 /* TouchPassthroughModalViewController.swift in Sources */,
 				5A40C04F53CCEC3161A6B272 /* TouchPassthroughView.swift in Sources */,
+				5A40C70BA446B4EFBF464446 /* OutsideTouchable.swift in Sources */,
+				5A40C595155A812C583CF045 /* SlideLeftRightTransition.swift in Sources */,
+				5A40C2C49FDFB5A4E784224F /* SlideUpDownTransition.swift in Sources */,
+				5A40CE60F88E2CA1754D8C70 /* BaseTransition.swift in Sources */,
+				5A40C3EAFC4E6F14F223027D /* ModalityTransition.swift in Sources */,
+				5A40CAEAD50A8CDAFCD2A25E /* BackgroundColorAlphaAnimation.swift in Sources */,
+				5A40C7EA16807531DB0B0C10 /* FadeInOutTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

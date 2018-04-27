@@ -23,6 +23,6 @@ class ColorVC: ToolViewController, ModalPresentable {
     }
 
     class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
-        return .system
+        return .fadeInOut
     }
 }
