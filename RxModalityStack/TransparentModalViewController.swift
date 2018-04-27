@@ -25,6 +25,7 @@ open class TransparentModalViewController: UIViewController {
 
         if let _ = self as? OutsideTouchable {
             let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tap(_:)))
+            tapGestureRecognizer.cancelsTouchesInView = true
             view.addGestureRecognizer(tapGestureRecognizer)
         }
     }
