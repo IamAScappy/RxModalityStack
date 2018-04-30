@@ -16,24 +16,36 @@ class GreenVC: TransparentToolViewController, BackgroundColorAlphaAnimation {
         return view
     }()
     let disposeBag = DisposeBag()
-
     let data: [UIColor] = [.purple, .brown, .cyan, .magenta, .orange, .red]
+
+    private let fakeView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.gray
+        view.isUserInteractionEnabled = false
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addSubview(contentView)
+        view.addSubview(fakeView)
         contentView.addSubview(tableView)
 
         tableView.dataSource = self
         tableView.delegate = self
     }
 
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
         contentView.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
         tableView.frame = contentView.bounds
+
+        fakeView.frame.size.width = view.frame.width
+        fakeView.frame.size.height = 60
+        fakeView.frame.origin.x = 0
+        fakeView.frame.origin.y = toolView.frame.origin.y - 100
     }
 }
 

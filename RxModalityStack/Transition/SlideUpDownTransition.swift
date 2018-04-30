@@ -15,6 +15,8 @@ class SlideUpDownTransition: TransitionAnimatable {
 
         UIView.animate(
             withDuration: duration,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 to.view.frame = to.finalFrame
 
@@ -31,6 +33,8 @@ class SlideUpDownTransition: TransitionAnimatable {
 
         UIView.animate(
             withDuration: duration,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 from.view.frame = frame
 

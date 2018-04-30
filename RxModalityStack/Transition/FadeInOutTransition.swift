@@ -14,6 +14,8 @@ class FadeInOutTransition: TransitionAnimatable {
 
         UIView.animate(
             withDuration: duration,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 to.view.alpha = 1
 
@@ -27,6 +29,8 @@ class FadeInOutTransition: TransitionAnimatable {
     func animateTransition(from: TransitionInfo, animation: @escaping () -> Void, completion: @escaping () -> Void) {
         UIView.animate(
             withDuration: duration,
+            delay: 0,
+            options: .curveEaseInOut,
             animations: {
                 from.view.alpha = 0
 
