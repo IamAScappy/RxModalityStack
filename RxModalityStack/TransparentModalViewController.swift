@@ -33,7 +33,7 @@ open class TransparentModalViewController: UIViewController, UIGestureRecognizer
     @objc func tap(_ gestureRecognizer: UITapGestureRecognizer) {
         let point = gestureRecognizer.location(in: view)
 
-        guard view.subviews.contains(where: { $0.frame.contains(point) }) == false else { return }
+        guard view.hitTest(point, with: nil) == view else { return }
         guard let touchable = self as? OutsideTouchable else { return }
 
         touchable.onTouchOutside()
