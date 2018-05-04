@@ -231,7 +231,7 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
     public func frontViewController() -> Single<UIViewController> {
         return Single.create { observer in
             DispatchQueue.main.async { [unowned self] in
-                guard let viewController = self.stack.last?.viewController ?? UIApplication.shared.keyWindow?.rootViewController else {
+                guard let viewController = self.stack.last?.viewController ?? UIApplication.shared.windows.first?.rootViewController else {
                     observer(.error(RxModalityStackTypeError.frontViewControllerNotExists))
                     return
                 }
