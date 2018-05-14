@@ -100,6 +100,7 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                 }
                 return (index, [])
             }
+            .debug()
             .flatMap { [unowned self] (index, reorderModality) -> Single<Modality<T, D>> in
                 var concatObservable: Observable<Modality<T, D>> = Observable.empty()
 
