@@ -245,24 +245,22 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
     }
 
     public func setToDismissed(_ id: String) -> Single<Void> {
-        let single = Single<Void>.create { [unowned self] observer in
-            self.stack = self.stack.filter {
-                $0.id != id
-            }
-            observer(.success(Void()))
-            return Disposables.create()
-        }
+        let single = fixStack()
+            .do(onSuccess: { [unowned self] _ in
+                self.stack = self.stack.filter {
+                    $0.id != id
+                }
+            })
         return queue.add(single: single)
     }
 
     public func setToDismissed(_ viewController: UIViewController) -> Single<Void> {
-        let single = Single<Void>.create { [unowned self] observer in
-            self.stack = self.stack.filter {
-                $0.viewController != viewController
-            }
-            observer(.success(Void()))
-            return Disposables.create()
-        }
+        let single = fixStack()
+            .do(onSuccess: { [unowned self] _ in
+                self.stack = self.stack.filter {
+                    $0.viewController != viewController
+                }
+            })
         return queue.add(single: single)
     }
 
