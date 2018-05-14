@@ -100,7 +100,6 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                 }
                 return (index, [])
             }
-            .debug()
             .flatMap { [unowned self] (index, reorderModality) -> Single<Modality<T, D>> in
                 var concatObservable: Observable<Modality<T, D>> = Observable.empty()
 
@@ -108,13 +107,13 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                     concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: animated))
                 } else {
                     for _ in (0..<(reorderModality.count + 1)) {
-                        concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
+                        concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false).debug())
                     }
                 }
 
                 reorderModality
                     .forEach { [unowned self] (modality: Modality<T, D>) in
-                        concatObservable = concatObservable.concat(self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore))
+                        concatObservable = concatObservable.concat(self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore).debug())
                     }
 
                 return concatObservable.takeLast(1).asSingle()
