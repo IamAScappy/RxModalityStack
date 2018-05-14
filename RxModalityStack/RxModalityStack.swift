@@ -90,6 +90,9 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                 observer(.success(index))
                 return Disposables.create()
             }
+            .flatMap { [unowned self] index in
+                return self.fixStack().map { _ in index }
+            }
             .map { [unowned self] index -> (index: Int, reorderedViewController: ArraySlice<Modality<T, D>>) in
                 if index < (self.stack.count - 1) {
                     let range: Range<Int> = (index + 1)..<self.stack.count
