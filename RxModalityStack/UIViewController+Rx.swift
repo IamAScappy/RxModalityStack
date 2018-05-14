@@ -30,9 +30,14 @@ public extension Reactive where Base: UIViewController {
         return Observable.create { observer in
             observer.onNext(.dismissing)
 
-            self.base.dismiss(animated: animated) {
+            if self.base.presentingViewController == nil {
                 observer.onNext(.completed)
                 observer.onCompleted()
+            } else {
+                self.base.dismiss(animated: animated) {
+                    observer.onNext(.completed)
+                    observer.onCompleted()
+                }
             }
             return Disposables.create()
         }
