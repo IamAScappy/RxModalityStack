@@ -122,6 +122,8 @@ class BasePresentedTransition: NSObject, UIViewControllerAnimatedTransitioning {
                     fromTransitionInfo.view.removeFromSuperview()
                 }
 
+                backgroundView?.removeFromSuperview()
+
                 transitionContext.completeTransition(success)
             })
     }

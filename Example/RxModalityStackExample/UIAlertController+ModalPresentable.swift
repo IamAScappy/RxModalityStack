@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import RxSwift
 import RxModalityStack
 
 extension UIAlertController: ModalPresentable {
@@ -22,6 +23,7 @@ extension UIAlertController: ModalPresentable {
             })
             vc.addAction(UIAlertAction(title: "cancel", style: .cancel) { action in
                 print("press cancel")
+                _ = Modal.shared.setToDismissed(vc).subscribe()
             })
             return vc
         default:

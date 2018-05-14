@@ -47,7 +47,7 @@ extension ModalityTransition {
         case .slideUpDown:
             return BaseViewControllerTransition(transitionAnimatable: SlideUpDownTransition())
         case .fadeInOut:
-            return BaseViewControllerTransition(transitionAnimatable: FadeInOutTransition())
+            return BaseViewControllerTransition(transitionAnimatable: NothingTransition())
         case .delegate(let delegate):
             return delegate
         }

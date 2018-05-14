@@ -5,20 +5,15 @@
 
 import UIKit
 
-class FadeInOutTransition: TransitionAnimatable {
+class NothingTransition: TransitionAnimatable {
     let duration: TimeInterval = 0.3
 
     func animateTransition(to: TransitionInfo, animation: @escaping () -> Void, completion: @escaping () -> Void) {
-        to.view.alpha = 0
-        to.view.frame = to.finalFrame
-
         UIView.animate(
             withDuration: duration,
             delay: 0,
             options: .curveEaseInOut,
             animations: {
-                to.view.alpha = 1
-
                 animation()
             },
             completion: { b in
@@ -32,8 +27,6 @@ class FadeInOutTransition: TransitionAnimatable {
             delay: 0,
             options: .curveEaseInOut,
             animations: {
-                from.view.alpha = 0
-
                 animation()
             },
             completion: { b in
