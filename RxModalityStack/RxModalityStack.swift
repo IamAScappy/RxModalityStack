@@ -110,6 +110,9 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
 
                 reorderModality
                     .forEach { [unowned self] (modality: Modality<T, D>) in
+                        guard modality.viewController.isBeingDismissed == false && modality.viewController.isBeingPresented == false else {
+                            return
+                        }
                         concatObservable = concatObservable.concat(self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore))
                     }
 
