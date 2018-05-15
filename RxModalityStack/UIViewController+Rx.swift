@@ -33,6 +33,11 @@ public extension Reactive where Base: UIViewController {
             if self.base.presentingViewController == nil {
                 observer.onNext(.completed)
                 observer.onCompleted()
+            } else if self.base.isBeingDismissed || self.base.isBeingPresented {
+                DispatchQueue.main.async {
+                    observer.onNext(.completed)
+                    observer.onCompleted()
+                }
             } else {
                 self.base.dismiss(animated: animated) {
                     observer.onNext(.completed)

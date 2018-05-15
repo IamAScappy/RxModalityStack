@@ -90,9 +90,6 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                 observer(.success(index))
                 return Disposables.create()
             }
-            .flatMap { [unowned self] index in
-                return self.fixStack().map { _ in index }
-            }
             .map { [unowned self] index -> (index: Int, reorderedViewController: ArraySlice<Modality<T, D>>) in
                 if index < (self.stack.count - 1) {
                     let range: Range<Int> = (index + 1)..<self.stack.count
@@ -107,13 +104,13 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
                     concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: animated))
                 } else {
                     for _ in (0..<(reorderModality.count + 1)) {
-                        concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false).debug())
+                        concatObservable = concatObservable.concat(self.dismissFrontViewController(animated: false))
                     }
                 }
 
                 reorderModality
                     .forEach { [unowned self] (modality: Modality<T, D>) in
-                        concatObservable = concatObservable.concat(self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore).debug())
+                        concatObservable = concatObservable.concat(self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore))
                     }
 
                 return concatObservable.takeLast(1).asSingle()
@@ -200,8 +197,11 @@ public class RxModalityStack<T: ModalityType, D: ModalityData>: RxModalityStackT
     private func bringModality(toFront modality: Modality<T, D>) -> Single<Modality<T, D>> {
         return Single<Void>.just(Void())
             .flatMap { [unowned self] _ -> Single<Modality<T, D>> in
-                _ = self.dismiss(modality.viewController, animated: false)
-                return self.queue.add(single: self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore))
+                let single = self._dismiss(modality.viewController, animated: false)
+                    .flatMap { _ in
+                        self.present(modality, onFrontViewControllerWithAnimated: false, transition: .ignore)
+                    }
+                return self.queue.add(single: single)
             }
     }
 
