@@ -47,6 +47,6 @@ class BlueVC: TouchPassthroughModalViewController, OutsideTouchable, ModalPresen
     }
 
     class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
-        return .slideUpDown
+        return .slide(.up)
     }
 }

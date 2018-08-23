@@ -19,9 +19,8 @@
 		5A40C04F53CCEC3161A6B272 /* TouchPassthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CE3DF20969AD4353B499 /* TouchPassthroughView.swift */; };
 		5A40C1DE2A3C7880778B0296 /* TouchPassthroughModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C0D06B31352A2D6B3F82 /* TouchPassthroughModalViewController.swift */; };
 		5A40C25FA8817CF99230E7A7 /* Modality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CC1654ED79D4C85EF942 /* Modality.swift */; };
-		5A40C2C49FDFB5A4E784224F /* SlideUpDownTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */; };
 		5A40C3EAFC4E6F14F223027D /* ModalityTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40CE32E2E859D34871B126 /* ModalityTransition.swift */; };
-		5A40C595155A812C583CF045 /* SlideLeftRightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */; };
+		5A40C595155A812C583CF045 /* SlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C9933E18B6B1208D66E0 /* SlideTransition.swift */; };
 		5A40C70BA446B4EFBF464446 /* OutsideTouchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C41BA8EC4C4B813FB83C /* OutsideTouchable.swift */; };
 		5A40C7EA16807531DB0B0C10 /* NothingTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C39B3C905357A4F9BEC9 /* NothingTransition.swift */; };
 		5A40CAEAD50A8CDAFCD2A25E /* BackgroundColorAlphaAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */; };
@@ -44,10 +43,9 @@
 		5A40C0D06B31352A2D6B3F82 /* TouchPassthroughModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchPassthroughModalViewController.swift; sourceTree = "<group>"; };
 		5A40C1257A3912DCE8FF6D06 /* ModalityPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityPresentable.swift; sourceTree = "<group>"; };
 		5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundColorAlphaAnimation.swift; sourceTree = "<group>"; };
-		5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideUpDownTransition.swift; sourceTree = "<group>"; };
 		5A40C39B3C905357A4F9BEC9 /* NothingTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NothingTransition.swift; sourceTree = "<group>"; };
 		5A40C41BA8EC4C4B813FB83C /* OutsideTouchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutsideTouchable.swift; sourceTree = "<group>"; };
-		5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideLeftRightTransition.swift; sourceTree = "<group>"; };
+		5A40C9933E18B6B1208D66E0 /* SlideTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTransition.swift; sourceTree = "<group>"; };
 		5A40CB5569C557E9D322DBB9 /* BaseTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTransition.swift; sourceTree = "<group>"; };
 		5A40CC1654ED79D4C85EF942 /* Modality.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modality.swift; sourceTree = "<group>"; };
 		5A40CE32E2E859D34871B126 /* ModalityTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalityTransition.swift; sourceTree = "<group>"; };
@@ -117,8 +115,7 @@
 		5A40CE3F5BC7796FA8283D29 /* Transition */ = {
 			isa = PBXGroup;
 			children = (
-				5A40C9933E18B6B1208D66E0 /* SlideLeftRightTransition.swift */,
-				5A40C358CE4DE52DE21492A9 /* SlideUpDownTransition.swift */,
+				5A40C9933E18B6B1208D66E0 /* SlideTransition.swift */,
 				5A40CB5569C557E9D322DBB9 /* BaseTransition.swift */,
 				5A40CE32E2E859D34871B126 /* ModalityTransition.swift */,
 				5A40C220E8297F6988F9D1D9 /* BackgroundColorAlphaAnimation.swift */,
@@ -240,8 +237,7 @@
 				5A40C1DE2A3C7880778B0296 /* TouchPassthroughModalViewController.swift in Sources */,
 				5A40C04F53CCEC3161A6B272 /* TouchPassthroughView.swift in Sources */,
 				5A40C70BA446B4EFBF464446 /* OutsideTouchable.swift in Sources */,
-				5A40C595155A812C583CF045 /* SlideLeftRightTransition.swift in Sources */,
-				5A40C2C49FDFB5A4E784224F /* SlideUpDownTransition.swift in Sources */,
+				5A40C595155A812C583CF045 /* SlideTransition.swift in Sources */,
 				5A40CE60F88E2CA1754D8C70 /* BaseTransition.swift in Sources */,
 				5A40C3EAFC4E6F14F223027D /* ModalityTransition.swift in Sources */,
 				5A40CAEAD50A8CDAFCD2A25E /* BackgroundColorAlphaAnimation.swift in Sources */,

@@ -8,8 +8,7 @@ import UIKit
 public enum ModalityTransition: Equatable {
     case ignore
     case system
-    case slideUpDown
-    case slideLeftRight
+    case slide(Direction)
     case nothing
     case delegate(UIViewControllerTransitioningDelegate?)
 
@@ -17,10 +16,10 @@ public enum ModalityTransition: Equatable {
         switch (lhs, rhs) {
         case (.ignore, .ignore),
              (.system, .system),
-             (.slideUpDown, .slideUpDown),
-             (.slideLeftRight, .slideLeftRight),
              (.nothing, .nothing):
             return true
+        case (.slide(let lhsValue), .slide(let rhsValue)):
+            return lhsValue == rhsValue
         case (.delegate(let lhsValue), .delegate(let rhsValue)):
             guard let lhsValue = lhsValue else {
                 return rhsValue == nil
@@ -42,10 +41,8 @@ extension ModalityTransition {
             return nil
         case .system:
             return nil
-        case .slideLeftRight:
-            return BaseViewControllerTransition(transitionAnimatable: SlideLeftRightTransition())
-        case .slideUpDown:
-            return BaseViewControllerTransition(transitionAnimatable: SlideUpDownTransition())
+        case .slide(let direction):
+            return BaseViewControllerTransition(transitionAnimatable: SlideTransition(direction: direction))
         case .nothing:
             return BaseViewControllerTransition(transitionAnimatable: NothingTransition())
         case .delegate(let delegate):

@@ -84,6 +84,6 @@ extension GreenVC: ModalPresentable {
     }
 
     class func transitionOf(_ modal: Modal, with data: ModalData) -> ModalityTransition? {
-        return .slideLeftRight
+        return .slide(.left)
     }
 }
