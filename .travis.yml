@@ -1,4 +1,4 @@
 language: objective-c
-osx_image: xcode9.2
+osx_image: xcode10
 script:
-  xcodebuild -project "Example/RxModalityStackExample.xcodeproj" -scheme "RxModalityStackExample" -destination "OS=11.2,name=iPhone X" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
+  xcodebuild -project "Example/RxModalityStackExample.xcodeproj" -scheme "RxModalityStackExample" -destination "OS=12,name=iPhone X" -configuration Debug ONLY_ACTIVE_ARCH=NO build | xcpretty;
